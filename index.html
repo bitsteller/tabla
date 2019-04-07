@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=0.7">
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<script type="text/javascript" src="vue.js"></script>
+	<title>Tablå</title>
+</head>
+<body>
+	<div id="app">
+		<header>
+			<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
+			<div v-show="search != ''">{{ filteredSessions | count }} sessions found</div>
+		</header>
+
+		<section id="main">
+			<div v-for="timeslot in filteredSessionsByTimeslot">
+				<div v-if="timeslot.days != null" v-bind:id = "timeslot.day" class="days">
+					<a v-for="d in timeslot.days" v-bind:href="'#' + d" v-bind:class="{active: d == timeslot.day}">{{ d }}</a>
+				</div>
+				<h2>{{ timeslot.title }}</h2>
+				<div class="sessions">
+					<div class="session" v-for="session in timeslot.sessions">
+						<div class="location">{{ session.locationID }}</div>
+						<div class="title"><span class="id">{{ session.sessionID }}:</span> {{ session.title }}</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			
+		</footer>
+	</div>
+</body>
+<script type="text/javascript" src="script.js"></script>
+</html>

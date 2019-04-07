@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=0.7">
+	<link rel="stylesheet" type="text/css" href="display.css"/>
+	<script type="text/javascript" src="vue.js"></script>
+	<title>Tablå</title>
+</head>
+<body>
+	<div id="app">
+		<header>
+			<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
+		</header>
+
+		<section id="main">
+			<h1>Departures</h1>
+			<table>
+				<tr>
+					<th>Destinaton</th>
+					<th>Depature</th>
+					<th>Platform</th>
+				</tr>
+				<tr v-for="session in filteredSessions">
+					<td><div class="title"><span class="id">{{ session.sessionID }}:</span> {{ session.title }}</div></td>
+					<td>{{ session.startTimeFormatted }}</td>
+					<td>{{ session.locationID }}</td>
+				</tr>
+			</table>
+		</section>
+		<footer>
+			
+		</footer>
+	</div>
+</body>
+<script type="text/javascript" src="script.js"></script>
+</html>
