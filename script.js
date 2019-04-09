@@ -47,10 +47,9 @@ function formatTime(date) {
   	});
 }
 
-var app = new Vue({
-  el: '#app',
-  data: {
+var data = {
   	search: '',
+  	showSessionDetail: '',
     sessions : {
     	"S1": {
     		sessionID: "S1",
@@ -108,8 +107,16 @@ var app = new Vue({
     		title: "Lunch break 🍽",
     		locationID: "Louis de Geer"
     	}
-    }
-  },
+	}
+};
+
+Vue.component('modal', {
+  template: '#modal-template'
+})
+
+var app = new Vue({
+  el: '#app',
+  data: data,
   computed: {
   	filteredSessions: function() {
       var sessions = Object.filter(this.sessions, session => {
@@ -166,6 +173,14 @@ var app = new Vue({
    		timeslots.push(timeslot);
 
   		return timeslots;
+  	},
+  	sessionDetail: function() {
+       sessions = Object.values(this.sessions);
+  		for (var i = 0; i < sessions.length; i++) {
+  			if (sessions[i].sessionID === this.showSessionDetail) {
+  				return sessions[i];
+  			}
+  		}
   	}
   },
   filters: {
@@ -175,3 +190,5 @@ var app = new Vue({
   			}
   }
 })
+
+

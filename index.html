@@ -5,6 +5,37 @@
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<script type="text/javascript" src="vue.js"></script>
 	<title>Tablå</title>
+	<script type="text/x-template" id="modal-template">
+	  <transition name="modal">
+	    <div class="modal-mask">
+	      <div class="modal-wrapper">
+	        <div class="modal-container">
+
+	          <div class="modal-header">
+	            <slot name="header">
+	              default header
+	            </slot>
+	          </div>
+
+	          <div class="modal-body">
+	            <slot name="body">
+	              default body
+	            </slot>
+	          </div>
+
+	          <div class="modal-footer">
+	            <slot name="footer">
+	              default footer
+	              <button class="modal-default-button" @click="$emit('close')">
+	                OK
+	              </button>
+	            </slot>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </transition>
+	</script>
 </head>
 <body>
 	<div id="app">
@@ -22,7 +53,7 @@
 				<div class="sessions">
 					<div class="session" v-for="session in timeslot.sessions">
 						<div class="location">{{ session.locationID }}</div>
-						<div class="title"><span class="id">{{ session.sessionID }}:</span> {{ session.title }}</div>
+						<a role="button" v-on:click="showSessionDetail = session.sessionID"><div class="title"><span class="id">{{ session.sessionID }}:</span> {{ session.title }}</div></a>
 					</div>
 				</div>
 			</div>
@@ -30,6 +61,10 @@
 		<footer>
 			
 		</footer>
+		<modal v-if="showSessionDetail != ''" @close="showSessionDetail = ''">
+			<h3 slot="header"><div class="title"><span class="id">{{ sessionDetail.sessionID }}:</span> {{ sessionDetail.title }}</div></h3>
+			<p slot="body">Room: {{ sessionDetail.locationID }}, {{ sessionDetail.startTime }} - {{ sessionDetail.endTime }}</p>
+		</modal>
 	</div>
 </body>
 <script type="text/javascript" src="script.js"></script>
