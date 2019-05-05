@@ -53,6 +53,7 @@ body {
 
 body{
 	font-family: 'IBM Plex Sans', sans-serif;
+  	overflow:auto;
 }
 
 header {
@@ -167,6 +168,7 @@ div#app {
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
   font-family: Helvetica, Arial, sans-serif;
+  overflow: scroll;
 }
 
 .modal-header h3 {
@@ -199,6 +201,31 @@ div#app {
 .modal-leave-active {
   opacity: 0;
 }
+
+
+.overlay {
+  position: fixed;
+  width: 96%;
+  height: 96%;
+  top: 2%;
+  left: 2%;
+  right: 2%;
+  bottom: 2%;
+  background-color: rgba(255,255,255,0.94);
+  z-index: 2;
+  cursor: pointer;
+  overlay: scroll-y;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+}
+
+.overlay .content {
+	font-size: larger;
+  	height: 100%;
+  	overflow:auto;
+  	padding: 1em;
+}
+
 
 /* social icons */
 

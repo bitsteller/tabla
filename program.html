@@ -1,0 +1,55 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=0.7">
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<script type="text/javascript" src="vue.js"></script>
+	<title>Tablå</title>
+	<script type="text/x-template" id="link-template">
+		  <a
+		    v-bind:href="href"
+		    v-bind:class="{ active: isActive }"
+		    v-on:click="go"
+		  >
+		    <slot></slot>
+		  </a>
+	</script>
+	<script type="text/x-template" id="sessiondetail-template">
+	  <div class="overlay" onclick="window.history.back();">
+    <div class="content">
+			<h2><div class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</div></h2>
+			<p>Room: {{ session.room }}, {{ session.startTime }} - {{ session.endTime }}</p>
+    </div>
+  </div>
+	</script>
+</head>
+<body>
+	<div id="app">
+		<header>
+			<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
+			<div v-show="search != ''">{{ filteredSessions | count }} sessions found</div>
+		</header>
+
+		<section id="main">
+			<div v-for="timeslot in filteredSessionsByTimeslot">
+				<div v-if="timeslot.days != null" v-bind:id = "timeslot.day" class="days">
+					<a v-for="d in timeslot.days" v-bind:href="'#' + d" v-bind:class="{active: d == timeslot.day}">{{ d }}</a>
+				</div>
+				<h2>{{ timeslot.title }}</h2>
+				<div class="sessions">
+					<div class="session" v-for="session in timeslot.sessions">
+						<div class="location">{{ session.locationID }}</div>
+						<vlink v-bind:href="'./session/' + session.number"><div class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</div></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			
+		</footer>
+	
+		<sessiondetail v-if="sessionDetail != null" v-bind:session="sessionDetail" @close="window.history.back();"/>
+	</div>
+</body>
+<script type="text/javascript" src="script/main.js"></script>
+</html>

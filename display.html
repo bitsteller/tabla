@@ -3,8 +3,22 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=0.7">
 	<link rel="stylesheet" type="text/css" href="display.css"/>
-	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript" src="script/vue.js"></script>
 	<title>Tablå</title>
+	<script type="text/x-template" id="link-template">
+		  <a
+		    v-bind:href="href"
+		    v-bind:class="{ active: isActive }"
+		    v-on:click="go"
+		  >
+		    <slot></slot>
+		  </a>
+	</script>
+	<script type="text/x-template" id="sessionDetail-template">
+	  <div id="overlay" onclick="window.history.back();">
+    <div id="text">Overlay Tex jahkd fkajdh fkajdhf akdhf kadhf kajhdf akdhf akdhf adkhf adkjfh adkfh akdhf ajkdhf adkhjf akdh adjhf akdhf akdhf akjhfa kjhadf kjhadf fhdfaaad d adfadfkadf t</div>
+  </div>
+	</script>
 </head>
 <body>
 	<div id="app">
