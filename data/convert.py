@@ -14,9 +14,9 @@ sessions = dict()
 for s in reader:
 	date = re.match(r'([0-9]{4})-([0-9]{2})-([0-9]{2})', s["date"])
 	time = re.match(r'([0-9]{2}):([0-9]{2})', s["time"])
-	s["startTime"] = [date.group(1), date.group(2), date.group(3), time.group(1), time.group(2)]
+	s["startTime"] = [int(date.group(1)), int(date.group(2)), int(date.group(3)), int(time.group(1)), int(time.group(2))]
+	s["duration"] = int(s["duration"])
 	sessions[s["number"]] = s
-
 
 # Save the JSON  
 print("Saving...")

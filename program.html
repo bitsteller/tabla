@@ -38,7 +38,7 @@
 				<h2>{{ timeslot.title }}</h2>
 				<div class="sessions">
 					<div class="session" v-for="session in timeslot.sessions">
-						<div class="location">{{ session.locationID }}</div>
+						<div class="location">{{ session.room }}</div>
 						<vlink v-bind:href="'./session/' + session.number"><div class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</div></a>
 					</div>
 				</div>

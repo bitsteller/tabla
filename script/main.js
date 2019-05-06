@@ -34,11 +34,17 @@ function searchRegex(q) {
 }
 
 function formatTime(date) {
-  return date.toLocaleTimeString(navigator.language, {
+  try {
+    return date.toLocaleTimeString(navigator.language, {
       hour: '2-digit',
       minute:'2-digit',
       hour12: false
     });
+  }
+  catch {
+    return undefined;
+  }
+
 }
 
 
@@ -116,6 +122,8 @@ const app = new Vue({
       for (var i = 0; i < sessions.length; i++) {
         sessions[i].startTimeFormatted = formatTime(sessions[i].startTime);
       }
+
+      sessions.sort(function(a,b) {return a.startTime - b.startTime});
 
       return sessions;
     },
