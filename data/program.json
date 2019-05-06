@@ -1,18 +1,940 @@
 {
-  "rooms": {
-    "name": "K1",
-    "description":""
-  },
-  "sessions": {
-    "S1": {
-      "number": "S1",
-      "startTime": [2019,4,10,10,15],
-      "duration": 60,
-      "title": "Innovations in model trains",
-      "kind": "???",
-      "description": "???",
-      "chairs": ["Test"],
-      "room": "K2"
+    "sessions": {
+        "": {
+            "chairs": "Anders Peterson",
+            "date": "2019-06-19",
+            "description": "<p>Technical visit: Hallsberg railway junction</p>\n",
+            "duration": "390",
+            "kind": "social",
+            "number": "",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "19",
+                "12",
+                "30"
+            ],
+            "time": "12:30",
+            "title": "Technical visit"
+        },
+        "1": {
+            "chairs": "",
+            "date": "2019-06-17",
+            "description": "<p>Registration</p>\n",
+            "duration": "30",
+            "kind": "empty",
+            "number": "1",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "09",
+                "00"
+            ],
+            "time": "09:00",
+            "title": "Registration"
+        },
+        "10A": {
+            "chairs": "Paola Pellegrini",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "10A",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "10",
+                "50"
+            ],
+            "time": "10:50",
+            "title": "Traffic management"
+        },
+        "10B": {
+            "chairs": "Alex Landex",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "10B",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "10",
+                "50"
+            ],
+            "time": "10:50",
+            "title": "Capacity analysis"
+        },
+        "10C": {
+            "chairs": "Ambra Toletti",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "10C",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "10",
+                "50"
+            ],
+            "time": "10:50",
+            "title": "Timetabling"
+        },
+        "10D": {
+            "chairs": "Stefano Ricci",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "10D",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "10",
+                "50"
+            ],
+            "time": "10:50",
+            "title": "Driver behaviour and support"
+        },
+        "11": {
+            "chairs": "",
+            "date": "2019-06-18",
+            "description": "<p>Keynote speaker: Rob Goverde</p>\n",
+            "duration": "30",
+            "kind": "presentations",
+            "number": "11",
+            "room": "K4",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "13",
+                "10"
+            ],
+            "time": "13:10",
+            "title": "Keynote speaker: Rob Goverde"
+        },
+        "12A": {
+            "chairs": "Pengling Wang",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "12A",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "13",
+                "50"
+            ],
+            "time": "13:50",
+            "title": "Energy saving"
+        },
+        "12B": {
+            "chairs": "Tyler Dick",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "12B",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "13",
+                "50"
+            ],
+            "time": "13:50",
+            "title": "Freight traffic planning"
+        },
+        "12C": {
+            "chairs": "Carlo Mannino",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "12C",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "13",
+                "50"
+            ],
+            "time": "13:50",
+            "title": "Timetabling with reduced capacity"
+        },
+        "12D": {
+            "chairs": "",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "90",
+            "kind": "poster session",
+            "number": "12D",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "13",
+                "50"
+            ],
+            "time": "13:50",
+            "title": "Poster session"
+        },
+        "13A": {
+            "chairs": "Rob Goverde",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "13A",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "15",
+                "20"
+            ],
+            "time": "15:20",
+            "title": "Robustness"
+        },
+        "13B": {
+            "chairs": "Norio Tomii",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "13B",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "15",
+                "20"
+            ],
+            "time": "15:20",
+            "title": "Delay analysis and prediction"
+        },
+        "13C": {
+            "chairs": "Tomas Lid\u00e9n",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "13C",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "15",
+                "20"
+            ],
+            "time": "15:20",
+            "title": "Strategic planning"
+        },
+        "13D": {
+            "chairs": "",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "13D",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "15",
+                "20"
+            ],
+            "time": "15:20",
+            "title": ""
+        },
+        "14": {
+            "chairs": "Norio Tomii",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "90",
+            "kind": "empty",
+            "number": "14",
+            "room": "K4",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "16",
+                "30"
+            ],
+            "time": "16:30",
+            "title": "AIROR Business Meeting"
+        },
+        "15A": {
+            "chairs": "Francesco Corman",
+            "date": "2019-06-19",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "15A",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "19",
+                "08",
+                "30"
+            ],
+            "time": "08:30",
+            "title": "Timetabling"
+        },
+        "15B": {
+            "chairs": "Sara Gestrelius",
+            "date": "2019-06-19",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "15B",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "19",
+                "08",
+                "30"
+            ],
+            "time": "08:30",
+            "title": "Freight traffic planning"
+        },
+        "15C": {
+            "chairs": "Pavle Kecman",
+            "date": "2019-06-19",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "15C",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "19",
+                "08",
+                "30"
+            ],
+            "time": "08:30",
+            "title": "Delay analysis and prediction"
+        },
+        "15D": {
+            "chairs": "",
+            "date": "2019-06-19",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "15D",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "19",
+                "08",
+                "30"
+            ],
+            "time": "08:30",
+            "title": ""
+        },
+        "16": {
+            "chairs": "",
+            "date": "2019-06-19",
+            "description": "<p>Keynote speaker: Jonas Eliasson</p>\n",
+            "duration": "30",
+            "kind": "presentations",
+            "number": "16",
+            "room": "K4",
+            "startTime": [
+                "2019",
+                "06",
+                "19",
+                "10",
+                "00"
+            ],
+            "time": "10:00",
+            "title": "Keynote speaker: Jonas Eliasson"
+        },
+        "17A": {
+            "chairs": "",
+            "date": "2019-06-19",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "17A",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "19",
+                "10",
+                "40"
+            ],
+            "time": "10:40",
+            "title": "Passenger flow analysis"
+        },
+        "17B": {
+            "chairs": "Joaquin Rodriguez",
+            "date": "2019-06-19",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "17B",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "19",
+                "10",
+                "40"
+            ],
+            "time": "10:40",
+            "title": "Rolling stock scheduling and maintenance"
+        },
+        "17C": {
+            "chairs": "",
+            "date": "2019-06-19",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "17C",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "19",
+                "10",
+                "40"
+            ],
+            "time": "10:40",
+            "title": "Hyperloop"
+        },
+        "17D": {
+            "chairs": "",
+            "date": "2019-06-19",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "17D",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "19",
+                "10",
+                "40"
+            ],
+            "time": "10:40",
+            "title": "Miscellaneous"
+        },
+        "18": {
+            "chairs": "",
+            "date": "2019-06-20",
+            "description": "<p>Introduction to big data in traffic planning, Clas Rydergren, Link\u00f6ping University, Sweden</p>\n",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "18",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "20",
+                "09",
+                "00"
+            ],
+            "time": "09:00",
+            "title": "Short course: Lecture 1"
+        },
+        "19": {
+            "chairs": "",
+            "date": "2019-06-20",
+            "description": "<p>Mining, analysis and modelling of passenger flow data, time androute choice inrailway networks, Otto Anker Nielsen, Technical University of Denmark, Denmark.</p>\n",
+            "duration": "90",
+            "kind": "presentations",
+            "number": "19",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "20",
+                "10",
+                "20"
+            ],
+            "time": "10:20",
+            "title": "Short course, Lecture 2"
+        },
+        "2": {
+            "chairs": "Anders Peterson",
+            "date": "2019-06-17",
+            "description": "<p>Conference opening session</p>\n",
+            "duration": "30",
+            "kind": "empty",
+            "number": "2",
+            "room": "K4",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "09",
+                "30"
+            ],
+            "time": "09:30",
+            "title": "Conference opening"
+        },
+        "20": {
+            "chairs": "",
+            "date": "2019-06-20",
+            "description": "<p>Analysis of train traffic and track capacity useto improve the quality of operations, Giorgio Medeossi, TRENOlab, Italy.</p>\n",
+            "duration": "90",
+            "kind": "presentations",
+            "number": "20",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "20",
+                "13",
+                "10"
+            ],
+            "time": "13:10",
+            "title": "Short course, Lecture 3"
+        },
+        "21": {
+            "chairs": "",
+            "date": "2019-06-20",
+            "description": "<p>Machine Learning: theory and application Pavle Kecman, Allianz Data Office, The Netherlands</p>\n",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "21",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "20",
+                "15",
+                "00"
+            ],
+            "time": "15:00",
+            "title": "Short course, Lecture 4"
+        },
+        "3": {
+            "chairs": "",
+            "date": "2019-06-17",
+            "description": "<p>Keynote speaker: Gunnar Alexandersson</p>\n",
+            "duration": "30",
+            "kind": "presentations",
+            "number": "3",
+            "room": "K4",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "10",
+                "10"
+            ],
+            "time": "10:10",
+            "title": "Keynote speaker: Gunnar Alexandersson"
+        },
+        "4A": {
+            "chairs": "Francesco Corman",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "4A",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "11",
+                "10"
+            ],
+            "time": "11:10",
+            "title": "Timetabling"
+        },
+        "4B": {
+            "chairs": "Nils Nie\u00dfen",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "4B",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "11",
+                "10"
+            ],
+            "time": "11:10",
+            "title": "Capacity analysis"
+        },
+        "4C": {
+            "chairs": "Dennis Huisman",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "4C",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "11",
+                "10"
+            ],
+            "time": "11:10",
+            "title": "Traffic management"
+        },
+        "4D": {
+            "chairs": "Ingo Hansen",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "4D",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "11",
+                "10"
+            ],
+            "time": "11:10",
+            "title": "Network and line planning"
+        },
+        "5A": {
+            "chairs": "Pieter Vansteenwegen",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "5A",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "13",
+                "30"
+            ],
+            "time": "13:30",
+            "title": "Passenger flow analysis"
+        },
+        "5B": {
+            "chairs": "Thomas Schlechte",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "5B",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "13",
+                "30"
+            ],
+            "time": "13:30",
+            "title": "Rolling stock scheduling and maintenance"
+        },
+        "5C": {
+            "chairs": "Lingyun Meng",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "5C",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "13",
+                "30"
+            ],
+            "time": "13:30",
+            "title": "Delay analysis and prediction"
+        },
+        "5D": {
+            "chairs": "Andreas Oetting",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "5D",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "13",
+                "30"
+            ],
+            "time": "13:30",
+            "title": "Network and line planning"
+        },
+        "6A": {
+            "chairs": "Joaquin Rodriguez",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "6A",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "14",
+                "40"
+            ],
+            "time": "14:40",
+            "title": "Timetabling"
+        },
+        "6B": {
+            "chairs": "Clas Rydergren",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "6B",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "14",
+                "40"
+            ],
+            "time": "14:40",
+            "title": "Passenger flow analysis"
+        },
+        "6C": {
+            "chairs": "Thomas White",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "6C",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "14",
+                "40"
+            ],
+            "time": "14:40",
+            "title": "Energy saving"
+        },
+        "6D": {
+            "chairs": "Pavle Kecman",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "60",
+            "kind": "presentations",
+            "number": "6D",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "14",
+                "40"
+            ],
+            "time": "14:40",
+            "title": "Capacity analysis"
+        },
+        "7A": {
+            "chairs": "Giorgio Medeossi",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "7A",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "16",
+                "10"
+            ],
+            "time": "16:10",
+            "title": "Planning policies"
+        },
+        "7B": {
+            "chairs": "Christian Liebchen",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "7B",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "16",
+                "10"
+            ],
+            "time": "16:10",
+            "title": "Robustness"
+        },
+        "7C": {
+            "chairs": "Alex Wardrop",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "7C",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "16",
+                "10"
+            ],
+            "time": "16:10",
+            "title": "Freight traffic planning"
+        },
+        "7D": {
+            "chairs": "",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "7D",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "16",
+                "10"
+            ],
+            "time": "16:10",
+            "title": "Traffic management"
+        },
+        "8": {
+            "chairs": "Norio Tomii",
+            "date": "2019-06-17",
+            "description": "<p>IAROR Board meeting</p>\n",
+            "duration": "120",
+            "kind": "empty",
+            "number": "8",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "17",
+                "18",
+                "00"
+            ],
+            "time": "18:00",
+            "title": "IAROR Board meeting"
+        },
+        "9A": {
+            "chairs": "",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "9A",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "09",
+                "00"
+            ],
+            "time": "09:00",
+            "title": "Delay analysis and prediction"
+        },
+        "9B": {
+            "chairs": "Carlo Mannino",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "9B",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "09",
+                "00"
+            ],
+            "time": "09:00",
+            "title": "Traffic management"
+        },
+        "9C": {
+            "chairs": "J\u00f6rn Pachl",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "9C",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "09",
+                "00"
+            ],
+            "time": "09:00",
+            "title": "System design, validation and evaluation"
+        },
+        "9D": {
+            "chairs": "Rob Goverde",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": "80",
+            "kind": "presentations",
+            "number": "9D",
+            "room": "",
+            "startTime": [
+                "2019",
+                "06",
+                "18",
+                "09",
+                "00"
+            ],
+            "time": "09:00",
+            "title": "Moving block"
+        }
     }
-  }
 }
