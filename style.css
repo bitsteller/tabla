@@ -22,7 +22,17 @@
 
 .sessions .session {
 	border-color: rgba(51,51,51,0.3);
+}
+
+.session .info {
+	color: rgba(51,51,51,0.6);
+}
+
+
+.timeslot {
 	border-top-color: #17c7d2;
+	background-color: rgba(23,199,210,0.1)
+
 }
 
 .id {
@@ -49,6 +59,10 @@ body {
 	font-weight: bold;
 }
 
+.session a {
+	color: #47425d;
+}
+
 /*CSS*/
 
 body{
@@ -73,6 +87,13 @@ div#app {
 	font-size: large;
 	max-width: 400px;
 	width: 100%;
+}
+
+h2.timeslot {
+	border-top-style: solid;
+	border-top-width: 2px;
+	padding: 0.5em;
+
 }
 
 .sessions {
@@ -107,11 +128,21 @@ div#app {
 .session .location {
 	font-size: x-large;
 	padding-right: 1em;
+	min-width: 2em;
 }
 
 .session .title {
 	font-weight: bold;
 }
+
+.session a:link {
+	text-decoration: none;
+}
+
+.session .info {
+	padding-top: 0.5em;
+}
+
 
 .days {
 	padding: 1em;
@@ -139,69 +170,7 @@ div#app {
 	border-bottom-right-radius: 5px;
 }
 
-/* modal */
-
-.modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-  display: table;
-  transition: opacity .3s ease;
-}
-
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.modal-container {
-  max-width: 80%;
-  min-height: 80%;
-  margin: 0px auto;
-  padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-  transition: all .3s ease;
-  font-family: Helvetica, Arial, sans-serif;
-  overflow: scroll;
-}
-
-.modal-header h3 {
-  margin-top: 0;
-  color: #42b983;
-}
-
-.modal-body {
-  margin: 20px 0;
-}
-
-.modal-default-button {
-  float: right;
-  font-size: x-large;
-}
-
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
-
-.modal-enter {
-  opacity: 0;
-}
-
-.modal-leave-active {
-  opacity: 0;
-}
-
+/* Overlay */
 
 .overlay {
   position: fixed;

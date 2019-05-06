@@ -33,7 +33,13 @@ function searchRegex(q) {
   return searchRegex;
 }
 
-function formatTime(date) {
+function minutesBetween(a, b) {
+  var diff = b-a;
+  var minutes = Math.floor((diff/1000)/60);
+  return minutes;
+}
+
+function toFormatTime(date) {
   try {
     return date.toLocaleTimeString(navigator.language, {
       hour: '2-digit',
@@ -47,7 +53,9 @@ function formatTime(date) {
 
 }
 
-
+Vue.filter('formatTime', function(d) {
+      return toFormatTime(d);
+    });
 
 Vue.component('vlink', {
     template: '#link-template',
@@ -95,7 +103,7 @@ const app = new Vue({
     search: "",
     sessions: {},
     rooms: {},
-    talks: {},
+    talks: [],
     authors: {},
     sessionschairs: {}
   },
@@ -116,11 +124,13 @@ const app = new Vue({
           var sessionIDMatch = searchRegex(this.search).test(session.number);
           var roomMatch = session.room.toLowerCase().includes(this.search.toLowerCase());
           var titleMatch = searchRegex(this.search).test(session.title);
-          return sessionIDMatch || roomMatch || titleMatch;
+          var talkMatch = (session.number in this.filteredTalks) && (this.filteredTalks[session.number].length > 0);
+
+          return sessionIDMatch || roomMatch || titleMatch || talkMatch;
       });
 
       for (var i = 0; i < sessions.length; i++) {
-        sessions[i].startTimeFormatted = formatTime(sessions[i].startTime);
+        sessions[i].startTimeFormatted = toFormatTime(sessions[i].startTime);
       }
 
       sessions.sort(function(a,b) {return a.startTime - b.startTime});
@@ -148,7 +158,20 @@ const app = new Vue({
             timeslots.push(timeslot);
             timeslot = {timeslotTitle: "", days: null, day: "", sessions: []};
           }
-          timeslot.title = weekdays[sessions[i].startTime.getDay()].toString() + ", " + formatTime(sessions[i].startTime) + " - " + formatTime(sessions[i].endTime);
+          timeslot.title = toFormatTime(sessions[i].startTime) + " - " + toFormatTime(sessions[i].endTime); //weekdays[sessions[i].startTime.getDay()].toString() + ", " +
+          var minLeftToStart = minutesBetween(this.now, sessions[i].startTime);
+          var minLeftToEnd = minutesBetween(this.now, sessions[i].endTime)
+
+          if (minLeftToStart <= 30 && minLeftToStart > 0) { //before
+            timeslot.title += " － 🔵 in " + minLeftToStart + " min";
+          }
+          else if (minLeftToStart <= 0 && minLeftToEnd >= 0) { //while
+            timeslot.title += " － 🔴 " + minLeftToEnd + " min left";
+          }
+          else if (minLeftToEnd < 0) { //after
+            timeslot.title += " － passed";
+          }
+
             if (i == 0 || sessions[i].day != sessions[i-1].day) {
           timeslot.days = days;
           timeslot.day =  weekdays[sessions[i].startTime.getDay()].toString();
@@ -160,12 +183,41 @@ const app = new Vue({
 
       return timeslots;
     },
+    talksBySession: function() {
+      var talks = this.talks;
+      var bysession = talks.reduce(function(rv, x) {
+        (rv[x["session"]] = rv[x["session"]] || []).push(x);
+        return rv;
+      }, {});
+
+      //todo sort by time
+
+      return bysession;
+    },
+    filteredTalks: function() {
+      var bysession = this.talksBySession;
+      var sessionIDs = Object.keys(bysession);
+      var filtered = {};
+
+      for (var s = 0; s < sessionIDs.length; s++) {
+        filtered[sessionIDs[s]] = bysession[sessionIDs[s]].filter(talk => {
+          var numberMatch = talk.number.toLowerCase().includes(this.search.toLowerCase());
+          var titleMatch = searchRegex(this.search).test(talk.title);
+          var abstractMatch = searchRegex(this.search).test(talk.abstract);
+          var authorMatch = searchRegex(this.search).test(talk.authors);
+
+          return numberMatch || titleMatch || abstractMatch || authorMatch;
+        })
+      }
+
+      return filtered
+    }
   },
   filters: {
     count: function (obj) {
-          var res = Object.keys(obj).length
-          return res
-        }
+      var res = Object.keys(obj).length
+      return res
+    }
   }
 })
 
@@ -198,7 +250,18 @@ function loadProgram(url, tries = 5) {
 
           }
         }
+        for (var i = 0; i < program.talks.length; i++) {
+          try {
+            var startTime = program.talks[i].startTime;
+            program.talks[i].startTime = new Date(startTime[0], startTime[1], startTime[2], startTime[3], startTime[4]);
+            program.talks[i].endTime = new Date(startTime[0], startTime[1], startTime[2], startTime[3], startTime[4] + program.talks[i].duration);       
+          }
+          catch {
+
+          }
+        }
         app.sessions = program.sessions;
+        app.talks = program.talks;
         app.rooms = program.rooms;
       }
       else {
