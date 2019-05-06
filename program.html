@@ -22,6 +22,9 @@
 			<p>Room: {{ session.room }}, {{ session.startTime | formatTime }} - {{ session.endTime | formatTime }} ({{ session.duration }} minutes)</p>
 			<p>Chair: {{ session.chair }}</p>
 			<p><span v-html="session.description"></span></p>
+			<p v-for="talk in talks">
+				{{ talk.title }} ({{ talk.presenter}})
+			</p>
     </div>
   </div>
 	</script>
@@ -61,7 +64,7 @@
 			
 		</footer>
 	
-		<sessiondetail v-if="sessionDetail != null" v-bind:session="sessionDetail" @close="window.history.back();"/>
+		<sessiondetail v-if="sessionDetail != null" v-bind:session="sessionDetail" v-bind:talks="talksBySession[sessionDetail.number]" @close="window.history.back();"/>
 	</div>
 </body>
 <script type="text/javascript" src="script/main.js"></script>

@@ -89,6 +89,10 @@ Vue.component('sessiondetail', {
       session: {
         type: Object,
         required: true 
+      },
+      talks: {
+        type: Array,
+        required: true
       }
     },
 })
@@ -124,9 +128,10 @@ const app = new Vue({
           var sessionIDMatch = searchRegex(this.search).test(session.number);
           var roomMatch = session.room.toLowerCase().includes(this.search.toLowerCase());
           var titleMatch = searchRegex(this.search).test(session.title);
+          var descriptionMatch = searchRegex(this.search).test(session.description);
           var talkMatch = (session.number in this.filteredTalks) && (this.filteredTalks[session.number].length > 0);
 
-          return sessionIDMatch || roomMatch || titleMatch || talkMatch;
+          return sessionIDMatch || roomMatch || titleMatch || talkMatch || descriptionMatch;
       });
 
       for (var i = 0; i < sessions.length; i++) {
