@@ -37,6 +37,7 @@
 <body>
 	<div id="app">
 		<header>
+			<span class="conference">RailNorrköping</span>
 			<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
 			<input type="checkbox" id="past" value="false" v-model="includePast"><label>Show past</label>
 			<div v-show="search != ''">{{ filteredSessions | count }} sessions found</div>
