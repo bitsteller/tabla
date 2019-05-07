@@ -74,6 +74,9 @@
 	
 		<sessiondetail v-if="sessionDetail != null" v-bind:session="sessionDetail" v-bind:talks="talksBySession[sessionDetail.number]" @close="window.history.back();"/>
 	</div>
+	<footer>
+		<a href="https://github.com/bitsteller/tabla">Tablå</a>
+	</footer>
 </body>
 <script type="text/javascript" src="script/main.js"></script>
 </html>

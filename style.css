@@ -24,7 +24,7 @@
 	border-color: rgba(51,51,51,0.3);
 }
 
-.session .info {
+.session .info, footer a {
 	color: rgba(51,51,51,0.6);
 }
 
@@ -65,7 +65,6 @@ body {
 
 ul.talks li::before, ul.talks li .time {
   background: #17c7d2;
-
 }
 
 
@@ -253,6 +252,12 @@ ul.talks li:first-child::before {
   display: none;
 }
 
+
+footer {
+	text-align: center;
+	padding: 2em 1em;
+	font-size: small;
+}
 
 /* Overlay */
 
