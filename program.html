@@ -22,9 +22,14 @@
 			<p>Room: {{ session.room }}, {{ session.startTime | formatTime }} - {{ session.endTime | formatTime }} ({{ session.duration }} minutes)</p>
 			<p>Chair: {{ session.chair }}</p>
 			<p><span v-html="session.description"></span></p>
-			<p v-for="talk in talks">
-				{{ talk.title }} ({{ talk.presenter}})
-			</p>
+			<ul class="talks">
+				<li v-for="talk in talks">
+					<div class="talk">
+						<span class="time">{{ talk.startTime | formatTime }}</span>
+						<span class="info">{{ talk.title }} ({{ talk.presenter}})</span>
+					</div>
+				</li>
+			</ul>
     </div>
   </div>
 	</script>
