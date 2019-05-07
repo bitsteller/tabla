@@ -135,9 +135,9 @@ h2.timeslot {
 }
 
 .session .location {
-	font-size: x-large;
+	font-size: xx-large;
 	padding-right: 1em;
-	min-width: 2em;
+	min-width: 0.8em;
 }
 
 .session .title {
