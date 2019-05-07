@@ -29,10 +29,9 @@
 }
 
 
-.timeslot {
+.timeslot, .overlay .content .header {
 	border-top-color: #17c7d2;
 	background-color: rgba(23,199,210,0.1)
-
 }
 
 .id {
@@ -129,7 +128,7 @@ h2.timeslot {
 	border-style: solid;
 	border-width: 1px 0px;
 	min-width: 250px;
-	width: 500px;
+	width: 450px;
 	padding: 0.5em;
 	margin:  0.5em 1em;
 	flex-flow: row nowrap;
@@ -179,6 +178,30 @@ h2.timeslot {
 	border-right-width: 1px;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
+}
+
+.content .body {
+	padding: 1em;
+}
+
+.content .header {
+	border-top-style: solid;
+	padding: 0.2em 1em;
+}
+
+.content .header h2 {
+	flex-flow: row nowrap;
+	align-content: stretch;
+	display: flex;
+}
+
+.content .header h2 span {
+	flex-grow: 1;
+}
+
+.content .header h2 .close {
+	flex-grow: 0;
+	padding: 0em 0.5em;
 }
 
 ul.talks {
@@ -253,7 +276,7 @@ ul.talks li:first-child::before {
 	font-size: larger;
   	height: 100%;
   	overflow:auto;
-  	padding: 1em;
+  	padding: 0em;
 }
 
 
