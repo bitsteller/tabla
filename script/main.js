@@ -219,7 +219,7 @@ const app = new Vue({
   },
   watch : {
     currentRoute: function (newRoute, oldRoute) {
-      if (this.search == "" && newRoute.match(/^\/([A-z0-9 ]+)$/g)) {
+      if (this.search == "" && newRoute.match(/^\#\/([A-z0-9 ]+)$/g)) {
         var day = /\/([A-z0-9 ]+)/.exec(newRoute)[1];
         this.filterDay = day;
       }
