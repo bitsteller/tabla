@@ -75,11 +75,6 @@ Vue.component('vlink', {
         event.preventDefault()
         this.$root.currentRoute = this.href
         window.location.hash = this.href
-        /*window.history.pushState(
-          null,
-          this.href,
-          this.href
-        )*/
       }
     }
 })

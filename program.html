@@ -48,13 +48,13 @@
 		<section id="main">
 			<div v-for="timeslot in filteredSessionsByTimeslot">
 				<div v-if="timeslot.days != null" v-bind:id = "timeslot.day" class="days">
-					<vlink v-for="d in timeslot.days" v-bind:href="'/' + d" v-bind:class="{active: d == timeslot.day}">{{ d }}</vlink>
+					<vlink v-for="d in timeslot.days" v-bind:href="'#/' + d" v-bind:class="{active: d == timeslot.day}">{{ d }}</vlink>
 				</div>
 				<h2 class="timeslot">{{ timeslot.title }}</h2>
 				<div class="sessions">
 					<div class="session" v-for="session in timeslot.sessions">
 						<div class="location">{{ session.room }}</div>
-						<vlink v-bind:href="'/session/' + session.number"><div class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</div></a>
+						<vlink v-bind:href="'#/session/' + session.number"><div class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</div></a>
 
 						<div class="info">
 							<p v-if="(search).length >= 2" v-for="talk in filteredTalks[session.number]">
