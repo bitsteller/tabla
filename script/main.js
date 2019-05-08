@@ -101,7 +101,7 @@ const app = new Vue({
     now: new Date(),
     includePast: false,
     search: "",
-    filterDay: "",
+    filterDay: "Monday", //TODO: next day
     sessions: {},
     rooms: {},
     talks: [],
@@ -219,9 +219,14 @@ const app = new Vue({
   },
   watch : {
     currentRoute: function (newRoute, oldRoute) {
-      if (this.search == "" && newRoute.match(/^\#\/([A-z0-9 ]+)$/g)) {
-        var day = /\/([A-z0-9 ]+)/.exec(newRoute)[1];
-        this.filterDay = day;
+      if (this.search == "") {
+        if (newRoute.match(/^\#\/([A-z0-9 ]+)$/g)) {
+          var day = /\/([A-z0-9 ]+)/.exec(newRoute)[1];
+          this.filterDay = day;
+        }
+        else if (newRoute.match(/^\#?$/g)) {
+          this.filterDay = 'Monday'; //TODO: next day
+        }
       }
     },
     search : function (newSearch, oldSearch) {
