@@ -118,7 +118,7 @@ const app = new Vue({
       }
     },
     filterDay () {
-      if (this.currentRoute.match(/\/([A-z0-9 ]+)/)) {
+      if (this.search == "" && this.currentRoute.match(/\/([A-z0-9 ]+)/)) {
         var day = /\/([A-z0-9 ]+)/.exec(this.currentRoute)[1];
         return day;
       }

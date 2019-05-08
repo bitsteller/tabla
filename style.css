@@ -53,7 +53,7 @@ body {
 	color: #d65050;
 }
 
-.days a.active {
+.days a.current {
 	background-color: #d65050;
 	color: #fff;
 	font-weight: bold;
