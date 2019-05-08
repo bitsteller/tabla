@@ -74,11 +74,12 @@ Vue.component('vlink', {
       go (event) {
         event.preventDefault()
         this.$root.currentRoute = this.href
-        window.history.pushState(
+        window.location.hash = this.href
+        /*window.history.pushState(
           null,
           this.href,
           this.href
-        )
+        )*/
       }
     }
 })
@@ -101,7 +102,7 @@ Vue.component('sessiondetail', {
 const app = new Vue({
   el: '#app',
   data: {
-    currentRoute: window.location.pathname,
+    currentRoute: window.location.hash,
     now: new Date(),
     includePast: false,
     search: "",
@@ -119,6 +120,15 @@ const app = new Vue({
       }
       else {
         return null;
+      }
+    },
+    filterDay () {
+      if (this.currentRoute.match(/\/([A-z0-9 ]+)/)) {
+        var day = /\/([A-z0-9 ]+)/.exec(this.currentRoute)[1];
+        return day;
+      }
+      else {
+        return "";
       }
     },
     filteredSessions: function() {
@@ -177,14 +187,16 @@ const app = new Vue({
             timeslot.title += " － passed";
           }
 
-            if (i == 0 || sessions[i].day != sessions[i-1].day) {
+          if (i == 0 || sessions[i].day != sessions[i-1].day) {
           timeslot.days = days;
-          timeslot.day =  weekdays[sessions[i].startTime.getDay()].toString();
           }
+          timeslot.day =  weekdays[sessions[i].startTime.getDay()].toString();
         }
         timeslot.sessions.push(sessions[i]);
       }
       timeslots.push(timeslot);
+
+      timeslots = timeslots.filter(ts => { return this.filterDay == "" || ts.day == this.filterDay });
 
       return timeslots;
     },
@@ -227,7 +239,7 @@ const app = new Vue({
 })
 
 window.addEventListener('popstate', () => {
-  app.currentRoute = window.location.pathname
+  app.currentRoute = window.location.hash;
 })
 
 this.interval = setInterval(() => {
