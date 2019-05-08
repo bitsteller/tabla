@@ -47,7 +47,7 @@
 
 		<section id="main">
 			<div v-for="timeslot in filteredSessionsByTimeslot">
-				<div v-if="timeslot.days != null" v-bind:id = "'/' + timeslot.day" class="days">
+				<div v-if="timeslot.days != null" v-bind:id = "filterDay == '' ? '/' + timeslot.day : null" class="days">
 					<vlink v-for="d in timeslot.days" v-bind:href="'#/' + d" v-bind:class="{current: d == timeslot.day}">{{ d }}</vlink>
 				</div>
 				<h2 class="timeslot">{{ timeslot.title }}</h2>
