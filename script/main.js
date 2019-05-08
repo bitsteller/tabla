@@ -101,6 +101,7 @@ const app = new Vue({
     now: new Date(),
     includePast: false,
     search: "",
+    filterDay: "",
     sessions: {},
     rooms: {},
     talks: [],
@@ -115,15 +116,6 @@ const app = new Vue({
       }
       else {
         return null;
-      }
-    },
-    filterDay () {
-      if (this.search == "" && this.currentRoute.match(/\/([A-z0-9 ]+)/)) {
-        var day = /\/([A-z0-9 ]+)/.exec(this.currentRoute)[1];
-        return day;
-      }
-      else {
-        return "";
       }
     },
     filteredSessions: function() {
@@ -223,6 +215,19 @@ const app = new Vue({
       }
 
       return filtered
+    }
+  },
+  watch : {
+    currentRoute: function (newRoute, oldRoute) {
+      if (this.search == "" && newRoute.match(/^\/([A-z0-9 ]+)$/g)) {
+        var day = /\/([A-z0-9 ]+)/.exec(newRoute)[1];
+        this.filterDay = day;
+      }
+    },
+    search : function (newSearch, oldSearch) {
+      if (this.newSearch != "") {
+        this.filterDay = "";
+      }
     }
   },
   filters: {
