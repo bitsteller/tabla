@@ -1,6 +1,10 @@
 import csv  
 import json  
 import re
+
+import analyse
+tr4w = analyse.TextRank4Keyword()
+
   
 # Open the CSV  
 f = open( 'sessions.csv', 'r' )  
@@ -31,6 +35,9 @@ for t in reader:
 	time = re.match(r'([0-9]{2}):([0-9]{2})', t["time"])
 	t["startTime"] = [int(date.group(1)), int(date.group(2))-1, int(date.group(3)), int(time.group(1)), int(time.group(2))]
 	t["duration"] = int(s["duration"])
+
+	tr4w.analyze(t["title"] + " " + t["abstract"], candidate_pos = ['NOUN'], window_size=4, lower=False, stopwords = ["railways", "railway", "train", "rail", "%"])
+	t["keywords"] = tr4w.get_keywords(1)
 	talks.append(t)
 
 # Save the JSON  

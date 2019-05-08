@@ -943,6 +943,11 @@
             "authors": "Yu Ke, Lei Nie, Wuyang Yuan and Xin Zhang",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "timetable",
+                "transfer",
+                "quality"
+            ],
             "number": "82",
             "presenter": "Yu Ke",
             "session": "15A",
@@ -962,6 +967,11 @@
             "authors": "Ping Huang",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "duration",
+                "distribution",
+                "disruption"
+            ],
             "number": "141",
             "presenter": "Ping Huang",
             "session": "15C",
@@ -981,6 +991,11 @@
             "authors": "Zezhou Wang, Darkhan Mussanov and C. Tyler Dick",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "conductors",
+                "person",
+                "crews"
+            ],
             "number": "168",
             "presenter": "C. Tyler Dick",
             "session": "15B",
@@ -1000,6 +1015,11 @@
             "authors": "Sida Jiang, Christer Persson and Karin Brundell-Freij",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "data",
+                "travel",
+                "sales"
+            ],
             "number": "6",
             "presenter": "Sida Jiang",
             "session": "15C",
@@ -1019,6 +1039,11 @@
             "authors": "Wesley Chen, Michael Pugh and C. Tyler Dick",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "capacity",
+                "terminal",
+                "transportation"
+            ],
             "number": "94",
             "presenter": "Wesley Chen",
             "session": "15B",
@@ -1038,6 +1063,11 @@
             "authors": "Daniel P\u00f6hle, Sebastian K\u00fchn, Anna-Lena Frank and Florian Dahms",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "infrastructure",
+                "capacity",
+                "usage"
+            ],
             "number": "132",
             "presenter": "Sebastian K\u00fchn",
             "session": "15A",
@@ -1057,6 +1087,11 @@
             "authors": "Clas Rydergren",
             "date": "2019-06-20",
             "duration": 60,
+            "keywords": [
+                "data",
+                "traffic",
+                "sources"
+            ],
             "number": "s4",
             "presenter": "Clas Rydergren",
             "session": "18",
@@ -1076,6 +1111,11 @@
             "authors": "Thorsten B\u00fcker, Thomas Graffagnino, Eike Hennig and Alexander Kuckelberg",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "programs",
+                "technology",
+                "architectures"
+            ],
             "number": "16",
             "presenter": "Eike Hennig",
             "session": "9D",
@@ -1095,6 +1135,11 @@
             "authors": "Valerio De Martinis and Francesco Corman",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "models",
+                "calibration",
+                "motion"
+            ],
             "number": "70",
             "presenter": "Valerio De Martinis",
             "session": "9C",
@@ -1114,6 +1159,11 @@
             "authors": "Anna-Katharina Brauner and Andreas Oetting",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "disruption",
+                "passenger",
+                "operations"
+            ],
             "number": "85",
             "presenter": "Anna-Katharina Brauner",
             "session": "9B",
@@ -1133,6 +1183,11 @@
             "authors": "William Barbour, Shankara Kuppa and Daniel Work",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "data",
+                "reconciliation",
+                "analysis"
+            ],
             "number": "114",
             "presenter": "William Barbour",
             "session": "9A",
@@ -1152,6 +1207,11 @@
             "authors": "Raimond W\u00fcst, Stephan B\u00fctikofer, Severin Ess, Claudio Gomez, Albert Steiner, Marco Laumanns and Jacint Szabo",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "timetable",
+                "track",
+                "times"
+            ],
             "number": "13",
             "presenter": "Raimond W\u00fcst",
             "session": "15A",
@@ -1171,6 +1231,11 @@
             "authors": "Carl-William Palmqvist, Norio Tomii and Yasufumi Ochiai",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "delays",
+                "time",
+                "times"
+            ],
             "number": "18",
             "presenter": "Carl-William Palmqvist",
             "session": "15C",
@@ -1190,6 +1255,11 @@
             "authors": "Ivan Belo\u0161evi\u0107, Yun Jing, Milo\u0161 Ivi\u0107 and Predrag Jovanovi\u0107",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "classification",
+                "optimization",
+                "number"
+            ],
             "number": "152",
             "presenter": "Ivan Belo\u0161evi\u0107",
             "session": "15B",
@@ -1209,6 +1279,11 @@
             "authors": "Alexander Kuckelberg and Bianca Multykin",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "systems",
+                "data",
+                "infrastructure"
+            ],
             "number": "10",
             "presenter": "Alexander Kuckelberg",
             "session": "9C",
@@ -1228,6 +1303,11 @@
             "authors": "Weiwei Mou, Zhaolan Cheng and Chao Wen",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "model",
+                "prediction",
+                "operation"
+            ],
             "number": "30",
             "presenter": "Chao Wen",
             "session": "9A",
@@ -1247,6 +1327,11 @@
             "authors": "Adrian Diaz de Rivera, C. Tyler Dick and Leonel E. Evans",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "traffic",
+                "blocks",
+                "block"
+            ],
             "number": "52",
             "presenter": "Adrian Diaz de Rivera",
             "session": "9D",
@@ -1266,6 +1351,11 @@
             "authors": "Rieko Otsuka, Masao Yamashiro, Itaru Ootsuchibashi and Sei Sakairi",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "service",
+                "timetable",
+                "policy"
+            ],
             "number": "56",
             "presenter": "Rieko Otsuka",
             "session": "9B",
@@ -1285,6 +1375,11 @@
             "authors": "Taketoshi Kunimatsu, Takahiko Terasawa and Yoko Takeuchi",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "control",
+                "block",
+                "operation"
+            ],
             "number": "36",
             "presenter": "Taketoshi Kunimatsu",
             "session": "9D",
@@ -1304,6 +1399,11 @@
             "authors": "Thorsten B\u00fcker, Matthias Becker, Eike Hennig and Felix Kogel",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "simulation",
+                "research",
+                "conflict"
+            ],
             "number": "61",
             "presenter": "Matthias Becker",
             "session": "9C",
@@ -1323,6 +1423,11 @@
             "authors": "Jun Zhang, Yuling Ye and Yunfei Zhou",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "data",
+                "indicator",
+                "HSR"
+            ],
             "number": "117",
             "presenter": "Jun Zhang",
             "session": "9A",
@@ -1342,6 +1447,11 @@
             "authors": "Jia Ning, Qiyuan Peng and Gongyuan Lu",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "problem",
+                "platforming",
+                "speed"
+            ],
             "number": "130",
             "presenter": "Jia Ning",
             "session": "9B",
@@ -1361,6 +1471,9 @@
             "authors": "Jonas Eliasson",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "TBA"
+            ],
             "number": "s3",
             "presenter": "Jonas Eliasson",
             "session": "16",
@@ -1380,6 +1493,11 @@
             "authors": "Egidio Quaglietta, Meng Wang and Rob M.P. Goverde",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "trains",
+                "capacity",
+                "Coupling"
+            ],
             "number": "34",
             "presenter": "Egidio Quaglietta",
             "session": "9D",
@@ -1399,6 +1517,11 @@
             "authors": "Christian Liebchen, Hanno Sch\u00fclldorf and N.N.",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "optimization",
+                "project",
+                "practice"
+            ],
             "number": "80",
             "presenter": "Christian Liebchen",
             "session": "9C",
@@ -1418,6 +1541,11 @@
             "authors": "Pieter Vansteenwegen, Sofie Van Thielen and Francesco Corman",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "conflict",
+                "prevention",
+                "networks"
+            ],
             "number": "87",
             "presenter": "Pieter Vansteenwegen",
             "session": "9B",
@@ -1437,6 +1565,11 @@
             "authors": "Shigeaki Adachi, Masahito Koresawa, Giancarlos Troncoso Parady, Kiyoshi Takami and Noboru Harata",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "time",
+                "TIME",
+                "passenger"
+            ],
             "number": "92",
             "presenter": "Shigeaki Adachi",
             "session": "9A",
@@ -1456,6 +1589,9 @@
             "authors": "Gunnar Alexandersson",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "TBA"
+            ],
             "number": "s2",
             "presenter": "Gunnar Alexandersson",
             "session": "3",
@@ -1475,6 +1611,11 @@
             "authors": "Otto Anker Nielsen",
             "date": "2019-06-20",
             "duration": 60,
+            "keywords": [
+                "passenger",
+                "data",
+                "surveys"
+            ],
             "number": "s5",
             "presenter": "Otto Anker Nielsen",
             "session": "19",
@@ -1494,6 +1635,11 @@
             "authors": "Ingo Hansen",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "design",
+                "development",
+                "system"
+            ],
             "number": "17",
             "presenter": "Ingo Hansen",
             "session": "17C",
@@ -1513,6 +1659,11 @@
             "authors": "Marko Kapetanovi\u0107, Niels van Oort, Alfredo N\u00fa\u00f1ez and Rob M.P. Goverde",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "emissions",
+                "passenger",
+                "vehicle"
+            ],
             "number": "140",
             "presenter": "Marko Kapetanovi\u0107",
             "session": "17D",
@@ -1532,6 +1683,11 @@
             "authors": "Timo Berthold, Boris Grimm, Markus Reuther, Stanley Schade and Thomas Schlechte",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "time",
+                "period",
+                "stage"
+            ],
             "number": "171",
             "presenter": "Stanley Schade",
             "session": "17B",
@@ -1551,6 +1707,11 @@
             "authors": "Jiping Fang, Fujiyama Taku, Howard Wong and Xin Chen",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "platform",
+                "passengers",
+                "time"
+            ],
             "number": "177",
             "presenter": "Jiping Fang",
             "session": "17A",
@@ -1570,6 +1731,11 @@
             "authors": "Dian Wang, Jun Zhao, Liuyang Lu and Qiyuan Peng",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "trains",
+                "time",
+                "problem"
+            ],
             "number": "65",
             "presenter": "Dian Wang",
             "session": "10A",
@@ -1589,6 +1755,11 @@
             "authors": "Predrag Jovanovic, Norbert Pavlovic, Ivan Belosevic and Sanjin Milinkovic",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "model",
+                "infrastructure",
+                "junction"
+            ],
             "number": "150",
             "presenter": "Predrag Jovanovic",
             "session": "10B",
@@ -1608,6 +1779,11 @@
             "authors": "Jennifer Warg and Markus Bohlin",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "delays",
+                "capacity",
+                "index"
+            ],
             "number": "159",
             "presenter": "Jennifer Warg",
             "session": "10C",
@@ -1627,6 +1803,11 @@
             "authors": "Per Leander and Andreas T\u00f6rnblom",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "development",
+                "trends",
+                "outline"
+            ],
             "number": "184",
             "presenter": "Per Leander",
             "session": "10D",
@@ -1646,6 +1827,11 @@
             "authors": "Meng-Ju Wu and Yung-Cheng Lai",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "maintenance",
+                "utilization",
+                "strategy"
+            ],
             "number": "31",
             "presenter": "Yung-Cheng Lai",
             "session": "17B",
@@ -1665,6 +1851,11 @@
             "authors": "Jeanne-Marie Dalbavie, Marc Delas and Thierry Bo\u00eetier",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "corridors",
+                "transport",
+                "corridor"
+            ],
             "number": "32",
             "presenter": "Marc Delas",
             "session": "17C",
@@ -1684,6 +1875,11 @@
             "authors": "Tetsuya Takata, Akira Asano and Hideo Nakamura",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "system",
+                "systems",
+                "function"
+            ],
             "number": "67",
             "presenter": "Tetsuya Takata",
             "session": "17D",
@@ -1703,6 +1899,11 @@
             "authors": "Abderrahman Ait-Ali and Jonas Eliasson",
             "date": "2019-06-19",
             "duration": 60,
+            "keywords": [
+                "data",
+                "card",
+                "solution"
+            ],
             "number": "84",
             "presenter": "Abderrahman Ait-Ali",
             "session": "17A",
@@ -1722,6 +1923,11 @@
             "authors": "Lei Nie, Zhenhuan He, Linqi Zhang, Jiabao Liu and Peiwen Han",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "line",
+                "speed",
+                "holiday"
+            ],
             "number": "14",
             "presenter": "Lei Nie",
             "session": "4D",
@@ -1741,6 +1947,11 @@
             "authors": "Markus Tideman, Ullrich Martin and Weiting Zhao",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "disturbances",
+                "dispatching",
+                "capacity"
+            ],
             "number": "29",
             "presenter": "Markus Tideman",
             "session": "10A",
@@ -1760,6 +1971,11 @@
             "authors": "Gert-Jaap Polinder, Marie Schmidt and Dennis Huisman",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "passengers",
+                "timetabling",
+                "timetable"
+            ],
             "number": "136",
             "presenter": "Gert-Jaap Polinder",
             "session": "4A",
@@ -1779,6 +1995,11 @@
             "authors": "Qinglun Zhong, Shaoquan Ni, Chang'An Xu and Shengdong Li",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "capacity",
+                "method",
+                "utilization"
+            ],
             "number": "143",
             "presenter": "Qinglun Zhong",
             "session": "10B",
@@ -1798,6 +2019,11 @@
             "authors": "Oliver Bratton and Giorgio Medeossi",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "changes",
+                "styles",
+                "mph"
+            ],
             "number": "147",
             "presenter": "Oliver Bratton",
             "session": "10D",
@@ -1817,6 +2043,11 @@
             "authors": "Weining Hao, Lingyun Meng, Francesco Corman and Sihui Long",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "demand",
+                "passenger",
+                "timetabling"
+            ],
             "number": "153",
             "presenter": "Weining Hao",
             "session": "10C",
@@ -1836,6 +2067,11 @@
             "authors": "Alex Landex and Lars Wittrup Jensen",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "paper",
+                "agreement",
+                "possible.</p"
+            ],
             "number": "176",
             "presenter": "Lars Wittrup Jensen",
             "session": "4B",
@@ -1855,6 +2091,11 @@
             "authors": "Fengbo Liu, Yongqiu Zhu, Nikola Besinovic, Rob Goverde and Ruihua Xu",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "model",
+                "frequency",
+                "disruption"
+            ],
             "number": "186",
             "presenter": "Fengbo Liu",
             "session": "4C",
@@ -1874,6 +2115,11 @@
             "authors": "Ambra Toletti, Marco Laumanns and Ulrich Weidmann",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "algorithms",
+                "approach",
+                "traffic"
+            ],
             "number": "9",
             "presenter": "Ambra Toletti",
             "session": "10A",
@@ -1893,6 +2139,11 @@
             "authors": "Jie Li, Dian Wang, Qiyuan Peng and Yuxiang Yang",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "capacity",
+                "timetable",
+                "method"
+            ],
             "number": "28",
             "presenter": "Jie Li",
             "session": "4B",
@@ -1912,6 +2163,11 @@
             "authors": "Yasufumi Ochiai and Norio Tomii",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "trains",
+                "speed",
+                "drivers"
+            ],
             "number": "55",
             "presenter": "Yasufumi Ochiai",
             "session": "4A",
@@ -1931,6 +2187,11 @@
             "authors": "Florin Leutwiler and Francesco Corman",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "network",
+                "scheduling",
+                "decomposition"
+            ],
             "number": "78",
             "presenter": "Florin Leutwiler",
             "session": "4C",
@@ -1950,6 +2211,11 @@
             "authors": "Ralf Bornd\u00f6rfer, Niels Lindner and Sarah Roth",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "method",
+                "simplex",
+                "satisfiability"
+            ],
             "number": "104",
             "presenter": "Niels Lindner",
             "session": "10C",
@@ -1969,6 +2235,11 @@
             "authors": "Norman Weik and Nils Nie\u00dfen",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "times",
+                "capacity",
+                "corridors"
+            ],
             "number": "112",
             "presenter": "Norman Weik",
             "session": "10B",
@@ -1988,6 +2259,11 @@
             "authors": "Birgitta Thorslund, Tomas Rosberg and Anders Lindstr\u00f6m",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "driver",
+                "simulator",
+                "user"
+            ],
             "number": "124",
             "presenter": "Birgitta Thorslund",
             "session": "10D",
@@ -2007,6 +2283,11 @@
             "authors": "Hans Sipil\u00e4 and Anders Lindfeldt",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "station",
+                "system",
+                "times"
+            ],
             "number": "182",
             "presenter": "Hans Sipil\u00e4",
             "session": "4D",
@@ -2026,6 +2307,11 @@
             "authors": "Johan H\u00f6gdahl",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "time",
+                "simulation",
+                "times"
+            ],
             "number": "19",
             "presenter": "Johan H\u00f6gdahl",
             "session": "4A",
@@ -2045,6 +2331,11 @@
             "authors": "Tzu-Ya Lin, Ying-Chun Lin and Yung-Cheng Lai",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "capacity",
+                "types",
+                "unit"
+            ],
             "number": "35",
             "presenter": "Yung-Cheng Lai",
             "session": "10B",
@@ -2064,6 +2355,11 @@
             "authors": "Olov Lindfeldt",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "timetable",
+                "solutions",
+                "area"
+            ],
             "number": "41",
             "presenter": "Olov Lindfeldt",
             "session": "10C",
@@ -2083,6 +2379,11 @@
             "authors": "Zhengyang Li, Jun Zhao and Qiyuan Peng",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "service",
+                "services",
+                "cost"
+            ],
             "number": "68",
             "presenter": "Zhengyang Li",
             "session": "4D",
@@ -2102,6 +2403,11 @@
             "authors": "Pengling Wang and Francesco Corman",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "optimization",
+                "method",
+                "account"
+            ],
             "number": "93",
             "presenter": "Francesco Corman",
             "session": "10D",
@@ -2121,6 +2427,11 @@
             "authors": "Norman Weik, Jennifer Warg, Ingrid Johansson, Nils Nie\u00dfen and Markus Bohlin",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "timetable",
+                "capacity",
+                "compression"
+            ],
             "number": "103",
             "presenter": "Ingrid Johansson",
             "session": "4B",
@@ -2140,6 +2451,11 @@
             "authors": "Yongxiang Zhang, Qingwei Zhong, Chao Wen, Wenxin Li and Qiyuan Peng",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "model",
+                "-",
+                "track"
+            ],
             "number": "134",
             "presenter": "Yongxiang Zhang",
             "session": "10A",
@@ -2159,6 +2475,11 @@
             "authors": "Xiaojie Luan, Bart De Schutter, Ton van den Boom, Lingyun Meng, Gabriel Lodewijks and Francesco Corman",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "optimization",
+                "problem",
+                "decomposition"
+            ],
             "number": "138",
             "presenter": "Xiaojie Luan",
             "session": "4C",
@@ -2178,6 +2499,11 @@
             "authors": "Di Liu, Pieter Vansteenwegen, Gongyuan Lu and Qiyuan Peng",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "line",
+                "approach",
+                "travel"
+            ],
             "number": "43",
             "presenter": "Di Liu",
             "session": "4D",
@@ -2197,6 +2523,11 @@
             "authors": "Xin Zhang, Lei Nie and Yu Ke",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "capacity",
+                "overtakings",
+                "stops"
+            ],
             "number": "83",
             "presenter": "Xin Zhang",
             "session": "4A",
@@ -2216,6 +2547,11 @@
             "authors": "Zhengwen Liao, Jianrui Miao, Ying Wang, Haiying Li and Francesco Corman",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "problem",
+                "capacity",
+                "approach"
+            ],
             "number": "107",
             "presenter": "Zhengwen Liao",
             "session": "4B",
@@ -2235,6 +2571,11 @@
             "authors": "Junduo Zhao, Haiying Li, Lingyun Meng and Francesco Corman",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "transportation",
+                "passengers",
+                "air"
+            ],
             "number": "148",
             "presenter": "Junduo Zhao",
             "session": "4C",
@@ -2254,6 +2595,11 @@
             "authors": "Rob Goverde",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "systems",
+                "traffic",
+                "operation"
+            ],
             "number": "s1",
             "presenter": "Rob Goverde",
             "session": "11",
@@ -2273,6 +2619,11 @@
             "authors": "Giorgio Medeossi",
             "date": "2019-06-20",
             "duration": 60,
+            "keywords": [
+                "quality",
+                "network",
+                "process"
+            ],
             "number": "s6",
             "presenter": "Giorgio Medeossi",
             "session": "20",
@@ -2292,6 +2643,11 @@
             "authors": "Franck Kamenga, Paola Pellegrini, Joaquin Rodriguez, Boubekeur Merabet and Bertrand Houzel",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "units",
+                "problem",
+                "shunting"
+            ],
             "number": "73",
             "presenter": "Franck Kamenga",
             "session": "5B",
@@ -2311,6 +2667,11 @@
             "authors": "Zhongcan Li, Ping Huang, Chao Wen and Yixiong Tang",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "NAT",
+                "model",
+                "algorithm"
+            ],
             "number": "75",
             "presenter": "Zhongcan Li",
             "session": "5C",
@@ -2330,6 +2691,11 @@
             "authors": "Ruoxi Xu, Lei Nie, Huiling Fu and M. Rapik Saat",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "trains",
+                "passengers",
+                "travel"
+            ],
             "number": "120",
             "presenter": "Huiling Fu",
             "session": "5D",
@@ -2349,6 +2715,11 @@
             "authors": "Denghui Li, Qiyuan Peng and Gongyuan Lu",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "passenger",
+                "flow",
+                "time"
+            ],
             "number": "164",
             "presenter": "Denghui Li",
             "session": "5A",
@@ -2368,6 +2739,11 @@
             "authors": "Alex Wardrop",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "mining",
+                "tonnes",
+                "ore"
+            ],
             "number": "37",
             "presenter": "Alex Wardrop",
             "session": "12B",
@@ -2387,6 +2763,11 @@
             "authors": "Satoshi Kato, Naoto Fukumura, Susumu Morito, Koichi Goto and Narumi Nakamura",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "roster",
+                "splitting",
+                "trains"
+            ],
             "number": "64",
             "presenter": "Satoshi Kato",
             "session": "5B",
@@ -2406,6 +2787,11 @@
             "authors": "Sultan Alsaedi and John Preston",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "performance",
+                "integration",
+                "services"
+            ],
             "number": "74",
             "presenter": "John Preston",
             "session": "5D",
@@ -2425,6 +2811,11 @@
             "authors": "Ismail Sahin",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "delay",
+                "model",
+                "time"
+            ],
             "number": "79",
             "presenter": "Ismail Sahin",
             "session": "5C",
@@ -2444,6 +2835,11 @@
             "authors": "Bisheng He, Hongxiang Zhang, Keyu Wen and Gongyuan Lu",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "facilities",
+                "plan",
+                "assignment"
+            ],
             "number": "158",
             "presenter": "Bisheng He",
             "session": "5A",
@@ -2463,6 +2859,11 @@
             "authors": "Boris Grimm, Ralf Bornd\u00f6rfer and Thomas Schlechte",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "plans",
+                "rotation",
+                "passenger"
+            ],
             "number": "166",
             "presenter": "Boris Grimm",
             "session": "12C",
@@ -2482,6 +2883,11 @@
             "authors": "Mohammad Hassan Davoudi Zavareh and Stefano Ricci",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "energy",
+                "emissions",
+                "power"
+            ],
             "number": "174",
             "presenter": "Mohammad Hassan Davoudi Zavareh",
             "session": "12A",
@@ -2501,6 +2907,11 @@
             "authors": "Junjie Lou, Xuekai Wang, Shuai Su, Tao Tang and Yihui Wang",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "energy",
+                "problem",
+                "metro"
+            ],
             "number": "8",
             "presenter": "Xuekai Wang",
             "session": "12A",
@@ -2520,6 +2931,11 @@
             "authors": "Toru Sahara",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "congestion",
+                "data",
+                "estimation"
+            ],
             "number": "12",
             "presenter": "Toru Sahara",
             "session": "5A",
@@ -2539,6 +2955,11 @@
             "authors": "Francisca Rosell and Esteve Codina",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "capacity",
+                "network",
+                "expansion"
+            ],
             "number": "48",
             "presenter": "Francisca Rosell",
             "session": "12B",
@@ -2558,6 +2979,11 @@
             "authors": "R\u00e9mi Lucas, Zacharie Ales, Sourour Elloumi and Fran\u00e7ois Ramond",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "stock",
+                "schedule",
+                "costs"
+            ],
             "number": "77",
             "presenter": "R\u00e9mi Lucas",
             "session": "5B",
@@ -2577,6 +3003,11 @@
             "authors": "Magnus Backman and Emma Solinen",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "track",
+                "strategies",
+                "capacity"
+            ],
             "number": "105",
             "presenter": "Magnus Backman",
             "session": "12C",
@@ -2596,6 +3027,11 @@
             "authors": "Felix G\u00fcndling, Pablo Hoch and Karsten Weihe",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "trip",
+                "algorithms",
+                "cases"
+            ],
             "number": "110",
             "presenter": "Felix G\u00fcndling",
             "session": "5D",
@@ -2615,6 +3051,11 @@
             "authors": "Yang Yang Zhao and Xinguo Jiang",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "passenger",
+                "term",
+                "flow"
+            ],
             "number": "118",
             "presenter": "Yang Yang Zhao",
             "session": "5C",
@@ -2634,6 +3075,11 @@
             "authors": "Peter Pudney, Amie Albrecht, Peng Zhou and Ajini Galapitage",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "trains",
+                "line",
+                "time"
+            ],
             "number": "21",
             "presenter": "Ajini Galapitage",
             "session": "12A",
@@ -2653,6 +3099,11 @@
             "authors": "Sander Van Aken, Sofie Van Thielen and Pieter Vansteenwegen",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "models",
+                "infrastructure",
+                "disruptions"
+            ],
             "number": "51",
             "presenter": "Sander Van Aken",
             "session": "12C",
@@ -2672,6 +3123,11 @@
             "authors": "Thomas Albrecht and Jonatan Gjerdrum",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "planning",
+                "cargo",
+                "plans"
+            ],
             "number": "122",
             "presenter": "Thomas Albrecht",
             "session": "12B",
@@ -2691,6 +3147,11 @@
             "authors": "Ida Kristoffersson and Roger Pyddoke",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "trains",
+                "numbers",
+                "passenger"
+            ],
             "number": "69",
             "presenter": "Ida Kristoffersson",
             "session": "6B",
@@ -2710,6 +3171,11 @@
             "authors": "Luca Corolli, Giorgio Medeossi, Saara Haapala, Jukka-Pekka Pitk\u00e4nen, Tuomo Lapp, Aki Mankki and Alex Landex",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "network",
+                "method",
+                "methods"
+            ],
             "number": "106",
             "presenter": "Luca Corolli",
             "session": "6D",
@@ -2729,6 +3195,11 @@
             "authors": "Anders Peterson, Valentin Polishchuk and Christiane Schmidt",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "paths",
+                "time",
+                "trains"
+            ],
             "number": "151",
             "presenter": "Christiane Schmidt",
             "session": "6A",
@@ -2748,6 +3219,11 @@
             "authors": "Thomas Graffagnino, Roland Sch\u00e4fer, Matthias Tuchschmid and Marco Weibel",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "energy",
+                "savings",
+                "runs"
+            ],
             "number": "172",
             "presenter": "Thomas Graffagnino",
             "session": "6C",
@@ -2767,6 +3243,11 @@
             "authors": "Pavle Kecman",
             "date": "2019-06-20",
             "duration": 60,
+            "keywords": [
+                "learning",
+                "project",
+                "data"
+            ],
             "number": "s7",
             "presenter": "Pavle Kecman",
             "session": "21",
@@ -2786,6 +3267,11 @@
             "authors": "Jie Li, Ping Huang, Yuxiang Yang and Qiyuan Peng",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "passenger",
+                "model",
+                "flow"
+            ],
             "number": "27",
             "presenter": "Jie Li",
             "session": "6B",
@@ -2805,6 +3291,11 @@
             "authors": "Yanan Li, Ruihua Xu, Chen Ji, Han Wang and Di Wu",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "capacity",
+                "corridor",
+                "speed"
+            ],
             "number": "44",
             "presenter": "Yanan Li",
             "session": "6D",
@@ -2824,6 +3315,11 @@
             "authors": "Takuya Sato and Masafumi Miyatake",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "energy",
+                "battery",
+                "system"
+            ],
             "number": "129",
             "presenter": "Takuya Sato",
             "session": "6C",
@@ -2843,6 +3339,11 @@
             "authors": "Julian Jordi, Ambra Toletti, Gabrio Caimi and Kaspar Sch\u00fcpbach",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "project",
+                "algorithmic",
+                "literature"
+            ],
             "number": "180",
             "presenter": "Ambra Toletti",
             "session": "6A",
@@ -2862,6 +3363,11 @@
             "authors": "Wiebke Lenze and Nils Nie\u00dfen",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "track",
+                "time",
+                "usage"
+            ],
             "number": "23",
             "presenter": "Wiebke Lenze",
             "session": "6D",
@@ -2881,6 +3387,11 @@
             "authors": "S\u00e9lim Cornet, Christine Buisson, Fran\u00e7ois Ramond, Paul Bouvarel and Joaquin Rodriguez",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "time",
+                "traffic",
+                "passengers"
+            ],
             "number": "26",
             "presenter": "S\u00e9lim Cornet",
             "session": "6B",
@@ -2900,6 +3411,11 @@
             "authors": "Gerben Scheepmaker, Peter Pudney, Amie Albrecht, Rob Goverde and Phil Howlett",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "energy",
+                "method",
+                "efficiency"
+            ],
             "number": "47",
             "presenter": "Gerben Scheepmaker",
             "session": "6C",
@@ -2919,6 +3435,11 @@
             "authors": "Zhoutong Jiang and Yanfeng Ouyang",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "accidents",
+                "facility",
+                "resources"
+            ],
             "number": "89",
             "presenter": "Zhoutong Jiang",
             "session": "13C",
@@ -2938,6 +3459,11 @@
             "authors": "Fabrizio Cerreto and Megan Holt Jonasson",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "principles",
+                "delays",
+                "timetabling"
+            ],
             "number": "90",
             "presenter": "Fabrizio Cerreto",
             "session": "13A",
@@ -2957,6 +3483,11 @@
             "authors": "Zhenyu Han, Dewei Li, Baoming Han, Shangbin Ning, Yonghao Yin and Xinlei Dong",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "demand",
+                "models",
+                "network"
+            ],
             "number": "137",
             "presenter": "Zhenyu Han",
             "session": "6A",
@@ -2976,6 +3507,11 @@
             "authors": "Saba Soltani, Nils O.E. Olsson, Lena Winslott Hiselius and Carl-William Palmqvist",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "data",
+                "trackwork",
+                "traffic"
+            ],
             "number": "178",
             "presenter": "Nils O.E. Olsson",
             "session": "13B",
@@ -2995,6 +3531,11 @@
             "authors": "Beda B\u00fcchel, Timothy Partl and Francesco Corman",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "delay",
+                "delays",
+                "disruption"
+            ],
             "number": "33",
             "presenter": "Francesco Corman",
             "session": "13B",
@@ -3014,6 +3555,11 @@
             "authors": "Xiong Yang, Yafei Hou, Li Li and Chao Wen",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "time",
+                "delay",
+                "buffer"
+            ],
             "number": "54",
             "presenter": "Chao Wen",
             "session": "13A",
@@ -3033,6 +3579,11 @@
             "authors": "Wuyang Yuan, Lei Nie, Xin Wu and Yu Ke",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "control",
+                "seat",
+                "method"
+            ],
             "number": "63",
             "presenter": "Wuyang Yuan",
             "session": "13C",
@@ -3052,6 +3603,11 @@
             "authors": "John Armstrong, John Preston and Tolga Bektas",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "costs",
+                "compensation",
+                "engineering"
+            ],
             "number": "22",
             "presenter": "John Armstrong",
             "session": "13C",
@@ -3071,6 +3627,11 @@
             "authors": "Ping Huang and Chao Wen",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "delay",
+                "recovery",
+                "propagation"
+            ],
             "number": "81",
             "presenter": "Ping Huang",
             "session": "13B",
@@ -3090,6 +3651,11 @@
             "authors": "Jie Liu, Qiyuan Peng, Jinqu Chen and Yong Yin",
             "date": "2019-06-18",
             "duration": 60,
+            "keywords": [
+                "passengers",
+                "travel",
+                "stations"
+            ],
             "number": "98",
             "presenter": "Jie Liu",
             "session": "13A",
@@ -3109,6 +3675,11 @@
             "authors": "Yongqiu Zhu and Rob M.P. Goverde",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "disruption",
+                "disruptions",
+                "scenarios"
+            ],
             "number": "42",
             "presenter": "Yongqiu Zhu",
             "session": "7B",
@@ -3128,6 +3699,11 @@
             "authors": "Jintang Shi and Haodong Li",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "time",
+                "yard",
+                "operation"
+            ],
             "number": "57",
             "presenter": "Jintang Shi",
             "session": "7C",
@@ -3147,6 +3723,11 @@
             "authors": "Gr\u00e9gory Marli\u00e8re, Sonia Sobieraj Richard, Paola Pellegrini and Joaquin Rodriguez",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "time",
+                "formulation",
+                "approach"
+            ],
             "number": "62",
             "presenter": "Gr\u00e9gory Marli\u00e8re",
             "session": "7D",
@@ -3166,6 +3747,11 @@
             "authors": "Abderrahman Ait-Ali, Jennifer Warg and Jonas Eliasson",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "commuter",
+                "path",
+                "capacity"
+            ],
             "number": "108",
             "presenter": "Abderrahman Ait-Ali",
             "session": "7A",
@@ -3185,6 +3771,11 @@
             "authors": "Mahnam Saeednia",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "communication",
+                "transportation",
+                "systems"
+            ],
             "number": "86",
             "presenter": "Mahnam Saeednia",
             "session": "7C",
@@ -3204,6 +3795,11 @@
             "authors": "Emma Solinen",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "rules",
+                "timetables",
+                "timetable"
+            ],
             "number": "88",
             "presenter": "Emma Solinen",
             "session": "7B",
@@ -3223,6 +3819,11 @@
             "authors": "Emanuel Broman, Jonas Eliasson and Martin Aronsson",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "capacity",
+                "traffic",
+                "allocation"
+            ],
             "number": "111",
             "presenter": "Emanuel Broman",
             "session": "7A",
@@ -3242,6 +3843,11 @@
             "authors": "Y. Chang, R. Niu, Y. Wang, X. Luan, A. D'Ariano and M. Sam\u00e0",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "stocks",
+                "constraints",
+                "service"
+            ],
             "number": "149",
             "presenter": "Y. Wang",
             "session": "7D",
@@ -3261,6 +3867,11 @@
             "authors": "Sai Prashanth Josyula, Johanna T\u00f6rnquist Krasemann and Lars Lundberg",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "solution",
+                "space",
+                "detection"
+            ],
             "number": "40",
             "presenter": "Sai Prashanth Josyula",
             "session": "7D",
@@ -3280,6 +3891,11 @@
             "authors": "Martin Scheidt",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "timetable",
+                "freight",
+                "slots"
+            ],
             "number": "45",
             "presenter": "Martin Scheidt",
             "session": "7A",
@@ -3299,6 +3915,11 @@
             "authors": "Marie Milliet de Faverges, Christophe Picouleau, Giorgio Russolillo, Boubekeur Merabet and Bertrand Houzel",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "simulation",
+                "station",
+                "calibration"
+            ],
             "number": "119",
             "presenter": "Marie Milliet de Faverges",
             "session": "7B",
@@ -3318,6 +3939,11 @@
             "authors": "C. Tyler Dick and Nao Nishio",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "yard",
+                "freight",
+                "classification"
+            ],
             "number": "144",
             "presenter": "C. Tyler Dick",
             "session": "7C",
@@ -3337,6 +3963,11 @@
             "authors": "Paola Pellegrini, Pierre Hosteins and Joaquin Rodriguez",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "speed",
+                "approximation",
+                "functions"
+            ],
             "number": "71",
             "presenter": "Pierre Hosteins",
             "session": "7D",
@@ -3356,6 +3987,11 @@
             "authors": "Xin Hong, Lingyun Meng, Francesco Corman, Andrea D\u2019ariano, Lucas P. Veelenturf and Sihui Long",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "passengers",
+                "trains",
+                "time"
+            ],
             "number": "121",
             "presenter": "Xin Hong",
             "session": "7B",
@@ -3375,6 +4011,11 @@
             "authors": "Tzu-Yu Chang, Darkhan Mussanov and C. Tyler Dick",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "trains",
+                "freight",
+                "railcar"
+            ],
             "number": "139",
             "presenter": "Tzu-Yu Chang",
             "session": "7C",
@@ -3394,6 +4035,11 @@
             "authors": "Sara Gestrelius, Anders Peterson and Martin Aronsson",
             "date": "2019-06-17",
             "duration": 60,
+            "keywords": [
+                "timetable",
+                "planning",
+                "documents"
+            ],
             "number": "160",
             "presenter": "Sara Gestrelius",
             "session": "7A",
