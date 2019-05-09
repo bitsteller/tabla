@@ -16,8 +16,8 @@
 	</script>
 	<script type="text/x-template" id="sessiondetail-template">
 	<div class="overlay" onclick="window.history.back();">
+	<div class="header"><h2><span class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</span><span class="close"> ╳ </span></h2></div>
     <div class="content">
-			<div class="header"><h2><span class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</span><span class="close"> ╳ </span></h2></div>
 			<div class="body">
 				<p>{{ session.kind }}</p>
 				<p>Room: {{ session.room }}, {{ session.startTime | formatTime }} - {{ session.endTime | formatTime }} ({{ session.duration }} minutes)</p>
@@ -41,7 +41,6 @@
 		<header>
 			<span class="conference">RailNorrköping</span>
 			<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
-			<input type="checkbox" id="past" value="false" v-model="includePast"><label>Show past</label>
 			<div v-show="search != ''">{{ filteredSessions | count }} sessions found</div>
 		</header>
 
