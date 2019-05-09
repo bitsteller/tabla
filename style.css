@@ -221,7 +221,7 @@ ul.talks li::before {
   top: -35px;
   left: 2em;
   width: 0.2em;
-  height: 4em;
+  height: 100%;
 }
 
 ul.talks li:first-child::before {
