@@ -233,6 +233,14 @@ const app = new Vue({
       if (this.newSearch != "") {
         this.filterDay = "";
       }
+    },
+    sessionDetail: function(newSessionDetail, oldSessionDetail) {
+      if (newSessionDetail != null) {
+        document.body.classList.add("noscroll");
+      }
+      else {
+        document.body.classList.remove("noscroll");
+      }
     }
   },
   filters: {
