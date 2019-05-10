@@ -2,8 +2,8 @@ import csv
 import json  
 import re
 
-import analyse
-tr4w = analyse.TextRank4Keyword()
+#import analyse
+#tr4w = analyse.TextRank4Keyword()
 
   
 # Open the CSV  
@@ -36,8 +36,8 @@ for t in reader:
 	t["startTime"] = [int(date.group(1)), int(date.group(2))-1, int(date.group(3)), int(time.group(1)), int(time.group(2))]
 	t["duration"] = int(s["duration"])
 
-	tr4w.analyze(t["title"] + " " + t["abstract"], candidate_pos = ['NOUN'], window_size=4, lower=False, stopwords = ["railways", "railway", "train", "rail", "%"])
-	t["keywords"] = tr4w.get_keywords(1)
+	#tr4w.analyze(t["title"] + " " + t["abstract"], candidate_pos = ['NOUN'], window_size=4, lower=False, stopwords = ["railways", "railway", "train", "rail", "%"])
+	#t["keywords"] = tr4w.get_keywords(1)
 	talks.append(t)
 
 # Save the JSON  
@@ -48,3 +48,11 @@ out = json.dumps( program, indent = 4, sort_keys=True)
 f = open( 'program.json', 'w')  
 f.write(out)  
 print("JSON saved!")
+
+talks.sort(key = lambda talk: talk["authors"])
+tex = "\n".join(["\\includeabstract{" + talk["title"].replace("\\","") + "}{" + talk["authors"] + "}{" + talk["session"] + "}{" + talk["number"] + "}" for talk in talks])
+tex = tex.replace("&", "\\&")
+tex = tex.replace("&", "\\%")
+
+f = open( 'proceedings.tex', 'w')  
+f.write(tex)  
