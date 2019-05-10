@@ -34,7 +34,11 @@
 	</script>
 	<script type="text/x-template" id="talk-template">
 		<div class="talk">
-			<span class="time">{{ talk.startTime | formatTime }}</span>
+			<div class="timeline">
+				<div class="line"/>
+				<div class="time">{{ talk.startTime | formatTime }}</div>
+				<div class="line"/>
+			</div>
 			<span class="info">
 				<div class="title">{{ talk.title }} <input type="checkbox" id="test" v-model="showDetail"/></div> 
 				<div class="presenter">{{ talk.presenter}}</div>

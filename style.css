@@ -63,9 +63,13 @@ body {
 	color: #47425d;
 }
 
-ul.talks li::before, ul.talks li .time {
-  background: #17c7d2;
+ul.talks li .time {
+ 	background: #17c7d2;
 }
+.timeline .line {
+	border-left-color: #17c7d2;
+}
+
 
 
 /*CSS*/
@@ -90,6 +94,7 @@ div#app {
 
 .conference {
 	padding-right: 1em;
+	font-weight: 800;
 }
 
 .search {
@@ -195,17 +200,25 @@ ul.talks .talk {
 	flex-wrap: nowrap;
 	display: flex;
 	flex-direction: row;
+	align-items: stretch;
 }
 
-ul.talks li .time {
-  width: 4em;
-  height: 2em;
+
+.timeline {
+	text-align: center;
+	flex-flow: column nowrap;
+	display: flex;
+	align-items: center;
+}
+
+.timeline .time {
   text-align: center;
   line-height: 2em;
   border-radius: 1em;
+  padding: 0px 4px;
   color: white;
-  margin: 1.4em 0;
   flex-shrink: 0;
+  flex-grow: 0;
 }
 
 ul.talks li .info {
@@ -214,18 +227,22 @@ ul.talks li .info {
   	font-size: large;
 }
 
-ul.talks li::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  top: -35px;
-  left: 2em;
-  width: 0.2em;
-  height: 100%;
+.timeline .line {
+  flex-grow: 1;
+  border-left-style: solid;
+  border-left-width: 3px;
 }
 
-ul.talks li:first-child::before {
-  display: none;
+.timeline .line:first-child {
+  flex-grow: 0;
+  height: 1.5em;
+}
+
+.talks li:first-child .timeline .line:first-child {
+  border-style: none;
+}
+.talks li:last-child .timeline .line:last-child {
+  border-style: none;
 }
 
 
