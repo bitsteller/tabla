@@ -90,7 +90,22 @@ Vue.component('sessiondetail', {
         type: Array,
         required: true
       }
+    }
+})
+
+Vue.component('talk', {
+    template: '#talk-template',
+    data: function() {
+      return {
+        showDetail: false
+      }
     },
+    props: {
+      talk: {
+        type: Object,
+        required: true 
+      }
+    }
 })
 
 
