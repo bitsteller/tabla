@@ -20,7 +20,7 @@
   gray transparent : rgba(51,51,51,0.9);
  */
 
-.sessions .session {
+.sessions .session, .meta>div {
 	border-color: rgba(51,51,51,0.3);
 }
 
@@ -68,6 +68,14 @@ ul.talks li .time {
 }
 .timeline .line {
 	border-left-color: #17c7d2;
+}
+
+.meta {
+	background-color: rgba(51,51,51,0.1);
+}
+
+.meta .description {
+	color: rgba(51,51,51,0.5);
 }
 
 /*CSS*/
@@ -183,7 +191,7 @@ h2.timeslot {
 }
 
 ul.talks {
-	padding: 0;
+	padding: 1em;
 	margin: 0;
 }
 
@@ -249,6 +257,31 @@ ul.talks li .info {
 }
 
 
+.meta {
+	display: flex;
+	flex-flow: row wrap;
+	align-content: stretch;
+}
+
+.meta>div {
+	text-align: center;
+	padding: 5px 0px;
+	margin: 0px 10px;
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+
+.meta .description {
+	font-size: small;
+	text-transform: uppercase;
+}
+
+.meta .value {
+	font-size: large;
+}
+
+
+
 footer {
 	text-align: center;
 	padding: 2em 1em;
@@ -278,10 +311,6 @@ footer {
   	overflow: scroll;
 }
 
-.content .body {
-	padding: 1em;
-}
-
 .overlay .header {
 	border-top-style: solid;
 	padding: 0.2em 1em;
@@ -301,6 +330,11 @@ footer {
 .overlay .header h2 .close {
 	flex-grow: 0;
 	padding: 0em 0.5em;
+}
+
+.overlay .body p {
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .noscroll {

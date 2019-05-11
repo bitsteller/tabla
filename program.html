@@ -19,10 +19,31 @@
 	<div class="header" onclick="window.history.back();"><h2><span class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</span><span class="close"> ╳ </span></h2></div>
     <div class="content">
 		<div class="body">
-			<p>{{ session.kind }}</p>
-			<p>Room: {{ session.room }}, {{ session.startTime | formatTime }} - {{ session.endTime | formatTime }} ({{ session.duration }} minutes)</p>
-			<p>Chair: {{ session.chair }}</p>
-			<p><span v-html="session.description"></span></p>
+			<div class="meta">
+				<div>
+					<div class="description">Chair</div>
+					<div class="value">{{ session.chair }}</div>
+				</div>
+				<div>
+					<div class="description">Room</div>
+					<div class="value">{{ session.room }}</div>
+				</div>
+				<div>
+					<div class="description">Day</div>
+					<div class="value">{{ session.startTime | formatDay }}</div>
+				</div>
+				<div>
+					<div class="description">Time</div>
+					<div class="value">{{ session.startTime | formatTime }} - {{ session.endTime | formatTime }}</div>
+				</div>
+				<div>
+					<div class="description">Duration</div>
+					<div class="value">{{ session.duration }} minutes</div>
+				</div>
+			</div>
+
+			<p v-html="session.description"></p>
+
 			<ul class="talks">
 				<li v-for="talk in talks">
 					<talk v-bind:talk="talk"></talk>

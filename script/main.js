@@ -57,6 +57,10 @@ Vue.filter('formatTime', function(d) {
       return toFormatTime(d);
     });
 
+Vue.filter('formatDay', function(d) {
+      return weekdays[d.getDay()]
+    });
+
 Vue.component('vlink', {
     template: '#link-template',
     props: {
