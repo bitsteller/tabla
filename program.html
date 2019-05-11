@@ -38,7 +38,7 @@
 				</div>
 				<div>
 					<div class="description">Duration</div>
-					<div class="value">{{ session.duration }} minutes</div>
+					<div class="value">{{ session.duration }} min</div>
 				</div>
 			</div>
 
@@ -49,6 +49,8 @@
 					<talk v-bind:talk="talk"></talk>
 				</li>
 			</ul>
+
+			<a v-bind:href="ical" v-bind:download="session.number + '.ics'">iCal</a>
 		</div>
     </div>
   </div>

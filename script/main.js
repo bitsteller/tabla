@@ -53,6 +53,41 @@ function toFormatTime(date) {
 
 }
 
+
+function getiCalForSession(session, talks) {
+  function pad(i) {
+    return i < 10 ? `0${i}` : `${i}`;
+  }
+  function formatDateTime(date) {
+    const year = date.getUTCFullYear();
+    const month = pad(date.getUTCMonth() + 1);
+    const day = pad(date.getUTCDate());
+    const hour = pad(date.getUTCHours());
+    const minute = pad(date.getUTCMinutes());
+    const second = pad(date.getUTCSeconds());
+    return `${year}${month}${day}T${hour}${minute}${second}Z`;
+  }
+
+  var str = "\
+BEGIN:VCALENDAR\n\
+VERSION:2.0\n\
+PRODID:https://www.railnorrkoping2019.org\n\
+METHOD:PUBLISH\n\
+BEGIN:VEVENT\n\
+UID:" + String(session.number) + ".session@railnorrkoping2019.org\n\
+LOCATION:" + String(session.room) + ", Campus Norrköping\n\
+SUMMARY:" + String(session.number) + ": " + String(session.title) + "\n\
+DESCRIPTION:Test2\n\
+CLASS:PUBLIC\n\
+DTSTART:" + formatDateTime(session.startTime) + "\n\
+DTEND:" + formatDateTime(session.endTime) + "\n\
+DTSTAMP:" + formatDateTime(new Date()) + "\n\
+END:VEVENT\n\
+END:VCALENDAR"
+
+  return str
+}
+
 Vue.filter('formatTime', function(d) {
       return toFormatTime(d);
     });
@@ -93,6 +128,12 @@ Vue.component('sessiondetail', {
       talks: {
         type: Array,
         required: true
+      }
+    },
+    computed: {
+      ical: function() {
+        var str = getiCalForSession(this.session, this.session.talks);
+        return 'data:text/plain;charset=utf-8,' + encodeURIComponent(str);
       }
     }
 })
