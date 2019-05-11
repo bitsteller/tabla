@@ -18,17 +18,17 @@
 	<div class="overlay">
 	<div class="header" onclick="window.history.back();"><h2><span class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</span><span class="close"> ╳ </span></h2></div>
     <div class="content">
-			<div class="body">
-				<p>{{ session.kind }}</p>
-				<p>Room: {{ session.room }}, {{ session.startTime | formatTime }} - {{ session.endTime | formatTime }} ({{ session.duration }} minutes)</p>
-				<p>Chair: {{ session.chair }}</p>
-				<p><span v-html="session.description"></span></p>
-				<ul class="talks">
-					<li v-for="talk in talks">
-						<talk v-bind:talk="talk"></talk>
-					</li>
-				</ul>
-			</div>
+		<div class="body">
+			<p>{{ session.kind }}</p>
+			<p>Room: {{ session.room }}, {{ session.startTime | formatTime }} - {{ session.endTime | formatTime }} ({{ session.duration }} minutes)</p>
+			<p>Chair: {{ session.chair }}</p>
+			<p><span v-html="session.description"></span></p>
+			<ul class="talks">
+				<li v-for="talk in talks">
+					<talk v-bind:talk="talk"></talk>
+				</li>
+			</ul>
+		</div>
     </div>
   </div>
 	</script>
@@ -40,8 +40,10 @@
 				<div class="line"/>
 			</div>
 			<span class="info">
-				<div class="title">{{ talk.title }} <input type="checkbox" id="test" v-model="showDetail"/></div> 
-				<div class="presenter">{{ talk.presenter}}</div>
+				<div class="title" v-on:click='showDetail = !showDetail'>
+					{{ talk.title }} 
+				</div> 
+				<div class="presenter" v-on:click='showDetail = !showDetail'>{{ talk.presenter}}</div>
 				<div v-show="showDetail" class="presenter">Authors: {{ talk.authors }} </div>
 				<div v-show="showDetail" class="abstract" v-html="talk.abstract"></div>
 			</span>

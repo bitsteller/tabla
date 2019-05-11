@@ -70,8 +70,6 @@ ul.talks li .time {
 	border-left-color: #17c7d2;
 }
 
-
-
 /*CSS*/
 
 body{
@@ -205,8 +203,8 @@ ul.talks .talk {
 
 .talk .title {
 	font-weight: 800;
+	cursor: pointer;
 }
-
 
 .timeline {
 	text-align: center;
@@ -230,6 +228,7 @@ ul.talks li .info {
   	padding-top: 0.5em;
   	font-size: large;
 }
+
 
 .timeline .line {
   flex-grow: 1;
@@ -268,7 +267,6 @@ footer {
   bottom: 2%;
   background-color: rgba(255,255,255,0.94);
   z-index: 2;
-  cursor: pointer;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   display: flex;
@@ -287,6 +285,7 @@ footer {
 .overlay .header {
 	border-top-style: solid;
 	padding: 0.2em 1em;
+ 	cursor: pointer;
 }
 
 .overlay .header h2 {
