@@ -104,7 +104,6 @@ div#app {
 }
 
 .conference {
-	padding-right: 1em;
 	font-weight: 800;
 }
 
@@ -119,6 +118,7 @@ div#app {
 	padding: 3px 8px;
 	flex-grow: 1;
 	flex-shrink: 1;
+	margin: 0px 1em;
 }
 
 h2.timeslot {
