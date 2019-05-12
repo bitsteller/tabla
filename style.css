@@ -105,6 +105,8 @@ div#app {
 
 .conference {
 	font-weight: 800;
+	flex-grow: 0.01;
+	text-align: center;
 }
 
 .search {
