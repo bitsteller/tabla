@@ -133,7 +133,7 @@ Vue.component('sessiondetail', {
     computed: {
       ical: function() {
         var str = getiCalForSession(this.session, this.session.talks);
-        return 'data:text/plain;charset=utf-8,' + encodeURIComponent(str);
+        return 'data:text/calendar;charset=utf-8,' + encodeURIComponent(str);
       }
     }
 })
