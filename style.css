@@ -107,6 +107,7 @@ div#app {
 	font-weight: 800;
 	flex-grow: 0.01;
 	text-align: center;
+	line-height: 1.5;
 }
 
 .search {
