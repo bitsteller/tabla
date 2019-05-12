@@ -41,6 +41,9 @@
 
 header {
 	background-color: rgba(200,200,200,0.8);
+}
+
+header a {
 	color: rgba(51,51,51,0.9);
 }
 
@@ -307,6 +310,10 @@ footer {
 	font-size: small;
 }
 
+
+.conference a:link {
+	text-decoration: none;
+}
 /* Overlay */
 
 .overlay {
