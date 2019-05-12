@@ -50,8 +50,20 @@ function toFormatTime(date) {
   catch {
     return undefined;
   }
-
 }
+
+function copyToClip(str) {
+  function listener(e) {
+    e.clipboardData.setData("text/html", str);
+    e.clipboardData.setData("text/plain", str);
+    e.preventDefault();
+  }
+  document.addEventListener("copy", listener);
+  document.execCommand("copy");
+  document.removeEventListener("copy", listener);
+};
+
+
 
 
 function getiCalForSession(session, talks) {
@@ -147,6 +159,22 @@ Vue.component('sessiondetail', {
       ical: function() {
         var str = getiCalForSession(this.session, this.talks);
         return 'data:text/calendar;charset=utf-8,' + encodeURIComponent(str);
+      }
+    },
+    methods: {
+      copyNotes: function() {
+        try {
+          var el = document.getElementById('notes-for-session-' + this.session.number);
+          var dt = new clipboard.DT();
+          dt.setData("text/plain", el.textContent);
+          dt.setData("text/html", el.innerHTML);
+          clipboard.write(dt);
+          alert("✅ Text for use in your note taking app has been copied to clipboard.");
+        }
+        catch {
+          alert("Could not copy to clipboard");
+        }
+
       }
     }
 })

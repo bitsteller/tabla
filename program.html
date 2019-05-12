@@ -4,6 +4,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=0.7">
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript" src="script/clipboard-polyfill.js"></script>
 	<title>Tablå</title>
 	<script type="text/x-template" id="link-template">
 		  <a
@@ -52,7 +53,19 @@
 
 			<p>
 				<a class="button" v-bind:href="ical" v-bind:download="session.number + '.ics'">📅 Add to my calendar</a>
-			</p
+				<a class="button" v-on:click="copyNotes">📝 Take notes</a>
+			</p>
+
+			<div v-bind:id="'notes-for-session-' + session.number" style="display:none;">
+				<h2>{{ session.number }}: {{ session.title }}</h2>
+				<p>Chair: {{ session.chair }}</p>
+				<br/>
+				<span v-for="talk in talks">
+					<h3>{{ talk.title }}</h3>
+					<p>{{ talk.authors }}</p>
+					<p><br/><br/></p>
+				</span>
+			</div>
 		</div>
     </div>
   </div>

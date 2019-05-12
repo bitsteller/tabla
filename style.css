@@ -185,7 +185,7 @@ h2.timeslot {
 
 .days {
 	padding: 1em;
-	padding-top: 1.5em;
+	padding-top: 1.6em;
 	/*text-align: center;*/
 }
 
@@ -313,6 +313,7 @@ footer {
   position: fixed;
   width: 96%;
   height: 96%;
+  max-width: 1024px;
   top: 2%;
   left: 2%;
   right: 2%;
@@ -371,6 +372,7 @@ a.button {
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 a.button:link {
