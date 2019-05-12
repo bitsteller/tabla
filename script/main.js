@@ -68,24 +68,37 @@ function getiCalForSession(session, talks) {
     return `${year}${month}${day}T${hour}${minute}${second}Z`;
   }
 
-  var str = "\
+  var desc = "";
+  if (session.chair != undefined) {
+      desc += "Chair: " + String(session.chair) + "\n\n";
+  }
+  desc += String(session.description) + "\n\n";
+  if (talks != undefined) {
+      for (var i = 0; i < talks.length; i++) {
+      desc += toFormatTime(talks[i].startTime) + ": " + String(talks[i].title) + " (" + String(talks[i].presenter) + ")\n\n"
+    }
+  }
+  desc = desc.replace(/\n/g, "\\n");
+
+  var ical = "\
 BEGIN:VCALENDAR\n\
 VERSION:2.0\n\
 PRODID:https://www.railnorrkoping2019.org\n\
 METHOD:PUBLISH\n\
 BEGIN:VEVENT\n\
 UID:" + String(session.number) + ".session@railnorrkoping2019.org\n\
-LOCATION:" + String(session.room) + ", Campus Norrköping\n\
-SUMMARY:" + String(session.number) + ": " + String(session.title) + "\n\
-DESCRIPTION:Test2\n\
+LOCATION;ENCODING=QUOTED-PRINTABLE:" + String(session.room) + ", Campus Norrköping\n\
+SUMMARY;ENCODING=QUOTED-PRINTABLE:" + String(session.number) + ": " + String(session.title) + "\n\
+DESCRIPTION;ENCODING=QUOTED-PRINTABLE:" + desc + "\n\
 CLASS:PUBLIC\n\
 DTSTART:" + formatDateTime(session.startTime) + "\n\
 DTEND:" + formatDateTime(session.endTime) + "\n\
 DTSTAMP:" + formatDateTime(new Date()) + "\n\
+URL;VALUE=URI:" + "bitsteller.github.io/tabla/program.html#/session/" + String(session.number) + "\n\
 END:VEVENT\n\
 END:VCALENDAR"
 
-  return str
+  return ical
 }
 
 Vue.filter('formatTime', function(d) {
@@ -132,7 +145,7 @@ Vue.component('sessiondetail', {
     },
     computed: {
       ical: function() {
-        var str = getiCalForSession(this.session, this.session.talks);
+        var str = getiCalForSession(this.session, this.talks);
         return 'data:text/calendar;charset=utf-8,' + encodeURIComponent(str);
       }
     }
