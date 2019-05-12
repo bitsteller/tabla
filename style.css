@@ -97,15 +97,20 @@ header {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
+	align-content: stretch;
 }
 
 div#app {
 	margin-top: 4em;
 }
 
+header div {
+	margin: 0px 0.5em;
+}
+
 .conference {
 	font-weight: 800;
-	flex-grow: 0.01;
+	flex-grow: 1;
 	text-align: center;
 	line-height: 1.5;
 }
@@ -114,14 +119,13 @@ div#app {
 	font-size: large;
 	width: 300px;
 	min-width: 200px;
-	max-width: 400px;
+	max-width: 450px;
 	line-height: 1.5;
 	border-style: none;
 	border-radius: 5px;
 	padding: 3px 8px;
-	flex-grow: 1;
+	flex-grow: 10;
 	flex-shrink: 1;
-	margin: 0px 1em;
 }
 
 h2.timeslot {

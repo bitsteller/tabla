@@ -78,7 +78,7 @@
 <body>
 	<div id="app">
 		<header>
-			<span class="conference">RailNorrköping</span>
+			<div class="conference">RailNorrköping</div>
 			<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
 			<div v-show="search != ''">{{ filteredSessions | count }} sessions found</div>
 		</header>
