@@ -11,14 +11,15 @@ function searchRegex(q) {
   function escapeRegExp(s) {
     return s.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
   }
-  const words = q
-    .split(/\s+/g)
-    .map(function(s) {return s.trim()})
-    .filter(function(s) {return !!s});
+  if (q == undefined) {
+    return new RegExp("", "gi");
+  }
+  var words = q.split(/\s+/g);
+  words = words.map(function(s) {return s.trim()})
+  words = words.filter(function(s) {return !!s});
   const hasTrailingSpace = q.endsWith(" ");
   const searchRegex = new RegExp(
-    words
-      .map(function(word, i) {
+    words.map(function(word, i) {
         if (i + 1 === words.length && !hasTrailingSpace) {
           // The last word - ok with the word being "startswith"-like
           return `(?=.*\\b${escapeRegExp(word)})`;
@@ -223,11 +224,15 @@ const app = new Vue({
       var sessions = Object.values(this.sessions);
 
       var sessions = sessions.filter(function(session) {
-          var sessionIDMatch = searchRegex(this.search).test(session.number);
-          var roomMatch = session.room.toLowerCase().includes(this.search.toLowerCase());
-          var titleMatch = searchRegex(this.search).test(session.title);
-          var descriptionMatch = searchRegex(this.search).test(session.description);
-          var talkMatch = (session.number in this.filteredTalks) && (this.filteredTalks[session.number].length > 0);
+          if (app.search == undefined) {
+            return true;
+          }
+
+          var sessionIDMatch = searchRegex(app.search).test(session.number);
+          var roomMatch = session.room != undefined && session.room.toLowerCase().includes(app.search.toLowerCase());
+          var titleMatch = searchRegex(app.search).test(session.title);
+          var descriptionMatch = searchRegex(app.search).test(session.description);
+          var talkMatch = (session.number in app.filteredTalks) && (app.filteredTalks[session.number].length > 0);
 
           return sessionIDMatch || roomMatch || titleMatch || talkMatch || descriptionMatch;
       });
@@ -284,7 +289,9 @@ const app = new Vue({
       }
       timeslots.push(timeslot);
 
-      timeslots = timeslots.filter(function(ts) { return this.filterDay == "" || ts.day == this.filterDay });
+      timeslots = timeslots.filter(function(ts) { 
+        return app.filterDay == "" || ts.day == app.filterDay 
+      });
 
       return timeslots;
     },
@@ -306,6 +313,9 @@ const app = new Vue({
 
       for (var s = 0; s < sessionIDs.length; s++) {
         filtered[sessionIDs[s]] = bysession[sessionIDs[s]].filter(function(talk) {
+          if (this.search == undefined) {
+            return true;
+          }
           var numberMatch = talk.number.toLowerCase().includes(this.search.toLowerCase());
           var titleMatch = searchRegex(this.search).test(talk.title);
           var abstractMatch = searchRegex(this.search).test(talk.abstract);
