@@ -64,8 +64,15 @@ f = open( 'program.json', 'w')
 f.write(out)  
 print("JSON saved!")
 
-talks.sort(key = lambda talk: talk["authors"])
-tex = "\n".join(["\\includeabstract{" + talk["title"].replace("\\","") + "}{" + talk["authors"] + "}{" + talk["session"] + "}{" + talk["number"] + "}" for talk in talks])
+#save latex list of talks for proceedings
+print("Export latex for proceedings...")
+valid_talks = []
+for talk in talks:
+	if talk["authors"] != "" and "category" in talk:
+		valid_talks.append(talk)
+
+valid_talks.sort(key = lambda talk: re.search(r'([\w-]+)(,| and|$)', talk["authors"]).group(1))
+tex = "\n".join(["\\includeabstract{" + talk["title"].replace("\\","") + "}{" + talk["authors"] + "}{" + talk["session"] + "}{" + talk["number"] + "}{" + talk["category"] + "}{" + talk["accepts_publication"] + "}" for talk in valid_talks])
 tex = tex.replace("&", "\\&")
 tex = tex.replace("&", "\\%")
 
