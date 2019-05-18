@@ -47,7 +47,7 @@ function toFormatTime(date) {
       hour12: false
     });
   }
-  catch {
+  catch (e) {
     return undefined;
   }
 }
@@ -171,7 +171,7 @@ Vue.component('sessiondetail', {
           clipboard.write(dt);
           alert("✅ Text for use in your note taking app has been copied to clipboard.");
         }
-        catch {
+        catch (e) {
           alert("Could not copy to clipboard");
         }
 
@@ -377,7 +377,7 @@ function loadProgram(url, tries = 5) {
             program.sessions[sessionNumbers[i]].startTime = new Date(startTime[0], startTime[1], startTime[2], startTime[3], startTime[4]);
             program.sessions[sessionNumbers[i]].endTime = new Date(startTime[0], startTime[1], startTime[2], startTime[3], startTime[4] + program.sessions[sessionNumbers[i]].duration);       
           }
-          catch {
+          catch (e) {
 
           }
         }
@@ -387,7 +387,7 @@ function loadProgram(url, tries = 5) {
             program.talks[i].startTime = new Date(startTime[0], startTime[1], startTime[2], startTime[3], startTime[4]);
             program.talks[i].endTime = new Date(startTime[0], startTime[1], startTime[2], startTime[3], startTime[4] + program.talks[i].duration);       
           }
-          catch {
+          catch (e) {
 
           }
         }
