@@ -335,7 +335,7 @@ footer {
 
 .overlay .content {
 	font-size: larger;
-  	overflow: scroll;
+  	overflow: scroll-y;
 }
 
 .overlay .header {

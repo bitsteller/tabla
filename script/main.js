@@ -313,13 +313,13 @@ const app = new Vue({
 
       for (var s = 0; s < sessionIDs.length; s++) {
         filtered[sessionIDs[s]] = bysession[sessionIDs[s]].filter(function(talk) {
-          if (this.search == undefined) {
+          if (app.search == undefined) {
             return true;
           }
-          var numberMatch = talk.number.toLowerCase().includes(this.search.toLowerCase());
-          var titleMatch = searchRegex(this.search).test(talk.title);
-          var abstractMatch = searchRegex(this.search).test(talk.abstract);
-          var authorMatch = searchRegex(this.search).test(talk.authors);
+          var numberMatch = talk.number.toLowerCase().includes(app.search.toLowerCase());
+          var titleMatch = searchRegex(app.search).test(talk.title);
+          var abstractMatch = searchRegex(app.search).test(talk.abstract);
+          var authorMatch = searchRegex(app.search).test(talk.authors);
 
           return numberMatch || titleMatch || abstractMatch || authorMatch;
         })
