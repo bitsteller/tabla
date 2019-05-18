@@ -1,6 +1,7 @@
 import csv  
 import json  
 import re
+import os
 
 #import analyse
 #tr4w = analyse.TextRank4Keyword()
@@ -39,6 +40,20 @@ for t in reader:
 	#tr4w.analyze(t["title"] + " " + t["abstract"], candidate_pos = ['NOUN'], window_size=4, lower=False, stopwords = ["railways", "railway", "train", "rail", "%"])
 	#t["keywords"] = tr4w.get_keywords(1)
 	talks.append(t)
+
+
+if os.path.isfile('submissions.csv'):
+	print("Parsing submissions csv...")
+	f = open( 'submissions.csv', 'r' )  
+	f.readline()
+	reader = csv.DictReader(f, delimiter=";",fieldnames = ( "number", "authors", "title", "ext_abstract", "full_paper", "camera_ready", "revision_letter", "category", "accepts_publication", "poster_session", "track", "decision"))  
+	for s in reader:
+		talk = [t for t in talks if t["number"] == s["number"]]
+		if len(talk) > 0:
+			talk = talk[0]
+			talk["category"] = s["category"]
+			talk["accepts_publication"] = s["accepts_publication"]
+
 
 # Save the JSON  
 print("Saving...")
