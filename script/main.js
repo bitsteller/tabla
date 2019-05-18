@@ -13,12 +13,12 @@ function searchRegex(q) {
   }
   const words = q
     .split(/\s+/g)
-    .map(s => s.trim())
-    .filter(s => !!s);
+    .map(function(s) {return s.trim()})
+    .filter(function(s) {return !!s});
   const hasTrailingSpace = q.endsWith(" ");
   const searchRegex = new RegExp(
     words
-      .map((word, i) => {
+      .map(function(word, i) {
         if (i + 1 === words.length && !hasTrailingSpace) {
           // The last word - ok with the word being "startswith"-like
           return `(?=.*\\b${escapeRegExp(word)})`;
@@ -222,7 +222,7 @@ const app = new Vue({
     filteredSessions: function() {
       var sessions = Object.values(this.sessions);
 
-      var sessions = sessions.filter(session => {
+      var sessions = sessions.filter(function(session) {
           var sessionIDMatch = searchRegex(this.search).test(session.number);
           var roomMatch = session.room.toLowerCase().includes(this.search.toLowerCase());
           var titleMatch = searchRegex(this.search).test(session.title);
@@ -284,7 +284,7 @@ const app = new Vue({
       }
       timeslots.push(timeslot);
 
-      timeslots = timeslots.filter(ts => { return this.filterDay == "" || ts.day == this.filterDay });
+      timeslots = timeslots.filter(function(ts) { return this.filterDay == "" || ts.day == this.filterDay });
 
       return timeslots;
     },
@@ -305,7 +305,7 @@ const app = new Vue({
       var filtered = {};
 
       for (var s = 0; s < sessionIDs.length; s++) {
-        filtered[sessionIDs[s]] = bysession[sessionIDs[s]].filter(talk => {
+        filtered[sessionIDs[s]] = bysession[sessionIDs[s]].filter(function(talk) {
           var numberMatch = talk.number.toLowerCase().includes(this.search.toLowerCase());
           var titleMatch = searchRegex(this.search).test(talk.title);
           var abstractMatch = searchRegex(this.search).test(talk.abstract);
@@ -352,11 +352,11 @@ const app = new Vue({
   }
 })
 
-window.addEventListener('popstate', () => {
+window.addEventListener('popstate', function() {
   app.currentRoute = window.location.hash;
 })
 
-this.interval = setInterval(() => {
+this.interval = setInterval(function() {
   app.now = new Date();
 }, 30*1000)
 
