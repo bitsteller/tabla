@@ -178,6 +178,19 @@ Vue.component('sessiondetail', {
           status = "passed";
         }
         return status;
+      },
+      statusText: function() {
+        var minLeftToStart = minutesBetween(this.now, this.session.startTime);
+        var minLeftToEnd = minutesBetween(this.now, this.session.endTime)
+        var statusText = "";
+
+        if (minLeftToStart <= 30 && minLeftToStart > 0) { //before
+          statusText = " － starts in " + minLeftToStart + " min";
+        }
+        else if (minLeftToStart <= 0 && minLeftToEnd >= 0) { //while
+          statusText = " － 🔴 " + minLeftToEnd + " min left";
+        }
+        return statusText
       }
     },
     methods: {
@@ -326,7 +339,7 @@ const app = new Vue({
         if (i == 0 || (sessions[i].startTime.getTime() != sessions[i-1].startTime.getTime()) || (sessions[i].endTime.getTime() != sessions[i-1].endTime.getTime())) {
           if (i > 0) {
             timeslots.push(timeslot);
-            timeslot = {timeslotTitle: "", days: null, day: "", sessions: [], status: "upcoming"};
+            timeslot = {timeslotTitle: "", days: null, day: "", sessions: []};
           }
           timeslot.title = toFormatTime(sessions[i].startTime) + " - " + toFormatTime(sessions[i].endTime);
           timeslot.status = sessions[i].status;
@@ -334,7 +347,7 @@ const app = new Vue({
           timeslot.title += timeslot.statusText;
 
           if (i == 0 || sessions[i].day != sessions[i-1].day) {
-          timeslot.days = days;
+            timeslot.days = days;
           }
           timeslot.day =  weekdays[sessions[i].startTime.getDay()].toString();
         }
@@ -429,7 +442,11 @@ this.interval = setInterval(function() {
   if (!app.debug) {
     app.now = new Date();
   }
-}, 30*1000)
+  else {
+    app.now.setMinutes(app.now.getMinutes() + 1 );
+    app.now = new Date(app.now.getTime());
+  }
+}, 10*1000)
 
 
 

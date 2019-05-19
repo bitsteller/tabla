@@ -17,7 +17,11 @@
 	</script>
 	<script type="text/x-template" id="sessiondetail-template">
 	<div class="overlay">
-	<div class="header" onclick="window.history.back();" v-bind:class="{passed: status == 'passed'}"><h2><span class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</span><span class="close"> ╳ </span></h2></div>
+	<div class="header" onclick="window.history.back();" v-bind:class="{passed: status == 'passed'}">
+		<h2><span class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}{{ statusText }}</span>
+			<span class="close"> ╳ </span>
+		</h2>
+	</div>
     <div class="content">
 		<div class="body">
 			<div class="meta">
