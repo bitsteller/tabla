@@ -52,8 +52,8 @@
 			</ul>
 
 			<p>
-				<a class="button" v-bind:href="ical" v-bind:download="session.number + '.ics'">📅 Add to my calendar</a>
-				<a class="button" v-on:click="copyNotes">📝 Take notes</a>
+				<a class="button" v-bind:href="ical" v-bind:download="session.number + '.ics'">📅 Add to calendar</a>
+				<a class="button" v-on:click="copyNotes">📝 Export to notes</a>
 			</p>
 
 			<div v-bind:id="'notes-for-session-' + session.number" style="display:none;">
