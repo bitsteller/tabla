@@ -84,6 +84,11 @@ ul.talks li .time {
 	color: rgba(51,51,51,0.5);
 }
 
+.tag {
+	background-color: rgba(51,51,51,0.3);
+	color: rgba(255,255,255,1);
+}
+
 /*CSS*/
 
 body{
@@ -314,6 +319,15 @@ footer {
 .conference a:link {
 	text-decoration: none;
 }
+
+.tag {
+	border-radius: 4px;
+	font-size: smaller;
+	margin: 0em 0.2em;
+	padding: 0em 0.25em;
+	font-weight: 400;
+}
+
 /* Overlay */
 
 .overlay {
@@ -335,7 +349,7 @@ footer {
 
 .overlay .content {
 	font-size: larger;
-  	overflow: scroll-y;
+  	overflow: scroll;
 }
 
 .overlay .header {

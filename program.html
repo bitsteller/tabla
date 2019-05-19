@@ -79,9 +79,9 @@
 			</div>
 			<span class="info">
 				<div class="title" v-on:click='showDetail = !showDetail'>
-					{{ talk.title }} 
+					{{ talk.title }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">Professional&nbsp;paper</span>
 				</div> 
-				<div class="presenter" v-on:click='showDetail = !showDetail'>{{ talk.presenter}} <span v-if="talk.category == 'industrial-paper'">(Professional paper)</span></div>
+				<div class="presenter" v-on:click='showDetail = !showDetail'>{{ talk.presenter}}</div>
 				<div v-show="showDetail" class="presenter">Authors: {{ talk.authors }} </div>
 				<div v-show="showDetail" class="abstract" v-html="talk.abstract"></div>
 			</span>
@@ -113,7 +113,7 @@
 									{{ talk.title }} ({{ talk.presenter}})
 								</p>
 								<span v-if="(search).length == 0" v-for="(talk, index) in filteredTalks[session.number]">
-									{{ talk.presenter }}<span v-if="talk.category == 'industrial-paper'"> (PP)</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
+									{{ talk.presenter }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">PP</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
 								</span>
 								<!--<span v-if="(search).length == 0" v-for="(talk, index) in filteredTalks[session.number]">
 									<span v-for="keyword in talk.keywords">
