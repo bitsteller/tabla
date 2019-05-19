@@ -17,7 +17,7 @@
 	</script>
 	<script type="text/x-template" id="sessiondetail-template">
 	<div class="overlay">
-	<div class="header" onclick="window.history.back();" v-bind:class="{passed: session.status == 'passed'}"><h2><span class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</span><span class="close"> ╳ </span></h2></div>
+	<div class="header" onclick="window.history.back();" v-bind:class="{passed: status == 'passed'}"><h2><span class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</span><span class="close"> ╳ </span></h2></div>
     <div class="content">
 		<div class="body">
 			<div class="meta">
@@ -47,7 +47,7 @@
 
 			<ul class="talks">
 				<li v-for="talk in talks">
-					<talk v-bind:talk="talk"></talk>
+					<talk v-bind:talk="talk" v-bind:now="now"/>
 				</li>
 			</ul>
 
@@ -60,10 +60,12 @@
 				<h2>{{ session.number }}: {{ session.title }}</h2>
 				<p>Chair: {{ session.chair }}</p>
 				<br/>
-				<span v-for="talk in talks">
-					<h3>{{ talk.title }}</h3>
-					<p>{{ talk.authors }}</p>
-					<p><br/><br/></p>
+				<span v-if="talks">
+					<span v-for="talk in talks">
+						<h3>{{ talk.title }}</h3>
+						<p>{{ talk.authors }}</p>
+						<p><br/><br/></p>
+					</span>
 				</span>
 			</div>
 		</div>
@@ -72,7 +74,7 @@
 	</script>
 	<script type="text/x-template" id="talk-template">
 		<div class="talk">
-			<div class="timeline">
+			<div class="timeline" v-bind:class="{passed: status == 'passed'}">
 				<div class="line"/>
 				<div class="time">{{ talk.startTime | formatTime }}</div>
 				<div class="line"/>
@@ -80,7 +82,7 @@
 			<span class="info">
 				<div class="title" v-on:click='showDetail = !showDetail'>
 					{{ talk.title }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">Professional&nbsp;paper</span>
-				</div> 
+				</div>
 				<div class="presenter" v-on:click='showDetail = !showDetail'>{{ talk.presenter}}</div>
 				<div v-show="showDetail" class="presenter">Authors: {{ talk.authors }} </div>
 				<div v-show="showDetail" class="abstract" v-html="talk.abstract"></div>
@@ -140,7 +142,7 @@
 			
 		</footer>
 	
-		<sessiondetail v-if="sessionDetail != null" v-bind:session="sessionDetail" v-bind:talks="talksBySession[sessionDetail.number]"/>
+		<sessiondetail v-if="sessionDetail != null" v-bind:session="sessionDetail" v-bind:talks="talksBySession[sessionDetail.number]" v-bind:now="now"/>
 	</div>
 	<footer>
 		<a href="https://github.com/bitsteller/tabla">Tablå</a>

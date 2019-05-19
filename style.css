@@ -74,11 +74,18 @@ body {
 	color: #47425d;
 }
 
-ul.talks li .time {
+.timeline .time {
  	background: #17c7d2;
 }
 .timeline .line {
 	border-left-color: #17c7d2;
+}
+
+.timeline.passed .time {
+ 	background: rgba(51,51,51,0.2);
+}
+.timeline.passed .line {
+	border-left-color: rgba(51,51,51,0.2);
 }
 
 .meta {

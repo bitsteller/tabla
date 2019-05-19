@@ -153,6 +153,10 @@ Vue.component('sessiondetail', {
       },
       talks: {
         type: Array,
+        required: false
+      },
+      now: {
+        type: Date,
         required: true
       }
     },
@@ -160,6 +164,20 @@ Vue.component('sessiondetail', {
       ical: function() {
         var str = getiCalForSession(this.session, this.talks);
         return 'data:text/calendar;charset=utf-8,' + encodeURIComponent(str);
+      },
+      status: function() {
+        var status = "upcoming";
+
+        var minLeftToStart = minutesBetween(this.now, this.session.startTime);
+        var minLeftToEnd = minutesBetween(this.now, this.session.endTime)
+
+        if (minLeftToStart <= 0 && minLeftToEnd >= 0) { //while
+          status = "ongoing";
+        }
+        else if (minLeftToEnd < 0) { //after
+          status = "passed";
+        }
+        return status;
       }
     },
     methods: {
@@ -191,8 +209,28 @@ Vue.component('talk', {
       talk: {
         type: Object,
         required: true 
+      },
+      now: {
+        type: Date,
+        required: true
       }
-    }
+    },
+    computed: {
+      status: function() {
+        var status = "upcoming";
+
+        var minLeftToStart = minutesBetween(this.now, this.talk.startTime);
+        var minLeftToEnd = minutesBetween(this.now, this.talk.endTime)
+
+        if (minLeftToStart <= 0 && minLeftToEnd >= 0) { //while
+          status = "ongoing";
+        }
+        else if (minLeftToEnd < 0) { //after
+          status = "passed";
+        }
+        return status;
+      }
+    },
 })
 
 
@@ -205,7 +243,7 @@ const app = new Vue({
     search: "",
     debug: true,
     filterDay: "Monday", //TODO: next day
-    sessions: {},
+    sessionsData: {},
     rooms: {},
     talks: [],
     authors: {},
@@ -220,6 +258,33 @@ const app = new Vue({
       else {
         return null;
       }
+    },
+    sessions: function() {
+      var keys = Object.keys(this.sessionsData);
+      var sess = {};
+      for (var i = 0; i < keys.length; i++) {
+        var session = this.sessionsData[keys[i]];
+        session.startTimeFormatted = toFormatTime(session.startTime);
+        session.status = "upcoming";
+        session.statusText = "";
+
+        var minLeftToStart = minutesBetween(this.now, session.startTime);
+        var minLeftToEnd = minutesBetween(this.now, session.endTime)
+
+        if (minLeftToStart <= 30 && minLeftToStart > 0) { //before
+          session.statusText = " － starts in " + minLeftToStart + " min";
+        }
+        else if (minLeftToStart <= 0 && minLeftToEnd >= 0) { //while
+          session.status = "ongoing";
+          session.statusText = " － 🔴 " + minLeftToEnd + " min left";
+        }
+        else if (minLeftToEnd < 0) { //after
+          session.status = "passed";
+          session.statusText = " － passed";
+        }
+        sess[keys[i]] = session;
+      }
+      return sess;
     },
     filteredSessions: function() {
       var sessions = Object.values(this.sessions);
@@ -237,27 +302,6 @@ const app = new Vue({
 
           return sessionIDMatch || roomMatch || titleMatch || talkMatch || descriptionMatch;
       });
-
-      for (var i = 0; i < sessions.length; i++) {
-        sessions[i].startTimeFormatted = toFormatTime(sessions[i].startTime);
-        sessions[i].status = "upcoming";
-        sessions[i].statusText = "";
-
-        var minLeftToStart = minutesBetween(this.now, sessions[i].startTime);
-        var minLeftToEnd = minutesBetween(this.now, sessions[i].endTime)
-
-        if (minLeftToStart <= 30 && minLeftToStart > 0) { //before
-          sessions[i].statusText = " － starts in " + minLeftToStart + " min";
-        }
-        else if (minLeftToStart <= 0 && minLeftToEnd >= 0) { //while
-          sessions[i].status = "ongoing";
-          sessions[i].statusText = " － 🔴 " + minLeftToEnd + " min left";
-        }
-        else if (minLeftToEnd < 0) { //after
-          sessions[i].status = "passed";
-          sessions[i].statusText = " － passed";
-        }
-      }
 
       sessions.sort(function(a,b) {return a.startTime - b.startTime});
 
@@ -418,7 +462,7 @@ function loadProgram(url, tries = 5) {
 
           }
         }
-        app.sessions = program.sessions;
+        app.sessionsData = program.sessions;
         app.talks = program.talks;
         app.rooms = program.rooms;
       }
