@@ -203,6 +203,7 @@ const app = new Vue({
     now: new Date(),
     includePast: false,
     search: "",
+    debug: true,
     filterDay: "Monday", //TODO: next day
     sessions: {},
     rooms: {},
@@ -239,6 +240,23 @@ const app = new Vue({
 
       for (var i = 0; i < sessions.length; i++) {
         sessions[i].startTimeFormatted = toFormatTime(sessions[i].startTime);
+        sessions[i].status = "upcoming";
+        sessions[i].statusText = "";
+
+        var minLeftToStart = minutesBetween(this.now, sessions[i].startTime);
+        var minLeftToEnd = minutesBetween(this.now, sessions[i].endTime)
+
+        if (minLeftToStart <= 30 && minLeftToStart > 0) { //before
+          sessions[i].statusText = " － starts in " + minLeftToStart + " min";
+        }
+        else if (minLeftToStart <= 0 && minLeftToEnd >= 0) { //while
+          sessions[i].status = "ongoing";
+          sessions[i].statusText = " － 🔴 " + minLeftToEnd + " min left";
+        }
+        else if (minLeftToEnd < 0) { //after
+          sessions[i].status = "passed";
+          sessions[i].statusText = " － passed";
+        }
       }
 
       sessions.sort(function(a,b) {return a.startTime - b.startTime});
@@ -264,21 +282,12 @@ const app = new Vue({
         if (i == 0 || (sessions[i].startTime.getTime() != sessions[i-1].startTime.getTime()) || (sessions[i].endTime.getTime() != sessions[i-1].endTime.getTime())) {
           if (i > 0) {
             timeslots.push(timeslot);
-            timeslot = {timeslotTitle: "", days: null, day: "", sessions: []};
+            timeslot = {timeslotTitle: "", days: null, day: "", sessions: [], status: "upcoming"};
           }
-          timeslot.title = toFormatTime(sessions[i].startTime) + " - " + toFormatTime(sessions[i].endTime); //weekdays[sessions[i].startTime.getDay()].toString() + ", " +
-          var minLeftToStart = minutesBetween(this.now, sessions[i].startTime);
-          var minLeftToEnd = minutesBetween(this.now, sessions[i].endTime)
-
-          if (minLeftToStart <= 30 && minLeftToStart > 0) { //before
-            timeslot.title += " － 🔵 in " + minLeftToStart + " min";
-          }
-          else if (minLeftToStart <= 0 && minLeftToEnd >= 0) { //while
-            timeslot.title += " － 🔴 " + minLeftToEnd + " min left";
-          }
-          else if (minLeftToEnd < 0) { //after
-            timeslot.title += " － passed";
-          }
+          timeslot.title = toFormatTime(sessions[i].startTime) + " - " + toFormatTime(sessions[i].endTime);
+          timeslot.status = sessions[i].status;
+          timeslot.statusText = sessions[i].statusText;
+          timeslot.title += timeslot.statusText;
 
           if (i == 0 || sessions[i].day != sessions[i-1].day) {
           timeslot.days = days;
@@ -359,6 +368,12 @@ const app = new Vue({
       var res = Object.keys(obj).length
       return res
     }
+  },
+  methods: {
+    addMinutesToNow: function (min) {
+      this.now.setMinutes(this.now.getMinutes() + min );
+      this.now = new Date(this.now.getTime());
+    }
   }
 })
 
@@ -367,7 +382,9 @@ window.addEventListener('popstate', function() {
 })
 
 this.interval = setInterval(function() {
-  app.now = new Date();
+  if (!app.debug) {
+    app.now = new Date();
+  }
 }, 30*1000)
 
 

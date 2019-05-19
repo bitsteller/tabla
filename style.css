@@ -34,6 +34,11 @@
 	background-color: rgba(23,199,210,0.1);
 }
 
+.timeslot.passed, .overlay .header.passed {
+	border-top-color: rgba(51,51,51,0.2);
+	background-color: rgba(51,51,51,0.1);
+}
+
 .id {
 	color: rgba(51,51,51,0.5);
 	padding-right: 0.2em;

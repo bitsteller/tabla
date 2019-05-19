@@ -17,7 +17,7 @@
 	</script>
 	<script type="text/x-template" id="sessiondetail-template">
 	<div class="overlay">
-	<div class="header" onclick="window.history.back();"><h2><span class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</span><span class="close"> ╳ </span></h2></div>
+	<div class="header" onclick="window.history.back();" v-bind:class="{passed: session.status == 'passed'}"><h2><span class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</span><span class="close"> ╳ </span></h2></div>
     <div class="content">
 		<div class="body">
 			<div class="meta">
@@ -92,6 +92,15 @@
 	<div id="app">
 		<header>
 			<div class="conference"><a href="https://www.railnorrkoping2019.org">RailNorrköping</a></div>
+			<div v-if="debug">
+				<button type="button" v-on:click="addMinutesToNow(-24*60)">-1d</button>
+				<button type="button" v-on:click="addMinutesToNow(-60)">-1h</button>
+				<button type="button" v-on:click="addMinutesToNow(-1)">-1min</button>
+				<button type="button" v-on:click="now = new Date(2019,5,17,9,0)">Start</button>
+				<button type="button" v-on:click="addMinutesToNow(1)">+1min</button>
+				<button type="button" v-on:click="addMinutesToNow(60)">+1h</button>
+				<button type="button" v-on:click="addMinutesToNow(24*60)">+1d</button>
+			</div>
 			<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
 			<div v-show="search != ''">{{ filteredSessions | count }} sessions found</div>
 		</header>
@@ -101,7 +110,7 @@
 				<div v-if="timeslot.days != null" v-bind:id = "filterDay == '' ? '/' + timeslot.day : null" class="days">
 					<vlink v-for="d in timeslot.days" v-bind:href="'#/' + d" v-bind:class="{current: d == timeslot.day}">{{ d }}</vlink>
 				</div>
-				<h2 class="timeslot">{{ timeslot.title }}</h2>
+				<h2 class="timeslot" v-bind:class="{passed: timeslot.status == 'passed'}">{{ timeslot.title }}</h2>
 				<div class="sessions">
 					<div class="session" v-for="session in timeslot.sessions">
 						<div class="location">{{ session.room }}</div>
