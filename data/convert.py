@@ -32,7 +32,7 @@ print("Converting talks...")
 talks = []
 
 for t in reader:
-	date = re.match(r'([0-9]{4})-([0-9]{2})-([0-9]{2})', s["date"])
+	date = re.match(r'([0-9]{4})-([0-9]{2})-([0-9]{2})', t["date"])
 	time = re.match(r'([0-9]{2}):([0-9]{2})', t["time"])
 	t["startTime"] = [int(date.group(1)), int(date.group(2))-1, int(date.group(3)), int(time.group(1)), int(time.group(2))]
 	t["duration"] = int(s["duration"])
