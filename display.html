@@ -42,7 +42,7 @@
 					<div class="title">{{ session.title }}<br/>
 					<marquee>
 						<span v-for="(talk, index) in filteredTalks[session.number]">
-							{{ talk.presenter }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">PP</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
+							{{ talk.presenter }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper"> (PP)</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
 						</span>
 					</marquee>
 					</div>
