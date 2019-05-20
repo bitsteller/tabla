@@ -45,11 +45,16 @@ body {
 	border: none;
 }
 
+.display .session:nth-child(even) {
+	background-color: rgba(35,35,35,1.0);
+}
+
 /*CSS*/
 
 body{
 	font-family: 'IBM Plex Sans', sans-serif;
-	font-size: xx-large;
+	font-size: 48pt;
+	margin: 0;
 }
 
 header {
@@ -65,29 +70,34 @@ div#app {
 	margin-top: 4em;
 }
 
-td {
-		font-size: xx-large;
-}
-
-th {
-	text-align: left;
-}
-
-tr td:nth-child(1) {
-	width: 70%;
-}
-tr td:nth-child(2) {
-	width: 15%;
-}
-tr td:nth-child(3) {
-	width: 15%;
-}
-
 .search {
 	font-size: large;
 	max-width: 400px;
 	width: 100%;
 }
+
+.logo {
+	height: 1.6em;
+	float:right;
+}
+
+
+/*display grid */
+
+.display {
+  display: grid;
+  grid-template-columns: minmax(2em,5%) 1fr minmax(5em,5%) minmax(4em,5%) minmax(5em,25%); /*number, title, time, room, status*/
+  list-style: none;
+  padding: 0;
+}
+
+.session {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(2em,5%) 1fr minmax(5em,5%) minmax(4em,5%) minmax(5em,25%); /*number, title, session, time, room, status*/
+  padding: 0.3em 0.2em;
+}
+
 
 /* social icons */
 

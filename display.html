@@ -19,22 +19,38 @@
 	<div id="app">
 		<header>
 			<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
+			<div v-if="debug">
+				<button type="button" v-on:click="addMinutesToNow(-24*60)">-1d</button>
+				<button type="button" v-on:click="addMinutesToNow(-60)">-1h</button>
+				<button type="button" v-on:click="addMinutesToNow(-1)">-1min</button>
+				<button type="button" v-on:click="now = new Date(2019,5,17,9,0)">Start</button>
+				<button type="button" v-on:click="addMinutesToNow(1)">+1min</button>
+				<button type="button" v-on:click="addMinutesToNow(60)">+1h</button>
+				<button type="button" v-on:click="addMinutesToNow(24*60)">+1d</button>
+			</div>
 		</header>
 
 		<section id="main">
-			<h1>Departures</h1>
-			<table>
-				<tr>
-					<th>Destinaton</th>
-					<th>Depature</th>
-					<th>Platform</th>
-				</tr>
-				<tr v-for="session in upcomingSessions">
-					<td><div class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</div></td>
-					<td>{{ session.startTimeFormatted }}</td>
-					<td>{{ session.room }}</td>
-				</tr>
-			</table>
+			<h1>Departures <img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/></h1>
+			<ul class="display">
+				<div></div>
+				<div>Destinaton</div>
+				<div>Depature</div>
+				<div>Platform</div>
+				<li v-for="session in upcomingSessions" class="session">
+					<div class="id">{{ session.number }}</div>
+					<div class="title">{{ session.title }}<br/>
+					<marquee>
+						<span v-for="(talk, index) in filteredTalks[session.number]">
+							{{ talk.presenter }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">PP</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
+						</span>
+					</marquee>
+					</div>
+					<div>{{ session.startTimeFormatted }}</div>
+					<div>{{ session.room }}</div>
+					<div>{{ session.statusText }}</div>
+				</li>
+			</ul>
 		</section>
 		<footer>
 			
