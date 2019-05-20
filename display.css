@@ -40,17 +40,6 @@ body {
 	background-color: rgba(21,21,21,1.0);
 }
 
-.days a {
-	border-color: #d65050;
-	color: #d65050;
-}
-
-.days a.active {
-	background-color: #d65050;
-	color: #fff;
-	font-weight: bold;
-}
-
 .search {
 	background-color: #337ab7;
 	border: none;
@@ -98,70 +87,6 @@ tr td:nth-child(3) {
 	font-size: large;
 	max-width: 400px;
 	width: 100%;
-}
-
-.sessions {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: flex-start;
-}
-
-@media screen and (max-width:1024px) { 
-	.sessions {
-		padding-left: 0px;
-		padding-right: 0px;
-	}
-	.sessions .session {
-		padding: 1em 1.5em;
-		overflow: hidden;
-		flex-grow: 1;
-	}
-}
-
-.sessions .session {
-	border-style: solid;
-	border-width: 1px 0px;
-	min-width: 250px;
-	width: 500px;
-	padding: 0.5em;
-	margin:  0.5em 1em;
-	flex-flow: row wrap;
-	display: flex;
-}
-
-.session .location {
-	font-size: x-large;
-	padding-right: 1em;
-}
-
-.session .title {
-	font-weight: bold;
-}
-
-.days {
-	padding: 1em;
-	padding-top: 3em;
-	/*text-align: center;*/
-}
-
-.days a {
-	padding: 0.5em 1em;
-	border-width: 1px;
-	border-style: solid;
-	border-right-width: 0px;
-	text-decoration: none;
-}
-
-.days a:first-child {
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
-}
-
-
-.days a:last-child {
-	border-right-width: 1px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
 }
 
 /* social icons */

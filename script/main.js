@@ -320,6 +320,12 @@ const app = new Vue({
 
       return sessions;
     },
+    upcomingSessions: function() {
+      var sessions = this.filteredSessions.filter(function(session) {
+        return session.status == "ongoing" || session.status == "upcoming";
+      })
+      return sessions;
+    },
     filteredSessionsByTimeslot: function() {
       var sessions = this.filteredSessions;
       var days = new Array();

@@ -14,11 +14,6 @@
 		    <slot></slot>
 		  </a>
 	</script>
-	<script type="text/x-template" id="sessionDetail-template">
-	  <div id="overlay" onclick="window.history.back();">
-    <div id="text">Overlay Tex jahkd fkajdh fkajdhf akdhf kadhf kajhdf akdhf akdhf adkhf adkjfh adkfh akdhf ajkdhf adkhjf akdh adjhf akdhf akdhf akjhfa kjhadf kjhadf fhdfaaad d adfadfkadf t</div>
-  </div>
-	</script>
 </head>
 <body>
 	<div id="app">
@@ -34,10 +29,10 @@
 					<th>Depature</th>
 					<th>Platform</th>
 				</tr>
-				<tr v-for="session in filteredSessions">
-					<td><div class="title"><span class="id">{{ session.sessionID }}:</span> {{ session.title }}</div></td>
+				<tr v-for="session in upcomingSessions">
+					<td><div class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</div></td>
 					<td>{{ session.startTimeFormatted }}</td>
-					<td>{{ session.locationID }}</td>
+					<td>{{ session.room }}</td>
 				</tr>
 			</table>
 		</section>
@@ -46,5 +41,5 @@
 		</footer>
 	</div>
 </body>
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="./script/main.js"></script>
 </html>
