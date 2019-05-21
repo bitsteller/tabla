@@ -230,6 +230,7 @@ h2.timeslot {
 .days {
 	padding: 1em;
 	padding-top: 1.6em;
+	overflow: scroll;
 	/*text-align: center;*/
 }
 
