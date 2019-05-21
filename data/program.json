@@ -1,23 +1,5 @@
 {
     "sessions": {
-        "": {
-            "chairs": "Anders Peterson",
-            "date": "2019-06-19",
-            "description": "<p>Technical visit: Hallsberg railway junction</p>\n",
-            "duration": 390,
-            "kind": "social",
-            "number": "",
-            "room": "",
-            "startTime": [
-                2019,
-                5,
-                19,
-                12,
-                30
-            ],
-            "time": "12:30",
-            "title": "Technical visit"
-        },
         "1": {
             "chairs": "",
             "date": "2019-06-17",
@@ -917,6 +899,366 @@
             ],
             "time": "09:00",
             "title": "Moving block"
+        },
+        "_0": {
+            "chairs": "",
+            "date": "2019-06-16",
+            "description": "",
+            "duration": 150,
+            "kind": "social",
+            "number": "_0",
+            "room": "Visualiceringscenter C",
+            "startTime": [
+                2019,
+                5,
+                16,
+                18,
+                30
+            ],
+            "time": "18:30",
+            "title": "Welcome reception"
+        },
+        "_1": {
+            "chairs": "",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": 10,
+            "kind": "coffee break",
+            "number": "_1",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                17,
+                10,
+                0
+            ],
+            "time": "10:00",
+            "title": "Break"
+        },
+        "_10": {
+            "chairs": "",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": 10,
+            "kind": "coffee break",
+            "number": "_10",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                18,
+                16,
+                20
+            ],
+            "time": "16:20",
+            "title": "Break"
+        },
+        "_11": {
+            "chairs": "",
+            "date": "2019-06-18",
+            "description": "<p>Conference dinner</p>\n",
+            "duration": 180,
+            "kind": "social",
+            "number": "_11",
+            "room": "V\u00e4rmekyrkan",
+            "startTime": [
+                2019,
+                5,
+                18,
+                19,
+                30
+            ],
+            "time": "19:30",
+            "title": "Conference dinner"
+        },
+        "_12": {
+            "chairs": "",
+            "date": "2019-06-19",
+            "description": "",
+            "duration": 30,
+            "kind": "coffee break",
+            "number": "_12",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                19,
+                9,
+                30
+            ],
+            "time": "09:30",
+            "title": "Coffee Break"
+        },
+        "_13": {
+            "chairs": "",
+            "date": "2019-06-19",
+            "description": "",
+            "duration": 10,
+            "kind": "coffee break",
+            "number": "_13",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                19,
+                10,
+                30
+            ],
+            "time": "10:30",
+            "title": "Break"
+        },
+        "_14": {
+            "chairs": "",
+            "date": "2019-06-19",
+            "description": "<p>For those attending Technical Visit</p>\n",
+            "duration": 10,
+            "kind": "lunch",
+            "number": "_14",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                19,
+                11,
+                50
+            ],
+            "time": "11:50",
+            "title": "Lunch Box Handout"
+        },
+        "_15": {
+            "chairs": "",
+            "date": "2019-06-19",
+            "description": "<p>For those staying in Norrk\u00f6ping</p>\n",
+            "duration": 60,
+            "kind": "lunch",
+            "number": "_15",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                19,
+                12,
+                0
+            ],
+            "time": "12:00",
+            "title": "Lunch"
+        },
+        "_16": {
+            "chairs": "Anders Peterson",
+            "date": "2019-06-19",
+            "description": "<p>Technical visit: Hallsberg railway junction</p>\n",
+            "duration": 390,
+            "kind": "social",
+            "number": "_16",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                19,
+                12,
+                30
+            ],
+            "time": "12:30",
+            "title": "Technical visit"
+        },
+        "_17": {
+            "chairs": "",
+            "date": "2019-06-20",
+            "description": "",
+            "duration": 20,
+            "kind": "coffee break",
+            "number": "_17",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                20,
+                10,
+                0
+            ],
+            "time": "10:00",
+            "title": "Coffee Break"
+        },
+        "_18": {
+            "chairs": "",
+            "date": "2019-06-20",
+            "description": "<p>Served at Louis de Geer (10 min walk)</p>\n",
+            "duration": 80,
+            "kind": "lunch",
+            "number": "_18",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                20,
+                11,
+                50
+            ],
+            "time": "11:50",
+            "title": "Lunch Break"
+        },
+        "_19": {
+            "chairs": "",
+            "date": "2019-06-20",
+            "description": "",
+            "duration": 20,
+            "kind": "coffee break",
+            "number": "_19",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                20,
+                14,
+                40
+            ],
+            "time": "14:40",
+            "title": "Coffee Break"
+        },
+        "_2": {
+            "chairs": "",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": 30,
+            "kind": "coffee break",
+            "number": "_2",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                17,
+                10,
+                40
+            ],
+            "time": "10:40",
+            "title": "Coffee Break"
+        },
+        "_3": {
+            "chairs": "",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": 60,
+            "kind": "lunch",
+            "number": "_3",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                17,
+                12,
+                30
+            ],
+            "time": "12:30",
+            "title": "Lunch Break"
+        },
+        "_4": {
+            "chairs": "",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": 10,
+            "kind": "coffee break",
+            "number": "_4",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                17,
+                14,
+                30
+            ],
+            "time": "14:30",
+            "title": "Break"
+        },
+        "_5": {
+            "chairs": "",
+            "date": "2019-06-17",
+            "description": "",
+            "duration": 30,
+            "kind": "coffee break",
+            "number": "_5",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                17,
+                15,
+                40
+            ],
+            "time": "15:40",
+            "title": "Coffee Break"
+        },
+        "_6": {
+            "chairs": "",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": 30,
+            "kind": "coffee break",
+            "number": "_6",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                18,
+                10,
+                20
+            ],
+            "time": "10:20",
+            "title": "Coffee Break"
+        },
+        "_7": {
+            "chairs": "",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": 60,
+            "kind": "lunch",
+            "number": "_7",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                18,
+                12,
+                10
+            ],
+            "time": "12:10",
+            "title": "Lunch Break"
+        },
+        "_8": {
+            "chairs": "",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": 10,
+            "kind": "coffee break",
+            "number": "_8",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                18,
+                13,
+                40
+            ],
+            "time": "13:40",
+            "title": "Break"
+        },
+        "_9": {
+            "chairs": "",
+            "date": "2019-06-18",
+            "description": "",
+            "duration": 30,
+            "kind": "coffee break",
+            "number": "_9",
+            "room": "",
+            "startTime": [
+                2019,
+                5,
+                18,
+                14,
+                50
+            ],
+            "time": "14:50",
+            "title": "Coffee Break"
         }
     },
     "talks": [

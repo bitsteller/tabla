@@ -15,13 +15,19 @@ reader = csv.DictReader( f, fieldnames = ( "number", "title", "date", "time", "d
 
 print("Converting sessions...")
 sessions = dict()
+next_internal_id = 0
 
 for s in reader:
 	date = re.match(r'([0-9]{4})-([0-9]{2})-([0-9]{2})', s["date"])
 	time = re.match(r'([0-9]{2}):([0-9]{2})', s["time"])
 	s["startTime"] = [int(date.group(1)), int(date.group(2))-1, int(date.group(3)), int(time.group(1)), int(time.group(2))]
 	s["duration"] = int(s["duration"])
-	sessions[s["number"]] = s
+	if s["number"] != "":
+		sessions[s["number"]] = s
+	else:
+		s["number"] = "_" + str(next_internal_id)
+		sessions["_" + str(next_internal_id)] = s
+		next_internal_id = next_internal_id + 1
 
 print("Parsing talks csv...")
 f = open( 'talks.csv', 'r' )  
