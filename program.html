@@ -18,7 +18,7 @@
 	<script type="text/x-template" id="sessiondetail-template">
 	<div class="overlay">
 	<div class="header" onclick="window.history.back();" v-bind:class="{passed: status == 'passed'}">
-		<h2><span class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}{{ statusText }}</span>
+		<h2><span class="title"><span v-if="!session.number.startsWith('_')" class="id">{{ session.number }}:</span> {{ session.title }}{{ statusText }}</span>
 			<span class="close"> ╳ </span>
 		</h2>
 	</div>
@@ -116,12 +116,16 @@
 				<div v-if="timeslot.days != null" v-bind:id = "filterDay == '' ? '/' + timeslot.day : null" class="days">
 					<vlink v-for="d in timeslot.days" v-bind:href="'#/' + d" v-bind:class="{current: d == timeslot.day}">{{ d }}</vlink>
 				</div>
-				<h2 class="timeslot" v-bind:class="{passed: timeslot.status == 'passed'}">{{ timeslot.title }}</h2>
+				<h2 class="timeslot" v-if="timeslot.sessions.length > 1 || !timeslot.sessions[0].kind.includes('break')" v-bind:class="{passed: timeslot.status == 'passed'}">{{ timeslot.title }}</h2>
 				<div class="sessions">
-					<div class="session" v-for="session in timeslot.sessions">
+					<div class="session" v-for="session in timeslot.sessions" v-bind:class="{single: timeslot.sessions.length == 1, break: session.kind.includes('break'), passed: timeslot.status == 'passed'}">
 						<div class="location">{{ session.room }}</div>
 						<div>
-							<vlink v-bind:href="'#/session/' + session.number"><div class="title"><span class="id">{{ session.number }}:</span> {{ session.title }}</div></vlink>
+							<vlink v-bind:href="'#/session/' + session.number">
+								<div class="title">
+									<span v-if="!session.number.startsWith('_')" class="id">{{ session.number }}:</span> {{ session.title }}
+								</div>
+							</vlink>
 
 							<div class="info">
 								<p v-if="(search).length >= 2" v-for="talk in filteredTalks[session.number]">
@@ -130,12 +134,7 @@
 								<span v-if="(search).length == 0" v-for="(talk, index) in filteredTalks[session.number]">
 									{{ talk.presenter }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">PP</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
 								</span>
-								<!--<span v-if="(search).length == 0" v-for="(talk, index) in filteredTalks[session.number]">
-									<span v-for="keyword in talk.keywords">
-										{{ keyword }}
-									</span>
-									<br/>
-								</span>-->
+								<span v-if="session.kind != 'presentations'" class="id">{{ session.duration }} minutes</span>
 							</div>
 						</div>
 					</div>

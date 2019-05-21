@@ -38,7 +38,7 @@
 				<div>Depature</div>
 				<div>Platform</div>
 				<li v-for="session in upcomingSessions" class="session">
-					<div class="id">{{ session.number }}</div>
+					<div v-if="!session.number.startswith('_')" class="id">{{ session.number }}</div>
 					<div class="title">{{ session.title }}<br/>
 					<marquee>
 						<span v-for="(talk, index) in filteredTalks[session.number]">

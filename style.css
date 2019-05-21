@@ -29,14 +29,19 @@
 }
 
 
-.timeslot, .overlay .header {
+.timeslot, .overlay .header, .session.break {
 	border-top-color: #17c7d2;
-	background-color: rgba(23,199,210,0.1);
+	background-color: rgba(23,199,210,0.08);
+	/*background-image: linear-gradient(to bottom, rgba(23,199,210,0.1), transparent);*/
 }
 
-.timeslot.passed, .overlay .header.passed {
+.timeslot.passed, .overlay .header.passed, .session.break.passed {
 	border-top-color: rgba(51,51,51,0.2);
 	background-color: rgba(51,51,51,0.1);
+}
+
+.session.break, .session.break.passed {
+	background-color: transparent;
 }
 
 .id {
@@ -106,6 +111,7 @@ body {
 body{
 	font-family: 'IBM Plex Sans', sans-serif;
   	overflow:auto;
+  	margin: 0;
 }
 
 header {
@@ -151,8 +157,7 @@ header div {
 h2.timeslot {
 	border-top-style: solid;
 	border-top-width: 2px;
-	padding: 0.5em;
-
+	padding: 0.5em 1em;
 }
 
 .sessions {
@@ -182,6 +187,25 @@ h2.timeslot {
 	margin:  0.5em 1em;
 	flex-flow: row nowrap;
 	display: flex;
+}
+
+.session.single {
+ 	width: 100%;
+}
+
+.session.break {
+	border-top-style: solid;
+	border-top-width: 2px;
+	border-bottom-style: none;
+	margin-left: -1em;
+ 	margin-right: -1em;
+ 	margin-top: 2em;
+ 	margin-bottom: -1.2em;
+  	padding-right: : 1.5em;
+}
+
+.session.break .location {
+	padding-right: 0.2em;
 }
 
 .session .location {
