@@ -35,7 +35,7 @@ for t in reader:
 	date = re.match(r'([0-9]{4})-([0-9]{2})-([0-9]{2})', t["date"])
 	time = re.match(r'([0-9]{2}):([0-9]{2})', t["time"])
 	t["startTime"] = [int(date.group(1)), int(date.group(2))-1, int(date.group(3)), int(time.group(1)), int(time.group(2))]
-	t["duration"] = int(s["duration"])
+	t["duration"] = int(t["duration"])
 
 	#tr4w.analyze(t["title"] + " " + t["abstract"], candidate_pos = ['NOUN'], window_size=4, lower=False, stopwords = ["railways", "railway", "train", "rail", "%"])
 	#t["keywords"] = tr4w.get_keywords(1)

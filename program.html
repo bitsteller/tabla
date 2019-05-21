@@ -27,7 +27,7 @@
 			<div class="meta">
 				<div>
 					<div class="description">Chair</div>
-					<div class="value">{{ session.chair }}</div>
+					<div class="value">{{ session.chairs }}</div>
 				</div>
 				<div>
 					<div class="description">Room</div>
@@ -62,7 +62,7 @@
 
 			<div v-bind:id="'notes-for-session-' + session.number" style="display:none;">
 				<h2>{{ session.number }}: {{ session.title }}</h2>
-				<p>Chair: {{ session.chair }}</p>
+				<p>Chair: {{ session.chairs }}</p>
 				<br/>
 				<span v-if="talks">
 					<span v-for="talk in talks">
