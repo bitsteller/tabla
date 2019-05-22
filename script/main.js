@@ -1,3 +1,5 @@
+const timezoneOffset = 2; //Offset from UTC to display times, +2=CEST 
+
 const weekdays = new Array(7);
         weekdays[0] = "Sunday";
         weekdays[1] = "Monday";
@@ -42,11 +44,14 @@ function minutesBetween(a, b) {
 
 function toFormatTime(date) {
   try {
-    return date.toLocaleTimeString(navigator.language, {
-      hour: '2-digit',
-      minute:'2-digit',
-      hour12: false
-    });
+    var str = date.getHours().toString() + ":";
+    if (date.getMinutes() > 9) {
+      str += date.getMinutes().toString();
+    }
+    else {
+      str += "0" + date.getMinutes().toString();
+    }
+    return str;
   }
   catch (e) {
     return undefined;
@@ -446,7 +451,12 @@ window.addEventListener('popstate', function() {
 
 this.interval = setInterval(function() {
   if (!app.debug) {
-    app.now = new Date();
+    var now = new Date();
+    var localoffset = -(now.getTimezoneOffset()/60);
+    var offset = (timezoneOffset-localoffset) * 3600 * 1000;
+    var utc_timestamp = Date.UTC(now.getUTCFullYear(),now.getUTCMonth(), now.getUTCDate() , 
+      now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
+    app.now = new Date(new Date(utc_timestamp).getTime() + offset);
   }
   else {
     app.now.setMinutes(app.now.getMinutes() + 1 );
@@ -465,11 +475,17 @@ function loadProgram(url, tries = 5) {
       if (http_request.status == ok || http_request.status == local) {
         var program = JSON.parse(this.responseText);
         var sessionNumbers = Object.keys(program.sessions);
+        var today = new Date();  
+        var localoffset = -(today.getTimezoneOffset()/60);
+        var offset = (timezoneOffset-localoffset) * 3600 * 1000;
         for (var i = 0; i < sessionNumbers.length; i++) {
           try {
             var startTime = program.sessions[sessionNumbers[i]].startTime;
-            program.sessions[sessionNumbers[i]].startTime = new Date(startTime[0], startTime[1], startTime[2], startTime[3], startTime[4]);
-            program.sessions[sessionNumbers[i]].endTime = new Date(startTime[0], startTime[1], startTime[2], startTime[3], startTime[4] + program.sessions[sessionNumbers[i]].duration);       
+            startTime = new Date(Date.UTC(startTime[0], startTime[1]-1, startTime[2], startTime[3], startTime[4]));
+            endTime = new Date(startTime.getTime() + program.sessions[sessionNumbers[i]].duration * 60 * 1000);
+
+            program.sessions[sessionNumbers[i]].startTime = new Date(startTime.getTime() + offset);
+            program.sessions[sessionNumbers[i]].endTime = new Date(endTime.getTime() + offset);
           }
           catch (e) {
 
@@ -478,8 +494,11 @@ function loadProgram(url, tries = 5) {
         for (var i = 0; i < program.talks.length; i++) {
           try {
             var startTime = program.talks[i].startTime;
-            program.talks[i].startTime = new Date(startTime[0], startTime[1], startTime[2], startTime[3], startTime[4]);
-            program.talks[i].endTime = new Date(startTime[0], startTime[1], startTime[2], startTime[3], startTime[4] + program.talks[i].duration);       
+            startTime = new Date(Date.UTC(startTime[0], startTime[1]-1, startTime[2], startTime[3], startTime[4]));
+            endTime = new Date(startTime.getTime() +  program.talks[i].duration * 60 * 1000);
+
+            program.talks[i].startTime = new Date(startTime.getTime() + offset);
+            program.talks[i].endTime = new Date(endTime.getTime() + offset);    
           }
           catch (e) {
 

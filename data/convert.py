@@ -2,6 +2,11 @@ import csv
 import json  
 import re
 import os
+import datetime
+from dateutil.parser import parse
+from pytz import timezone
+
+tz = 'Europe/Stockholm'
 
 #import analyse
 #tr4w = analyse.TextRank4Keyword()
@@ -18,9 +23,10 @@ sessions = dict()
 next_internal_id = 0
 
 for s in reader:
-	date = re.match(r'([0-9]{4})-([0-9]{2})-([0-9]{2})', s["date"])
-	time = re.match(r'([0-9]{2}):([0-9]{2})', s["time"])
-	s["startTime"] = [int(date.group(1)), int(date.group(2))-1, int(date.group(3)), int(time.group(1)), int(time.group(2))]
+	date_str = s["date"] + " " + s["time"]
+	start = parse(date_str)
+	start_utc = timezone(tz).localize(start).utctimetuple()
+	s["startTime"] = start_utc[0:5]
 	s["duration"] = int(s["duration"])
 	if s["number"] != "":
 		sessions[s["number"]] = s
@@ -38,9 +44,10 @@ print("Converting talks...")
 talks = []
 
 for t in reader:
-	date = re.match(r'([0-9]{4})-([0-9]{2})-([0-9]{2})', t["date"])
-	time = re.match(r'([0-9]{2}):([0-9]{2})', t["time"])
-	t["startTime"] = [int(date.group(1)), int(date.group(2))-1, int(date.group(3)), int(time.group(1)), int(time.group(2))]
+	date_str = t["date"] + " " + t["time"]
+	start = parse(date_str)
+	start_utc = timezone(tz).localize(start).utctimetuple()
+	t["startTime"] = start_utc[0:5]
 	t["duration"] = int(t["duration"])
 
 	#tr4w.analyze(t["title"] + " " + t["abstract"], candidate_pos = ['NOUN'], window_size=4, lower=False, stopwords = ["railways", "railway", "train", "rail", "%"])
