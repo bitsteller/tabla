@@ -191,6 +191,7 @@ h2.timeslot, .session.break {
 
 .session.single {
  	flex-grow: 1;
+ 	max-width: 100%;
 }
 
 .session.break {
