@@ -6,7 +6,7 @@ Conference program display with focus on usability
 * Conference program website 
 	* Works great on all screen sizes (Mobile and Desktop)
 	* Built-in search function
-	* Highlight of current timeslot/talk during conference in real-time (*coming*)
+	* Highlight of current timeslot/talk during conference in real-time
 	* Export of sessions as calendar entry (ical)
 	* Export of session info for note taking
 	* Easily customizable due to the use of vue templates (*coming*)
