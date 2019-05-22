@@ -259,7 +259,7 @@ const app = new Vue({
     now: new Date(),
     includePast: false,
     search: "",
-    debug: true,
+    debug: false,
     filterDay: "",
     sessionsData: {},
     rooms: {},
