@@ -119,7 +119,11 @@
 				<h2 class="timeslot" v-if="timeslot.sessions.length > 0 && (timeslot.sessions.length > 1 || !(timeslot.sessions[0].kind.includes('break') || timeslot.sessions[0].kind.includes('lunch')))" v-bind:class="{passed: timeslot.status == 'passed'}">{{ timeslot.title }}</h2>
 				<div class="sessions">
 					<div class="session" v-for="session in timeslot.sessions" v-bind:class="{single: timeslot.sessions.length == 1, break: session.kind.includes('break') || session.kind.includes('lunch'), passed: timeslot.status == 'passed'}">
-						<div class="location">{{ session.room }}</div>
+						<div class="location">
+							<vlink v-bind:href="'#/session/' + session.number">
+								{{ session.room }}
+							</vlink>
+						</div>
 						<div class="info">
 							<vlink v-bind:href="'#/session/' + session.number">
 								<div class="title">

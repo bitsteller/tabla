@@ -180,8 +180,11 @@ h2.timeslot, .session.break {
 .sessions .session {
 	min-width: 250px;
 	width: 450px;
-	padding: 0.5em;
-	margin:  0.5em 1em;
+	padding: 0.4em;
+	margin-top: 0em;
+	margin-bottom: 0.5em;
+	margin-left: 1em;
+	margin-right: 1em;
 	flex-flow: row nowrap;
 	display: flex;
 }
@@ -202,6 +205,7 @@ h2.timeslot, .session.break {
 	font-size: x-large;
 	padding-right: 10px;
 	min-width: 2em;
+	text-align: right;
 }
 
 .session.break .location {
@@ -212,7 +216,7 @@ h2.timeslot, .session.break {
 	padding-left: 10px;
 	flex-grow: 1;
 	border-left-style: solid;
-	border-left-width: 2px;
+	border-left-width: 1.5px;
 }
 
 .session.break .info{
@@ -298,6 +302,8 @@ ul.talks .talk {
   color: white;
   flex-shrink: 0;
   flex-grow: 0;
+  font-size: small;
+  min-width: 3em;
 }
 
 ul.talks li .info {
@@ -310,7 +316,7 @@ ul.talks li .info {
 .timeline .line {
   flex-grow: 1;
   border-left-style: solid;
-  border-left-width: 3px;
+  border-left-width: 2.5px;
 }
 
 .timeline .line:first-child {
