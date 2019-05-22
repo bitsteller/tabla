@@ -46,14 +46,14 @@ body {
 }
 
 .display .session:nth-child(even) {
-	background-color: rgba(35,35,35,1.0);
+	background-color: rgba(40,40,40,1.0);
 }
 
 /*CSS*/
 
 body{
 	font-family: 'IBM Plex Sans', sans-serif;
-	font-size: 48pt;
+	font-size: 38pt;
 	margin: 0;
 }
 
