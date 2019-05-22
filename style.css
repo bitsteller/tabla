@@ -190,7 +190,7 @@ h2.timeslot, .session.break {
 }
 
 .session.single {
- 	width: 100%;
+ 	flex-grow: 1;
 }
 
 .session.break {
