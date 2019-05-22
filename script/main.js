@@ -255,12 +255,12 @@ Vue.component('talk', {
 const app = new Vue({
   el: '#app',
   data: {
-    currentRoute: window.location.hash,
+    currentRoute: "",
     now: new Date(),
     includePast: false,
     search: "",
     debug: true,
-    filterDay: "Monday", //TODO: next day
+    filterDay: "",
     sessionsData: {},
     rooms: {},
     talks: [],
@@ -367,7 +367,7 @@ const app = new Vue({
       timeslots.push(timeslot);
 
       timeslots = timeslots.filter(function(ts) { 
-        return app.filterDay == "" || ts.day == app.filterDay 
+        return app.filterDay == "" || ts.day == app.filterDay;
       });
 
       return timeslots;
@@ -403,6 +403,19 @@ const app = new Vue({
       }
 
       return filtered
+    },
+    defaultDay: function () {
+      var sessions = Object.values(this.sessions);
+      sessions.sort(function(a,b) {return a.startTime - b.startTime});
+      var conferenceStart = sessions[0].startTime;
+      var conferenceEnd = sessions[sessions.length-1].endTime;
+
+      if (this.now < conferenceStart || this.now > conferenceEnd) { //before and after conference: show first day
+        return weekdays[conferenceStart.getDay()];
+      }
+      else { //during conference
+        return weekdays[this.now.getDay()]; //show currentday
+      }
     }
   },
   watch : {
@@ -413,12 +426,28 @@ const app = new Vue({
           this.filterDay = day;
         }
         else if (newRoute.match(/^\#?$/g)) {
-          this.filterDay = 'Monday'; //TODO: next day
+          this.filterDay = this.defaultDay;
         }
       }
     },
+    sessionsData: function(newSessions, oldSessions) {
+      if (!this.currentRoute.match(/^\#\/([A-z0-9 ]+)$/g)) {
+        this.filterDay = this.defaultDay;
+      }
+    },
     search : function (newSearch, oldSearch) {
-      if (this.newSearch != "") {
+      if (newSearch == "") { //leaving search, go back to whole day
+        if (this.oldSearch != "") {
+          if (this.currentRoute.match(/^\#\/([A-z0-9 ]+)$/g)) {
+            var day = /\/([A-z0-9 ]+)/.exec(this.currentRoute)[1];
+            this.filterDay = day;
+          }
+          else if (newRoute.match(/^\#?$/g)) {
+            this.filterDay = this.defaultDay;
+          }
+        }
+      }
+      else { //show all days in search mode
         this.filterDay = "";
       }
     },
@@ -507,6 +536,7 @@ function loadProgram(url, tries = 5) {
         app.sessionsData = program.sessions;
         app.talks = program.talks;
         app.rooms = program.rooms;
+        app.currentRoute = window.location.hash;
       }
       else {
         if (tries > 0) {

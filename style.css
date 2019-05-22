@@ -349,6 +349,12 @@ ul.talks li .info {
 	font-size: large;
 }
 
+.message {
+	width: 100%;
+	text-align: center;
+	font-size: xx-large;
+	padding: 2em 0em;
+}
 
 
 footer {
