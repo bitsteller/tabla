@@ -20,14 +20,13 @@
   gray transparent : rgba(51,51,51,0.9);
  */
 
-.sessions .session, .meta>div {
+.session .info, .meta>div {
 	border-color: rgba(51,51,51,0.3);
 }
 
-.session .info, .talk .presenter, footer a {
+.session .detail, .talk .presenter, footer a {
 	color: rgba(51,51,51,0.6);
 }
-
 
 .timeslot, .overlay .header, .session.break {
 	border-top-color: #17c7d2;
@@ -154,7 +153,7 @@ header div {
 	flex-shrink: 1;
 }
 
-h2.timeslot {
+h2.timeslot, .session.break {
 	border-top-style: solid;
 	border-top-width: 2px;
 	padding: 0.5em 1em;
@@ -179,8 +178,6 @@ h2.timeslot {
 }
 
 .sessions .session {
-	border-style: solid;
-	border-width: 1px 0px;
 	min-width: 250px;
 	width: 450px;
 	padding: 0.5em;
@@ -194,9 +191,6 @@ h2.timeslot {
 }
 
 .session.break {
-	border-top-style: solid;
-	border-top-width: 2px;
-	border-bottom-style: none;
 	margin-left: -1em;
  	margin-right: -1em;
  	margin-top: 2em;
@@ -204,14 +198,25 @@ h2.timeslot {
   	padding-right: : 1.5em;
 }
 
+.session .location {
+	font-size: x-large;
+	padding-right: 10px;
+	min-width: 2em;
+}
+
 .session.break .location {
 	padding-right: 0.2em;
 }
 
-.session .location {
-	font-size: xx-large;
-	padding-right: 1em;
-	min-width: 0.8em;
+.session .info {
+	padding-left: 10px;
+	flex-grow: 1;
+	border-left-style: solid;
+	border-left-width: 2px;
+}
+
+.session.break .info{
+	border-left-style: none;
 }
 
 .session .title {
@@ -222,7 +227,7 @@ h2.timeslot {
 	text-decoration: none;
 }
 
-.session .info {
+.session .detail {
 	padding-top: 0.5em;
 }
 

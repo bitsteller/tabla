@@ -120,14 +120,14 @@
 				<div class="sessions">
 					<div class="session" v-for="session in timeslot.sessions" v-bind:class="{single: timeslot.sessions.length == 1, break: session.kind.includes('break') || session.kind.includes('lunch'), passed: timeslot.status == 'passed'}">
 						<div class="location">{{ session.room }}</div>
-						<div>
+						<div class="info">
 							<vlink v-bind:href="'#/session/' + session.number">
 								<div class="title">
 									<span v-if="!session.number.startsWith('_')" class="id">{{ session.number }}:</span> {{ session.title }}
 								</div>
 							</vlink>
 
-							<div class="info">
+							<div class="detail">
 								<p v-if="(search).length >= 2" v-for="talk in filteredTalks[session.number]">
 									{{ talk.title }} ({{ talk.presenter}})
 								</p>
