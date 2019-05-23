@@ -413,7 +413,7 @@ footer {
 .overlay .content {
 	font-size: larger;
   	overflow: scroll;
-  	scroll-behavior: smooth;
+  	overflow-scrolling: touch;
 }
 
 .overlay .header {
@@ -473,18 +473,6 @@ a.button:link {
 }
 .overlay-enter, .overlay-leave-to /* .fade-leave-active below version 2.1.8 */ {
   left: -1024px;
-}
-
-.detail-enter-active, .detail-leave-active {
-  transition: transform .3s ease;
-  transform: scaleY(1);
-  transform-origin: top;
-  opacity: 1;
-}
-.detail-enter, .detail-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  transform-origin: top;
-  transform: scaleY(0);
-  opacity: 0.1;
 }
 
 /* social icons */

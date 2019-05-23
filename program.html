@@ -100,9 +100,7 @@
 						{{ author.name }}, <a v-if="author.url != ''" v-bind:href="author.url">{{ author.organization }}</a><span v-if="author.url == ''">{{ author.organization }}</span><span v-if="index+1 < talk.authors.length"></br></span>
 					</span>
 				</div>
-				<transition name="detail">
-					<div v-show="showDetail" class="abstract" v-html="talk.abstract" class="abstract"></div>
-				</transition>
+				<div v-show="showDetail" class="abstract" v-html="talk.abstract" class="abstract"></div>
 			</span>
 		</div>
 	</script>
