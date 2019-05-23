@@ -93,7 +93,7 @@ function getiCalForSession(session, talks) {
   desc += String(session.description) + "\n\n";
   if (talks != undefined) {
       for (var i = 0; i < talks.length; i++) {
-      desc += toFormatTime(talks[i].startTime) + ": " + String(talks[i].title) + " (" + String(talks[i].presenter) + ")\n\n"
+      desc += toFormatTime(talks[i].startTime) + ": " + String(talks[i].title) + " (" + String(talks[i].presenter[0].name) + ")\n\n"
     }
   }
   desc = desc.replace(/\n/g, "\\n");
@@ -396,7 +396,13 @@ const app = new Vue({
           var numberMatch = talk.number.toLowerCase().includes(app.search.toLowerCase());
           var titleMatch = searchRegex(app.search).test(talk.title);
           var abstractMatch = searchRegex(app.search).test(talk.abstract);
-          var authorMatch = searchRegex(app.search).test(talk.authors);
+          var authorMatch = false;
+          for (var i = 0; i < talk.authors.length; i++) {
+            if (searchRegex(app.search).test(talk.authors[i].name) || searchRegex(app.search).test(talk.authors[i].organization)) {
+              authorMatch = true;
+              break;
+            }
+          }
 
           return numberMatch || titleMatch || abstractMatch || authorMatch;
         })

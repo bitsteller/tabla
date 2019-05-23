@@ -67,7 +67,11 @@
 				<span v-if="talks">
 					<span v-for="talk in talks">
 						<h3>{{ talk.title }}</h3>
-						<p>{{ talk.authors }}</p>
+						<p>
+							<span v-for="(author, index) in talk.authors">{{ author.name }} (<a v-if="author.url != ''" v-bind:href="author.url">{{ author.organization }}</a><span v-if="author.url == ''">{{ author.organization }}</span>)
+								<span v-if="index+1 < talk.authors.length">, </span>
+							</span>
+						</p>
 						<p><br/><br/></p>
 					</span>
 				</span>
@@ -87,8 +91,15 @@
 				<div class="title" v-on:click='showDetail = !showDetail'>
 					{{ talk.title }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">Professional&nbsp;paper</span>
 				</div>
-				<div class="presenter" v-on:click='showDetail = !showDetail'>{{ talk.presenter}}</div>
-				<div v-show="showDetail" class="presenter">Authors: {{ talk.authors }} </div>
+				<div class="presenter" v-on:click='showDetail = !showDetail' v-if= "talk.presenter.length > 0">
+					{{ talk.presenter[0].name }} (<a v-if="talk.presenter[0].url != ''" v-bind:href="talk.presenter[0].url">{{ talk.presenter[0].organization }}</a><span v-if="talk.presenter[0].url == ''">{{ talk.presenter[0].organization }}</span>)
+				</div>
+				<div v-show="showDetail" class="presenter">Authors: 
+					<span v-for="(author, index) in talk.authors">
+						{{ author.name }} (<a v-if="author.url != ''" v-bind:href="author.url">{{ author.organization }}</a><span v-if="author.url == ''">{{ author.organization }}</span>)
+						<span v-if="index+1 < talk.authors.length">, </span>
+					</span>
+				</div>
 				<div v-show="showDetail" class="abstract" v-html="talk.abstract"></div>
 			</span>
 		</div>
@@ -134,10 +145,12 @@
 
 							<div class="detail">
 								<p v-if="(search).length >= 2" v-for="talk in filteredTalks[session.number]">
-									{{ talk.title }} ({{ talk.presenter}})
+									{{ talk.title }} <span v-if= "talk.presenter.length > 0">({{talk.presenter[0].name}})</span>
 								</p>
 								<span v-if="(search).length == 0" v-for="(talk, index) in filteredTalks[session.number]">
-									{{ talk.presenter }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">PP</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
+									<span v-if= "talk.presenter.length > 0">{{talk.presenter[0].name}}</span>
+									<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">PP</span>
+									<span v-if="index+1 < filteredTalks[session.number].length">, </span>
 								</span>
 							</div>
 						</div>

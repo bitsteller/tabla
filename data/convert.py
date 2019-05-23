@@ -49,10 +49,35 @@ for t in reader:
 	start_utc = timezone(tz).localize(start).utctimetuple()
 	t["startTime"] = start_utc[0:5]
 	t["duration"] = int(t["duration"])
+	t["authors_str"] = t["authors"]
+	t["authors"] = []
+	t["presenter"] = []
 
 	#tr4w.analyze(t["title"] + " " + t["abstract"], candidate_pos = ['NOUN'], window_size=4, lower=False, stopwords = ["railways", "railway", "train", "rail", "%"])
 	#t["keywords"] = tr4w.get_keywords(1)
 	talks.append(t)
+
+
+print("Parsing authors csv...")
+f = open( 'authors.csv', 'r' )  
+f.readline()
+reader = csv.DictReader( f, fieldnames = ( "talk", "firstname", "lastname", "country", "organization", "email", "url", "personid", "presenter"))  
+
+for a in reader:
+	talk = [t for t in talks if t["number"] == a["talk"]]
+	if len(talk) > 0:
+		talk = talk[0]
+		author = {"name": a["firstname"] + " " + a["lastname"],
+				  "firstname": a["firstname"],
+				  "lastname": a["lastname"],
+				  "country": a["country"],
+				  "organization": a["organization"],
+				  "url": a["url"],
+				  "presenter": True if a["presenter"] == "yes" else False
+				  }
+		talk["authors"].append(author)
+		if author["presenter"]:
+			talk["presenter"].append(author)
 
 
 if os.path.isfile('submissions.csv'):
@@ -81,11 +106,11 @@ print("JSON saved!")
 print("Export latex for proceedings...")
 valid_talks = []
 for talk in talks:
-	if talk["authors"] != "" and "category" in talk:
+	if talk["authors_str"] != "" and "category" in talk:
 		valid_talks.append(talk)
 
-valid_talks.sort(key = lambda talk: re.search(r'([\w-]+)(,| and|$)', talk["authors"]).group(1))
-tex = "\n".join(["\\includeabstract{" + talk["title"].replace("\\","") + "}{" + talk["authors"] + "}{" + talk["session"] + "}{" + talk["number"] + "}{" + talk["category"] + "}{" + talk["accepts_publication"] + "}" for talk in valid_talks])
+valid_talks.sort(key = lambda talk: re.search(r'([\w-]+)(,| and|$)', talk["authors_str"]).group(1))
+tex = "\n".join(["\\includeabstract{" + talk["title"].replace("\\","") + "}{" + talk["authors_str"] + "}{" + talk["session"] + "}{" + talk["number"] + "}{" + talk["category"] + "}{" + talk["accepts_publication"] + "}" for talk in valid_talks])
 tex = tex.replace("&", "\\&")
 tex = tex.replace("&", "\\%")
 
