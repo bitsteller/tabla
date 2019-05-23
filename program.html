@@ -126,9 +126,10 @@
 						</div>
 						<div class="info">
 							<vlink v-bind:href="'#/session/' + session.number">
-								<div class="title">
+								<span class="title">
 									<span v-if="!session.number.startsWith('_')" class="id">{{ session.number }}:</span> {{ session.title }}
-								</div>
+								</span>
+								<span v-if="session.kind != 'presentations'"> {{ session.duration }} minutes</span>
 							</vlink>
 
 							<div class="detail">
@@ -138,7 +139,6 @@
 								<span v-if="(search).length == 0" v-for="(talk, index) in filteredTalks[session.number]">
 									{{ talk.presenter }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">PP</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
 								</span>
-								<span v-if="session.kind != 'presentations'" class="id">{{ session.duration }} minutes</span>
 							</div>
 						</div>
 					</div>
