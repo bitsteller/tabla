@@ -89,14 +89,16 @@
 			</div>
 			<span class="info">
 				<div class="title" v-on:click='showDetail = !showDetail'>
-					{{ talk.title }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">Professional&nbsp;paper</span>
+					<a class="button" v-if= "!showDetail"> ℹ︎ </a>
+					<a class="button" v-if= "showDetail"> ╳ </a>
+					{{ talk.title }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">Professional&nbsp;paper</span> 
 				</div>
-				<div class="presenter" v-on:click='showDetail = !showDetail' v-if= "talk.presenter.length > 0">
-					{{ talk.presenter[0].name }} (<a v-if="talk.presenter[0].url != ''" v-bind:href="talk.presenter[0].url">{{ talk.presenter[0].organization }}</a><span v-if="talk.presenter[0].url == ''">{{ talk.presenter[0].organization }}</span>)
+				<div class="presenter" v-on:click='showDetail = !showDetail' v-if= "!showDetail && talk.presenter.length > 0">
+					{{ talk.presenter[0].name }}, <a v-if="talk.presenter[0].url != ''" v-bind:href="talk.presenter[0].url">{{ talk.presenter[0].organization }}</a><span v-if="talk.presenter[0].url == ''">{{ talk.presenter[0].organization }}</span>
 				</div>
-				<div v-show="showDetail" class="presenter">Authors: 
+				<div v-show="showDetail" class="presenter">
 					<span v-for="(author, index) in talk.authors">
-						{{ author.name }} (<a v-if="author.url != ''" v-bind:href="author.url">{{ author.organization }}</a><span v-if="author.url == ''">{{ author.organization }}</span>)<span v-if="index+1 < talk.authors.length">, </span>
+						{{ author.name }}, <a v-if="author.url != ''" v-bind:href="author.url">{{ author.organization }}</a><span v-if="author.url == ''">{{ author.organization }}</span><span v-if="index+1 < talk.authors.length"></br></span>
 					</span>
 				</div>
 				<div v-show="showDetail" class="abstract" v-html="talk.abstract" class="abstract"></div>
