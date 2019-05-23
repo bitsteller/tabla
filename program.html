@@ -89,8 +89,7 @@
 			</div>
 			<span class="info">
 				<div class="title" v-on:click='showDetail = !showDetail'>
-					<a class="button" v-if= "!showDetail"> ℹ︎ </a>
-					<a class="button" v-if= "showDetail"> ╳ </a>
+					<a class="button"><span v-if= "!showDetail"> ℹ︎ </span><span v-if= "showDetail"> ╳ </span></a>
 					{{ talk.title }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">Professional&nbsp;paper</span> 
 				</div>
 				<div class="presenter" v-on:click='showDetail = !showDetail' v-if= "!showDetail && talk.presenter.length > 0">
@@ -101,7 +100,9 @@
 						{{ author.name }}, <a v-if="author.url != ''" v-bind:href="author.url">{{ author.organization }}</a><span v-if="author.url == ''">{{ author.organization }}</span><span v-if="index+1 < talk.authors.length"></br></span>
 					</span>
 				</div>
-				<div v-show="showDetail" class="abstract" v-html="talk.abstract" class="abstract"></div>
+				<transition name="detail">
+					<div v-show="showDetail" class="abstract" v-html="talk.abstract" class="abstract"></div>
+				</transition>
 			</span>
 		</div>
 	</script>
@@ -161,8 +162,10 @@
 		<footer>
 			
 		</footer>
-	
-		<sessiondetail v-if="sessionDetail != null" v-bind:session="sessionDetail" v-bind:talks="talksBySession[sessionDetail.number]" v-bind:now="now"/>
+
+	 	 <transition name="overlay">
+			<sessiondetail v-if="sessionDetail != null" v-bind:session="sessionDetail" v-bind:talks="talksBySession[sessionDetail.number]" v-bind:now="now"/>
+		</transition>
 	</div>
 	<footer>
 		<a href="https://github.com/bitsteller/tabla">Tablå</a>

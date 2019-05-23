@@ -458,13 +458,35 @@ a.button {
 	border-width: 1px;
 	border-radius: 5px;
 	cursor: pointer;
-	min-width: 1.1em;
+	min-width: 1.5em;
+	min-height: 1.5em;
 	text-align: center;
 }
 
 a.button:link {
 	text-decoration: none;
 }
+
+
+.overlay-enter-active, .overlay-leave-active {
+  transition: .5s;
+}
+.overlay-enter, .overlay-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  left: -1024px;
+}
+
+.detail-enter-active, .detail-leave-active {
+  transition: transform .3s ease;
+  transform: scaleY(1);
+  transform-origin: top;
+  opacity: 1;
+}
+.detail-enter, .detail-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transform-origin: top;
+  transform: scaleY(0);
+  opacity: 0.1;
+}
+
 /* social icons */
 
 [data-icon]:before {
