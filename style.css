@@ -413,7 +413,7 @@ footer {
 .overlay .content {
 	font-size: larger;
   	overflow: scroll;
-  	overflow-scrolling: touch;
+  	-webkit-overflow-scrolling: touch;
 }
 
 .overlay .header {
