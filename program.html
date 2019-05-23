@@ -96,8 +96,7 @@
 				</div>
 				<div v-show="showDetail" class="presenter">Authors: 
 					<span v-for="(author, index) in talk.authors">
-						{{ author.name }} (<a v-if="author.url != ''" v-bind:href="author.url">{{ author.organization }}</a><span v-if="author.url == ''">{{ author.organization }}</span>)
-						<span v-if="index+1 < talk.authors.length">, </span>
+						{{ author.name }} (<a v-if="author.url != ''" v-bind:href="author.url">{{ author.organization }}</a><span v-if="author.url == ''">{{ author.organization }}</span>)<span v-if="index+1 < talk.authors.length">, </span>
 					</span>
 				</div>
 				<div v-show="showDetail" class="abstract" v-html="talk.abstract" class="abstract"></div>
@@ -148,9 +147,7 @@
 									{{ talk.title }} <span v-if= "talk.presenter.length > 0">({{talk.presenter[0].name}})</span>
 								</p>
 								<span v-if="(search).length == 0" v-for="(talk, index) in filteredTalks[session.number]">
-									<span v-if= "talk.presenter.length > 0">{{talk.presenter[0].name}}</span>
-									<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">PP</span>
-									<span v-if="index+1 < filteredTalks[session.number].length">, </span>
+									<span v-if= "talk.presenter.length > 0">{{talk.presenter[0].name}}</span><span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">PP</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
 								</span>
 							</div>
 						</div>
