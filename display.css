@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,700');
 
 @font-face {
   font-family: "socicon";
@@ -25,14 +25,18 @@
 	border-top-color: #17c7d2;
 }
 
-.id {
+.location {
 	color: #d65050;
 	padding-right: 0.2em;
 }
 
 header {
-	position: fixed;
 	background-color: #337ab7;
+	border-bottom-color: #17c7d2;
+}
+
+header h1 {
+	color: rgba(230,230,230,1);
 }
 
 body {
@@ -49,6 +53,15 @@ body {
 	background-color: rgba(40,40,40,1.0);
 }
 
+.display .header {
+	background-color:  #17c7d2;
+	color: black;
+}
+
+.livedot {
+	  background-color: #17c7d2;
+}
+
 /*CSS*/
 
 body{
@@ -58,16 +71,8 @@ body{
 }
 
 header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	padding: 1em;
-}
-
-div#app {
-	margin-top: 4em;
+	width: auto;
+	padding: 1px 1em;
 }
 
 .search {
@@ -85,10 +90,16 @@ div#app {
 /*display grid */
 
 .display {
-  display: grid;
-  grid-template-columns: minmax(2em,5%) 1fr minmax(5em,5%) minmax(4em,5%) minmax(5em,25%); /*number, title, time, room, status*/
   list-style: none;
   padding: 0;
+  margin:0;
+}
+
+.display .header {
+  display: grid;
+  grid-template-columns: minmax(2em,5%) 1fr minmax(5em,5%) minmax(4em,5%) minmax(5em,25%); /*number, title, time, room, status*/
+  padding: 0.3em 0em;
+  font-weight: 700;
 }
 
 .session {
@@ -98,8 +109,23 @@ div#app {
   padding: 0.3em 0.2em;
 }
 
+.session .title {
+	font-weight: 500;
+}
+
+.session .title .info {
+	font-weight: 400;
+	font-size: smaller;
+}
 
 /* social icons */
+
+.livedot {
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  display: inline-block;
+}
 
 [data-icon]:before {
   font-family: "socicon" !important;

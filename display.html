@@ -18,8 +18,10 @@
 <body>
 	<div id="app">
 		<header>
-			<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
+			<h1>Departures <img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/></h1>
+
 			<div v-if="debug">
+				<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
 				<button type="button" v-on:click="addMinutesToNow(-24*60)">-1d</button>
 				<button type="button" v-on:click="addMinutesToNow(-60)">-1h</button>
 				<button type="button" v-on:click="addMinutesToNow(-1)">-1min</button>
@@ -31,23 +33,25 @@
 		</header>
 
 		<section id="main">
-			<h1>Departures <img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/></h1>
 			<ul class="display">
-				<div></div>
-				<div>Destinaton</div>
-				<div>Depature</div>
-				<div>Platform</div>
+				<div class="header">
+					<div></div>
+					<div>Destinaton</div>
+					<div>Depature</div>
+					<div>Platform</div>
+				</div>
 				<li v-for="session in upcomingSessions" class="session">
 					<div class="id"><span v-if="!session.number.includes('_')">{{ session.number }}</span></div>
-					<div class="title">{{ session.title }}<br/>
-					<marquee>
-						<span v-for="(talk, index) in filteredTalks[session.number]" v-if="talk.presenter.length > 0">
-							{{ talk.presenter[0].name }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper"> (PP)</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
-						</span>
-					</marquee>
+					<div class="title">
+						<div>{{ session.title }}</div>
+						<marquee class="info">
+							<span v-for="(talk, index) in filteredTalks[session.number]" v-if="talk.presenter.length > 0">
+								{{ talk.presenter[0].name }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper"> (PP)</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
+							</span>
+						</marquee>
 					</div>
 					<div>{{ session.startTimeFormatted }}</div>
-					<div>{{ session.room }}</div>
+					<div class="location">{{ session.room }}</div>
 					<div>{{ session.statusText }}</div>
 				</li>
 			</ul>

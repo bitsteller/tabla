@@ -39,6 +39,11 @@
 	background-color: rgba(51,51,51,0.1);
 }
 
+.timeslot.ongoing, .overlay .header.ongoing, .session.break.ongoing {
+	border-top-color: #d65050;
+	background-color: rgba(214, 80, 80, 0.1)
+}
+
 .session.break, .session.break.passed {
 	background-color: transparent;
 }
@@ -107,6 +112,10 @@ body {
 .tag {
 	background-color: rgba(51,51,51,0.3);
 	color: rgba(255,255,255,1);
+}
+
+.livedot {
+	  background-color: #d65050
 }
 
 /*CSS*/
@@ -476,6 +485,14 @@ a.button:link {
 }
 
 /* social icons */
+
+.livedot {
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: -2px;
+}
 
 [data-icon]:before {
   font-family: "socicon" !important;

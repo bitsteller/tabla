@@ -190,10 +190,10 @@ Vue.component('sessiondetail', {
         var statusText = "";
 
         if (minLeftToStart <= 30 && minLeftToStart > 0) { //before
-          statusText = " － starts in " + minLeftToStart + " min";
+          statusText = "<span>starts in " + minLeftToStart + " min</span>";
         }
         else if (minLeftToStart <= 0 && minLeftToEnd >= 0) { //while
-          statusText = " － 🔴 " + minLeftToEnd + " min left";
+          statusText = '<span><span class="livedot"></span> ' + minLeftToEnd + " min left</span>";
         }
         return statusText
       }
@@ -290,15 +290,15 @@ const app = new Vue({
         var minLeftToEnd = minutesBetween(this.now, session.endTime)
 
         if (minLeftToStart <= 30 && minLeftToStart > 0) { //before
-          session.statusText = " － starts in " + minLeftToStart + " min";
+          session.statusText = '<span>starts in ' + minLeftToStart + " min</span>";
         }
         else if (minLeftToStart <= 0 && minLeftToEnd >= 0) { //while
           session.status = "ongoing";
-          session.statusText = " － 🔴 " + minLeftToEnd + " min left";
+          session.statusText = '<span><span class="livedot"></span> ' + minLeftToEnd + " min left</span>";
         }
         else if (minLeftToEnd < 0) { //after
           session.status = "passed";
-          session.statusText = " － passed";
+          session.statusText = "<span>passed</span>";
         }
         sess[keys[i]] = session;
       }
@@ -350,12 +350,11 @@ const app = new Vue({
         if (i == 0 || (sessions[i].startTime.getTime() != sessions[i-1].startTime.getTime()) || (sessions[i].endTime.getTime() != sessions[i-1].endTime.getTime())) {
           if (i > 0) {
             timeslots.push(timeslot);
-            timeslot = {timeslotTitle: "", days: null, day: "", sessions: []};
+            timeslot = {timeslotTitle: "", statusText: "", days: null, day: "", sessions: []};
           }
           timeslot.title = toFormatTime(sessions[i].startTime) + " - " + toFormatTime(sessions[i].endTime);
           timeslot.status = sessions[i].status;
           timeslot.statusText = sessions[i].statusText;
-          timeslot.title += timeslot.statusText;
 
           if (i == 0 || sessions[i].day != sessions[i-1].day) {
             timeslot.days = days;
@@ -500,6 +499,11 @@ this.interval = setInterval(function() {
 }, 10*1000)
 
 
+document.addEventListener('keypress', function(e) {
+  if (e.code == "Escape") {
+    app.debug = !app.debug;
+  }
+});
 
 function loadProgram(url, tries = 5) {
   var http_request = new XMLHttpRequest();

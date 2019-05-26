@@ -17,8 +17,11 @@
 	</script>
 	<script type="text/x-template" id="sessiondetail-template">
 	<div class="overlay">
-	<div class="header" onclick="window.history.back();" v-bind:class="{passed: status == 'passed'}">
-		<h2><span class="title"><span v-if="!session.number.startsWith('_')" class="id">{{ session.number }}:</span> {{ session.title }}{{ statusText }}</span>
+	<div class="header" onclick="window.history.back();" v-bind:class="{passed: status == 'passed', ongoing: status == 'ongoing'}">
+		<h2><span class="title">
+				<span v-if="!session.number.startsWith('_')" class="id">{{ session.number }}:</span> {{ session.title }}
+				<span v-if="statusText != ''"> — <span v-html="statusText"></span></span>
+			</span>
 			<span class="close"> ╳ </span>
 		</h2>
 	</div>
@@ -127,9 +130,11 @@
 				<div v-if="timeslot.days != null" v-bind:id = "filterDay == '' ? '/' + timeslot.day : null" class="days">
 					<vlink v-for="d in timeslot.days" v-bind:href="'#/' + d" v-bind:class="{current: d == timeslot.day}">{{ d }}</vlink>
 				</div>
-				<h2 class="timeslot" v-if="timeslot.sessions.length > 0 && (timeslot.sessions.length > 1 || !(timeslot.sessions[0].kind.includes('break') || timeslot.sessions[0].kind.includes('lunch')))" v-bind:class="{passed: timeslot.status == 'passed'}">{{ timeslot.title }}</h2>
+				<h2 class="timeslot" v-if="timeslot.sessions.length > 0 && (timeslot.sessions.length > 1 || !(timeslot.sessions[0].kind.includes('break') || timeslot.sessions[0].kind.includes('lunch')))" v-bind:class="{passed: timeslot.status == 'passed', ongoing: timeslot.status == 'ongoing'}">{{ timeslot.title }}
+					<span v-if="timeslot.statusText != ''"> — <span v-html="timeslot.statusText"></span></span>
+				</h2>
 				<div class="sessions">
-					<div class="session" v-for="session in timeslot.sessions" v-bind:class="{single: timeslot.sessions.length == 1, break: session.kind.includes('break') || session.kind.includes('lunch'), passed: timeslot.status == 'passed'}">
+					<div class="session" v-for="session in timeslot.sessions" v-bind:class="{single: timeslot.sessions.length == 1, break: session.kind.includes('break') || session.kind.includes('lunch'), passed: timeslot.status == 'passed', ongoing: timeslot.status == 'ongoing'}">
 						<div class="location">
 							<vlink v-bind:href="'#/session/' + session.number">
 								{{ session.room }}
