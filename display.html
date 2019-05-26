@@ -50,9 +50,9 @@
 							</span>
 						</marquee>
 					</div>
-					<div>{{ session.startTimeFormatted }}</div>
+					<div class="time">{{ session.startTimeFormatted }}</div>
 					<div class="location">{{ session.room }}</div>
-					<div>{{ session.statusText }}</div>
+					<div v-html="session.statusText"></div>
 				</li>
 			</ul>
 		</section>

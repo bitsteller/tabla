@@ -32,7 +32,6 @@
 
 header {
 	background-color: #337ab7;
-	border-bottom-color: #17c7d2;
 }
 
 header h1 {
@@ -59,7 +58,7 @@ body {
 }
 
 .livedot {
-	  background-color: #17c7d2;
+	  background-color: #d65050
 }
 
 /*CSS*/
@@ -109,6 +108,11 @@ header {
   padding: 0.3em 0.2em;
 }
 
+.session .id {
+	padding-right: 0.5em;
+	text-align: right;
+}
+
 .session .title {
 	font-weight: 500;
 }
@@ -118,6 +122,11 @@ header {
 	font-size: smaller;
 }
 
+.session .time {
+	text-align: right;
+	padding-right: 0.5em;
+}
+
 /* social icons */
 
 .livedot {
@@ -125,6 +134,7 @@ header {
   width: 1em;
   border-radius: 50%;
   display: inline-block;
+  margin-bottom: -2px;
 }
 
 [data-icon]:before {
