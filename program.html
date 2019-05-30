@@ -107,6 +107,15 @@
 			</span>
 		</div>
 	</script>
+	<script type="text/x-template" id="announcement-template">
+		<div class="announcement">
+			<a class="button" v-on:click="showDetail = !showDetail"><span v-if= "!showDetail"> ℹ︎ </span><span v-if= "showDetail"> ╳ </span></a>
+			<b>{{announcement.title}}</b>
+			<div v-if="showDetail">
+				<span v-html="announcement.message"/>
+			</div>
+		</div>
+	</script>
 </head>
 <body>
 	<div id="app">
@@ -126,6 +135,12 @@
 		</header>
 
 		<section id="main">
+			<transition name="fade">
+				<div v-if="announcements.length > 0">
+					<announcement v-for="announcement in announcements" v-bind:announcement="announcement"/>
+				</div>
+			</transition>
+
 			<div v-for="timeslot in filteredSessionsByTimeslot">
 				<div v-if="timeslot.days != null" v-bind:id = "filterDay == '' ? '/' + timeslot.day : null" class="days">
 					<vlink v-for="d in timeslot.days" v-bind:href="'#/' + d" v-bind:class="{current: d == timeslot.day}">{{ d }}</vlink>

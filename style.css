@@ -18,6 +18,7 @@
   dark : #47425d;
   gray transparent light : rgba(51,51,51,0.3);
   gray transparent : rgba(51,51,51,0.9);
+  yellow: rgba(246, 192, 48, 0.27);
  */
 
 .session .info, .meta>div {
@@ -51,6 +52,11 @@
 .id {
 	color: rgba(51,51,51,0.5);
 	padding-right: 0.2em;
+}
+
+.announcement {
+	border-left-color: rgba(246, 192, 48, 1.0);
+	background-color: rgba(246, 192, 48, 0.25);
 }
 
 header {
@@ -139,7 +145,7 @@ header {
 }
 
 div#app {
-	margin-top: 4em;
+	margin-top: 6em;
 }
 
 header div {
@@ -251,7 +257,6 @@ h2.timeslot, .session.break {
 
 .days {
 	padding: 1em;
-	padding-top: 1.8em;
 	overflow: scroll;
 	/*text-align: center;*/
 }
@@ -300,8 +305,9 @@ ul.talks .talk {
 	cursor: pointer;
 }
 
-.talk .title .button {
+.talk .title .button, .announcement .button {
 	float:right;
+	margin: 0px;
 }
 
 .timeline {
@@ -400,6 +406,15 @@ footer {
 	font-weight: 400;
 }
 
+.announcement {
+	border-left-style: solid;
+	border-left-width: 4px;
+	margin: 10px;
+	padding: 0.5em 0.8em;
+	min-height: 2em;
+	clear: both;
+}
+
 /* Overlay */
 
 .overlay {
@@ -467,8 +482,8 @@ a.button {
 	border-width: 1px;
 	border-radius: 5px;
 	cursor: pointer;
-	min-width: 1.5em;
-	min-height: 1.5em;
+	min-width: 1.4em;
+	min-height: 1.4em;
 	text-align: center;
 }
 
@@ -476,6 +491,15 @@ a.button:link {
 	text-decoration: none;
 }
 
+/* transitions */
+
+.fade-enter-active, .fade-leave-active {
+  transition: 1s;
+  opacity: 1;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 
 .overlay-enter-active, .overlay-leave-active {
   transition: .5s;
@@ -483,6 +507,7 @@ a.button:link {
 .overlay-enter, .overlay-leave-to /* .fade-leave-active below version 2.1.8 */ {
   left: -1024px;
 }
+
 
 /* social icons */
 

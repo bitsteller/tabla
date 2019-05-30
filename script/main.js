@@ -153,6 +153,21 @@ Vue.component('vlink', {
     }
 })
 
+Vue.component('announcement', {
+    template: '#announcement-template',
+    props: {
+      announcement: {
+        type:Object,
+        required: true
+      }
+    },
+    data: function() {
+      return {
+        showDetail: false
+      }
+    }
+})
+
 Vue.component('sessiondetail', {
     template: '#sessiondetail-template',
     props: {
@@ -270,7 +285,7 @@ const app = new Vue({
     talks: [],
     authors: {},
     sessionschairs: {},
-    announcementsData: {},
+    announcementsData: [],
     canceledTalks: [],
     conferenceName: conferenceName,
     conferenceUrl: conferenceUrl
@@ -386,8 +401,6 @@ const app = new Vue({
         return rv;
       }, {});
 
-      //todo sort by time
-
       return bysession;
     },
     filteredTalks: function() {
@@ -429,6 +442,41 @@ const app = new Vue({
       else { //during conference
         return weekdays[this.now.getDay()]; //show currentday
       }
+    },
+    announcementsForSession: function() {
+      var bysession = {};
+
+      for (var i = 0; i < this.announcementsData.length; i++) {
+        var a = this.announcementsData[i];
+        if ("considersSessions" in this.announcementsData[i]) {
+          for (var i = 0; i < a.considersSessions.length; i++) {
+            if (a.considersSessions[i] in bysession) {
+              bysession[a.considersSessions[i]].push(a);
+            }
+            else {
+              bysession[a.considersSessions[i]] = [a];
+            }
+          }
+        }
+      }
+      
+      return bysession;
+    },
+    announcements: function() {
+      var filteredAnnouncements = this.announcementsData.filter(function(a) {
+        var show = true;
+        if (a.considersAll == false) {
+          show = false;
+        } 
+        if (app.now < a.startTime) {
+          show = false; //don't show before start time
+        }
+        if (app.now > a.endTime) {
+          show = false; //don't show after end time
+        }
+        return show;
+      })
+      return filteredAnnouncements;
     }
   },
   watch : {
@@ -504,6 +552,7 @@ this.interval = setInterval(function() {
     app.now.setMinutes(app.now.getMinutes() + 1 );
     app.now = new Date(app.now.getTime());
   }
+  loadAnnouncements("./data/announcements.json");
 }, 10*1000)
 
 
@@ -568,7 +617,7 @@ function loadProgram(url, tries = 5) {
 
 function loadAnnouncements(url, tries = 2) {
   var http_request = new XMLHttpRequest();
-  http_request.open("GET", url, true);
+  http_request.open("GET", url + "?" + Math.random().toString(), true);
   http_request.onreadystatechange = function () {
     var done = 4, ok = 200, local = 0;
     if (http_request.readyState == done) {
@@ -591,7 +640,7 @@ function loadAnnouncements(url, tries = 2) {
               if ("endTime" in announcements[i]) {
                 var endTime = announcements[i].endTime;
                 endTime = new Date(Date.UTC(endTime[0], endTime[1]-1, endTime[2], endTime[3], endTime[4]));
-                announcements[i].endTime = new Date(startTime.getTime() + offset);
+                announcements[i].endTime = new Date(endTime.getTime() + offset);
               }
             }
             catch (e) {
@@ -615,3 +664,4 @@ function loadAnnouncements(url, tries = 2) {
 }
 
 loadProgram("./data/program.json");
+loadAnnouncements("./data/announcements.json");
