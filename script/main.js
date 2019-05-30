@@ -182,6 +182,10 @@ Vue.component('sessiondetail', {
       now: {
         type: Date,
         required: true
+      },
+      announcements: {
+        type: Array,
+        required: false
       }
     },
     computed: {
@@ -449,12 +453,12 @@ const app = new Vue({
       for (var i = 0; i < this.announcementsData.length; i++) {
         var a = this.announcementsData[i];
         if ("considersSessions" in this.announcementsData[i]) {
-          for (var i = 0; i < a.considersSessions.length; i++) {
-            if (a.considersSessions[i] in bysession) {
-              bysession[a.considersSessions[i]].push(a);
+          for (var j = 0; j < a.considersSessions.length; j++) {
+            if (a.considersSessions[j] in bysession) {
+              bysession[a.considersSessions[j]].push(a);
             }
             else {
-              bysession[a.considersSessions[i]] = [a];
+              bysession[a.considersSessions[j]] = [a];
             }
           }
         }

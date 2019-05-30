@@ -50,6 +50,8 @@
 				</div>
 			</div>
 
+			<announcement v-for="announcement in announcements" v-bind:announcement="announcement"/>
+
 			<p v-html="session.description"></p>
 
 			<ul class="talks">
@@ -182,7 +184,7 @@
 		</footer>
 
 	 	 <transition name="overlay">
-			<sessiondetail v-if="sessionDetail != null" v-bind:session="sessionDetail" v-bind:talks="talksBySession[sessionDetail.number]" v-bind:now="now"/>
+			<sessiondetail v-if="sessionDetail != null" v-bind:session="sessionDetail" v-bind:talks="talksBySession[sessionDetail.number]" v-bind:now="now" v-bind:announcements="announcementsForSession[sessionDetail.number]"/>
 		</transition>
 	</div>
 	<footer>

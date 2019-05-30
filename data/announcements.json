@@ -7,14 +7,6 @@
             "endTime": [2019, 6, 17, 8, 0],
             "considersSessions": ["1"],
             "considersAll": true
-        },
-        {
-            "title": "Welcome to Norrköping",
-            "message": "The conference takes place at Campus Norrköping, Kåkenhus. <a href='https://goo.gl/maps/EbkRe6VmQvPETpez9'>Map</a>",
-            "startTime": [2019, 6, 17, 7, 0],
-            "endTime": [2019, 6, 17, 8, 0],
-            "considersSessions": ["1"],
-            "considersAll": true
         }
     ],
     "canceledTalks": [],
