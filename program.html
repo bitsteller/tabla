@@ -111,7 +111,7 @@
 <body>
 	<div id="app">
 		<header>
-			<div class="conference"><a href="https://www.railnorrkoping2019.org">RailNorrköping</a></div>
+			<div class="conference"><a v-bind:href="conferenceUrl">{{ conferenceName }}</a></div>
 			<div v-if="debug">
 				<button type="button" v-on:click="addMinutesToNow(-24*60)">-1d</button>
 				<button type="button" v-on:click="addMinutesToNow(-60)">-1h</button>

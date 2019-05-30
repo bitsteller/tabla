@@ -1,4 +1,8 @@
 const timezoneOffset = 2; //Offset from UTC to display times, +2=CEST 
+const url = "http://railnorrkoping2019.org/program/program.html";
+const conferenceName = "RailNorrköping";
+const conferenceUrl = "https://www.railnorrkoping2019.org"
+
 
 const weekdays = new Array(7);
         weekdays[0] = "Sunday";
@@ -72,7 +76,7 @@ function copyToClip(str) {
 
 
 
-function getiCalForSession(session, talks) {
+function getiCalForSession(session, talks, url) {
   function pad(i) {
     return i < 10 ? `0${i}` : `${i}`;
   }
@@ -101,10 +105,10 @@ function getiCalForSession(session, talks) {
   var ical = "\
 BEGIN:VCALENDAR\n\
 VERSION:2.0\n\
-PRODID:https://www.railnorrkoping2019.org\n\
+PRODID:" + url + "\n\
 METHOD:PUBLISH\n\
 BEGIN:VEVENT\n\
-UID:" + String(session.number) + ".session@railnorrkoping2019.org\n\
+UID:" + String(session.number) + ".session@" + url + "\n\
 LOCATION;ENCODING=QUOTED-PRINTABLE:" + String(session.room) + ", Campus Norrköping\n\
 SUMMARY;ENCODING=QUOTED-PRINTABLE:" + String(session.number) + ": " + String(session.title) + "\n\
 DESCRIPTION;ENCODING=QUOTED-PRINTABLE:" + desc + "\n\
@@ -112,7 +116,7 @@ CLASS:PUBLIC\n\
 DTSTART:" + formatDateTime(session.startTime) + "\n\
 DTEND:" + formatDateTime(session.endTime) + "\n\
 DTSTAMP:" + formatDateTime(new Date()) + "\n\
-URL;VALUE=URI:" + "bitsteller.github.io/tabla/program.html#/session/" + String(session.number) + "\n\
+URL;VALUE=URI:" + url + "#/session/" + String(session.number) + "\n\
 END:VEVENT\n\
 END:VCALENDAR"
 
@@ -167,7 +171,7 @@ Vue.component('sessiondetail', {
     },
     computed: {
       ical: function() {
-        var str = getiCalForSession(this.session, this.talks);
+        var str = getiCalForSession(this.session, this.talks, url);
         return 'data:text/calendar;charset=utf-8,' + encodeURIComponent(str);
       },
       status: function() {
@@ -265,7 +269,9 @@ const app = new Vue({
     rooms: {},
     talks: [],
     authors: {},
-    sessionschairs: {}
+    sessionschairs: {},
+    conferenceName: conferenceName,
+    conferenceUrl: conferenceUrl
   },
   computed: {
     sessionDetail () {
