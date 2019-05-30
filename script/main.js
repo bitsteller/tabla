@@ -270,6 +270,8 @@ const app = new Vue({
     talks: [],
     authors: {},
     sessionschairs: {},
+    announcementsData: {},
+    canceledTalks: [],
     conferenceName: conferenceName,
     conferenceUrl: conferenceUrl
   },
@@ -557,6 +559,54 @@ function loadProgram(url, tries = 5) {
       else {
         if (tries > 0) {
           loadProgram(url, tries - 1);
+        }
+      }
+    }
+  };
+  http_request.send(null);
+}
+
+function loadAnnouncements(url, tries = 2) {
+  var http_request = new XMLHttpRequest();
+  http_request.open("GET", url, true);
+  http_request.onreadystatechange = function () {
+    var done = 4, ok = 200, local = 0;
+    if (http_request.readyState == done) {
+      if (http_request.status == ok || http_request.status == local) {
+        try {
+          var data = JSON.parse(this.responseText);
+          app.canceledTalks = data.canceledTalks;
+          var announcements = data.announcements;
+
+          var today = new Date();  
+          var localoffset = -(today.getTimezoneOffset()/60);
+          var offset = (timezoneOffset-localoffset) * 3600 * 1000;
+          for (var i = 0; i < announcements.length; i++) {
+            try {
+              if ("startTime" in announcements[i]) {
+                var startTime = announcements[i].startTime;
+                startTime = new Date(Date.UTC(startTime[0], startTime[1]-1, startTime[2], startTime[3], startTime[4]));
+                announcements[i].startTime = new Date(startTime.getTime() + offset);
+              }
+              if ("endTime" in announcements[i]) {
+                var endTime = announcements[i].endTime;
+                endTime = new Date(Date.UTC(endTime[0], endTime[1]-1, endTime[2], endTime[3], endTime[4]));
+                announcements[i].endTime = new Date(startTime.getTime() + offset);
+              }
+            }
+            catch (e) {
+
+            }
+          }
+          app.announcementsData = announcements;
+        }
+        catch (e) {
+
+        }
+      }
+      else {
+        if (tries > 0) {
+          loadAnnouncements(url, tries - 1);
         }
       }
     }
