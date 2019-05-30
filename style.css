@@ -59,6 +59,10 @@
 	background-color: rgba(246, 192, 48, 0.25);
 }
 
+.tag.announcements {
+	background-color: rgba(246, 192, 48, 0.8);
+}
+
 header {
 	background-color: rgba(200,200,200,0.8);
 }
@@ -405,6 +409,12 @@ footer {
 	margin: 0em 0.2em;
 	padding: 0em 0.25em;
 	font-weight: 400;
+	min-width: 1.5em;
+	text-align: center;
+}
+
+a.nounderline:link {
+	text-decoration: none;
 }
 
 .announcement {

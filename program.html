@@ -120,8 +120,15 @@
 	</script>
 </head>
 <body>
+	<a id="announcements"/>
 	<div id="app">
 		<header>
+			<transition name="fade">
+				<div v-if="announcements.length > 0">
+					<a href="#announcements" class="nounderline"><div class="tag announcements">{{announcements.length}}</div></a>
+				</div>
+			</transition>
+
 			<div class="conference"><a v-bind:href="conferenceUrl">{{ conferenceName }}</a></div>
 			<div v-if="debug">
 				<button type="button" v-on:click="addMinutesToNow(-24*60)">-1d</button>
