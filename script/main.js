@@ -177,7 +177,8 @@ Vue.component('sessiondetail', {
       },
       talks: {
         type: Array,
-        required: false
+        required: false,
+        default: function() {return new Array();}
       },
       now: {
         type: Date,
@@ -185,7 +186,13 @@ Vue.component('sessiondetail', {
       },
       announcements: {
         type: Array,
-        required: false
+        required: false,
+        default: function() {return new Array();}
+      },
+      canceledTalks: {
+        type: Array,
+        required: false,
+        default: function() {return new Array();}
       }
     },
     computed: {
@@ -254,6 +261,11 @@ Vue.component('talk', {
       now: {
         type: Date,
         required: true
+      },
+      canceled: {
+        type: Boolean,
+        required: false,
+        default: false
       }
     },
     computed: {

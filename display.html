@@ -46,7 +46,7 @@
 						<div>{{ session.title }}</div>
 						<marquee class="info">
 							<span v-for="(talk, index) in filteredTalks[session.number]" v-if="talk.presenter.length > 0">
-								{{ talk.presenter[0].name }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper"> (PP)</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
+								<span v-bind:class="{canceled: canceledTalks.includes(talk.number)}">{{ talk.presenter[0].name }}</span><span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper"> (PP)</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
 							</span>
 							<span v-for="announcement in announcementsForSession[session.number]">+++ <span v-html="announcement.message"></span> +++</span>
 						</marquee>

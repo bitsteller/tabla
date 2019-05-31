@@ -310,6 +310,10 @@ ul.talks .talk {
 	cursor: pointer;
 }
 
+.talk.canceled .title, span.canceled {
+	text-decoration: line-through;
+}
+
 .talk .title .button, .announcement .button {
 	float:right;
 	margin: 0px;

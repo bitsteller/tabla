@@ -127,6 +127,10 @@ header {
 	padding-right: 0.5em;
 }
 
+span.canceled {
+  text-decoration: line-through;
+}
+
 /* social icons */
 
 .livedot {
