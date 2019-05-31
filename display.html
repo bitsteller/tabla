@@ -48,11 +48,15 @@
 							<span v-for="(talk, index) in filteredTalks[session.number]" v-if="talk.presenter.length > 0">
 								{{ talk.presenter[0].name }}<span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper"> (PP)</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
 							</span>
+							<span v-for="announcement in announcementsForSession[session.number]">+++ <span v-html="announcement.message"></span> +++</span>
 						</marquee>
 					</div>
 					<div class="time">{{ session.startTimeFormatted }}</div>
 					<div class="location">{{ session.room }}</div>
-					<div v-html="session.statusText"></div>
+					<div>
+						<div v-html="session.statusText"></div>
+						<div v-for="announcement in announcementsForSession[session.number]">{{ announcement.title }}</div>
+					</div>
 				</li>
 			</ul>
 		</section>
