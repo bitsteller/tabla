@@ -303,9 +303,10 @@ const app = new Vue({
     sessionschairs: {},
     announcementsData: [],
     canceledTalks: [],
+    programVersion: 0,
     conferenceName: conferenceName,
     conferenceUrl: conferenceUrl,
-    phase: 0,
+    phase: 0
   },
   computed: {
     sessionDetail () {
@@ -526,6 +527,33 @@ const app = new Vue({
         presentersHTML[session.number] = html;
       }
       return presentersHTML;
+    },
+    displayCycle: function() {
+      var cycle = [];
+      for (var p = 0; p < 3; p++) {
+        cycle.push({
+          "displayView": "program",
+          "displayIndex": 0
+        });
+      }
+      var announcements = this.announcements;
+      for (var i = 0; i < announcements.length; i++) {
+        for (var p = 0; p < 1; p++) {
+          cycle.push({
+            "displayView": "announcement",
+            "displayIndex": i
+          });
+        }
+      }
+      return cycle;
+    },
+    displayView: function() {
+      var currentPhase = this.displayCycle[this.phase % this.displayCycle.length];
+      return currentPhase.displayView;
+    },
+    displayIndex: function() {
+      var currentPhase = this.displayCycle[this.phase % this.displayCycle.length];
+      return currentPhase.displayIndex;
     }
   },
   watch : {
@@ -604,7 +632,7 @@ this.interval = setInterval(function() {
   loadAnnouncements("./data/announcements.json");
 
   app.phase = (app.phase + 1) % 100;
-}, 10*1000)
+}, 40*1000)
 
 
 document.addEventListener('keypress', function(e) {
@@ -613,9 +641,9 @@ document.addEventListener('keypress', function(e) {
   }
 });
 
-function loadProgram(url, tries = 5) {
+function loadProgram(url, tries = 5, version = 0) {
   var http_request = new XMLHttpRequest();
-  http_request.open("GET", url, true);
+  http_request.open("GET", url + "?" + version.toString(), true);
   http_request.onreadystatechange = function () {
     var done = 4, ok = 200, local = 0;
     if (http_request.readyState == done) {
@@ -675,6 +703,12 @@ function loadAnnouncements(url, tries = 2) {
       if (http_request.status == ok || http_request.status == local) {
         try {
           var data = JSON.parse(this.responseText);
+
+          if (data.programVersion != app.programVersion) { //program outdated, update
+            app.programVersion = data.programVersion;
+            loadProgram("./data/program.json");
+          }
+
           app.canceledTalks = data.canceledTalks;
           var announcements = data.announcements;
 

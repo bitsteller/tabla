@@ -33,44 +33,54 @@
 </head>
 <body>
 	<div id="app">
-		<header>
-			<h1>Departures <img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/></h1>
+		<div v-if="debug">
+			<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
+			<button type="button" v-on:click="addMinutesToNow(-24*60)">-1d</button>
+			<button type="button" v-on:click="addMinutesToNow(-60)">-1h</button>
+			<button type="button" v-on:click="addMinutesToNow(-1)">-1min</button>
+			<button type="button" v-on:click="now = new Date(2019,5,17,9,0)">Start</button>
+			<button type="button" v-on:click="addMinutesToNow(1)">+1min</button>
+			<button type="button" v-on:click="addMinutesToNow(60)">+1h</button>
+			<button type="button" v-on:click="addMinutesToNow(24*60)">+1d</button>
+		</div>
+		<span v-if="displayView == 'program'">
+			<header>
+				<h1>Departures <img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/></h1>
+			</header>
 
-			<div v-if="debug">
-				<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
-				<button type="button" v-on:click="addMinutesToNow(-24*60)">-1d</button>
-				<button type="button" v-on:click="addMinutesToNow(-60)">-1h</button>
-				<button type="button" v-on:click="addMinutesToNow(-1)">-1min</button>
-				<button type="button" v-on:click="now = new Date(2019,5,17,9,0)">Start</button>
-				<button type="button" v-on:click="addMinutesToNow(1)">+1min</button>
-				<button type="button" v-on:click="addMinutesToNow(60)">+1h</button>
-				<button type="button" v-on:click="addMinutesToNow(24*60)">+1d</button>
-			</div>
-		</header>
-
-		<section id="main">
-			<ul class="display">
-				<div class="header">
-					<div></div>
-					<div>Destination</div>
-					<div>Depature</div>
-					<div>Platform</div>
-				</div>
-				<li v-for="session in upcomingSessions" class="session">
-					<div class="id"><span v-if="!session.number.includes('_')">{{ session.number }}</span></div>
-					<div class="title">
-						<div>{{ session.title }}</div>
-						<multimessage class="info" v-bind:phase="phase" field="message" v-bind:messages="(session.number in announcementsForSession ? announcementsForSession[session.number] : []).concat([presentersHTMLForSession[session.number]])">
+			<section id="main">
+				<ul class="display">
+					<div class="header">
+						<div></div>
+						<div>Destination</div>
+						<div>Depature</div>
+						<div>Platform</div>
 					</div>
-					<div class="time">{{ session.startTimeFormatted }}</div>
-					<div class="location"><multimessage max-length="10" v-bind:messages="[session.room]"/></div>
-					<multimessage v-bind:phase="phase" field="title" v-bind:messages="(session.number in announcementsForSession ? announcementsForSession[session.number] : []).concat([session.statusText])"/>
-				</li>
-			</ul>
-		</section>
-		<footer>
-			
-		</footer>
+					<li v-for="session in upcomingSessions" class="session">
+						<div class="id"><span v-if="!session.number.includes('_')">{{ session.number }}</span></div>
+						<div class="title">
+							<div>{{ session.title }}</div>
+							<multimessage class="info" v-bind:phase="phase" field="message" v-bind:messages="(session.number in announcementsForSession ? announcementsForSession[session.number] : []).concat([presentersHTMLForSession[session.number]])"/>
+						</div>
+						<div class="time">{{ session.startTimeFormatted }}</div>
+						<div class="location"><multimessage max-length=10 v-bind:messages="[session.room]"/></div>
+						<multimessage v-bind:phase="phase" field="title" v-bind:messages="(session.number in announcementsForSession ? announcementsForSession[session.number] : []).concat([session.statusText])"/>
+					</li>
+				</ul>
+			</section>
+			<footer>
+				
+			</footer>
+		</span>
+		<span v-if="displayView == 'announcement'">
+			<header>
+				<h1>Information <img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/></h1>
+			</header>
+			<div class="announcement">
+				<h2>{{ announcements[displayIndex].title }}</h2>
+				<p v-html="announcements[displayIndex].message"></p>
+			</div>
+		</span>
 	</div>
 </body>
 <script type="text/javascript" src="./script/display.js"></script>

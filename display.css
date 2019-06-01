@@ -131,6 +131,10 @@ span.canceled {
   text-decoration: line-through;
 }
 
+.announcement {
+	margin: 1em;
+}
+
 /* transitions */
 
 .fade-enter-active, .fade-leave-active {
