@@ -18,7 +18,7 @@ Vue.component('multimessage', {
       maxLength:{
         type: Number,
         required: false,
-        default: 100
+        default: 80
       }
     },
     computed: {

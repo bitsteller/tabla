@@ -85,6 +85,10 @@ header {
 	float:right;
 }
 
+h1 {
+	letter-spacing: 0.08em;
+}
+
 
 /*display grid */
 

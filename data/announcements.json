@@ -7,14 +7,6 @@
             "considersAll": true,
             "startTime": [2019, 6, 16, 19, 0],
             "endTime": [2019, 6, 17, 8, 0]
-        },
-        {
-            "title": "This is a test announcement!",
-            "message": "Please ignore this.",
-            "considersSessions": ["2"],
-            "considersAll": true,
-            "startTime": [2019, 6, 1, 19, 0],
-            "endTime": [2019, 6, 1, 21, 0]
         }
     ],
     "canceledTalks": [],
