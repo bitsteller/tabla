@@ -1,0 +1,128 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "announcements",
+    "canceledTalks",
+    "programVersion"
+  ],
+  "properties": {
+    "announcements": {
+      "$id": "#/properties/announcements",
+      "type": "array",
+      "title": "The Announcements Schema",
+      "items": {
+        "$id": "#/properties/announcements/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": [
+          "title",
+          "message",
+          "considersSessions",
+          "considersAll",
+          "startTime",
+          "endTime"
+        ],
+        "properties": {
+          "title": {
+            "$id": "#/properties/announcements/items/properties/title",
+            "type": "string",
+            "title": "The Title Schema",
+            "default": "",
+            "examples": [
+              "Welcome to RailNorrköping"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "message": {
+            "$id": "#/properties/announcements/items/properties/message",
+            "type": "string",
+            "title": "The Message Schema",
+            "default": "",
+            "examples": [
+              "The conference takes place at Campus Norrköping, Kåkenhus. <a href='https://goo.gl/maps/EbkRe6VmQvPETpez9'>Map</a>"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "considersSessions": {
+            "$id": "#/properties/announcements/items/properties/considersSessions",
+            "type": "array",
+            "title": "The Considerssessions Schema",
+            "items": {
+              "$id": "#/properties/announcements/items/properties/considersSessions/items",
+              "type": "string",
+              "title": "The Items Schema",
+              "default": "",
+              "examples": [
+                "1"
+              ],
+              "pattern": "^(.*)$"
+            }
+          },
+          "considersAll": {
+            "$id": "#/properties/announcements/items/properties/considersAll",
+            "type": "boolean",
+            "title": "The Considersall Schema",
+            "default": false,
+            "examples": [
+              true
+            ]
+          },
+          "startTime": {
+            "$id": "#/properties/announcements/items/properties/startTime",
+            "type": "array",
+            "title": "The Starttime Schema",
+            "items": {
+              "$id": "#/properties/announcements/items/properties/startTime/items",
+              "type": "integer",
+              "title": "The Items Schema",
+              "default": 0,
+              "examples": [
+                2019,
+                6,
+                16,
+                19,
+                0
+              ]
+            }
+          },
+          "endTime": {
+            "$id": "#/properties/announcements/items/properties/endTime",
+            "type": "array",
+            "title": "The Endtime Schema",
+            "items": {
+              "$id": "#/properties/announcements/items/properties/endTime/items",
+              "type": "integer",
+              "title": "The Items Schema",
+              "default": 0,
+              "examples": [
+                2019,
+                6,
+                17,
+                8,
+                0
+              ]
+            }
+          }
+        }
+      }
+    },
+    "canceledTalks": {
+      "$id": "#/properties/canceledTalks",
+      "type": "array",
+      "title": "The Canceledtalks Schema"
+    },
+    "programVersion": {
+      "$id": "#/properties/programVersion",
+      "type": "integer",
+      "title": "The Programversion Schema",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    }
+  }
+}
