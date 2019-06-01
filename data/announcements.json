@@ -1,7 +1,7 @@
 {
     "announcements": [
         {
-            "title": "Welcome to RailNorrköping",
+            "title": "Welcome to RailNorrköping!",
             "message": "The conference takes place at Campus Norrköping, Kåkenhus. <a href='https://goo.gl/maps/EbkRe6VmQvPETpez9'>Map</a>",
             "considersSessions": ["1"],
             "considersAll": true,

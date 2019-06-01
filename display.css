@@ -119,7 +119,7 @@ header {
 
 .session .title .info {
 	font-weight: 400;
-	font-size: smaller;
+	font-size: 70%;
 }
 
 .session .time {
@@ -130,6 +130,17 @@ header {
 span.canceled {
   text-decoration: line-through;
 }
+
+/* transitions */
+
+.fade-enter-active, .fade-leave-active {
+  transition: 1s;
+  opacity: 1;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 
 /* social icons */
 

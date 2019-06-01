@@ -14,6 +14,22 @@
 		    <slot></slot>
 		  </a>
 	</script>
+	<script type="text/x-template" id="multimessage-template">
+		<div>
+			<span v-if="messages.length > 0">
+				<transition name="fade">
+					<div v-if="message.length > 0 && message.length < maxLength" class="message">
+						<span v-html="message"/>
+					</div>
+				</transition>
+				<transition name="fade">
+					<marquee v-if="message.length >= maxLength" class="message">
+						<span v-html="message"/>
+					</marquee>
+				</transition>
+			</span>
+		</div>
+	</script>
 </head>
 <body>
 	<div id="app">
@@ -36,7 +52,7 @@
 			<ul class="display">
 				<div class="header">
 					<div></div>
-					<div>Destinaton</div>
+					<div>Destination</div>
 					<div>Depature</div>
 					<div>Platform</div>
 				</div>
@@ -44,19 +60,11 @@
 					<div class="id"><span v-if="!session.number.includes('_')">{{ session.number }}</span></div>
 					<div class="title">
 						<div>{{ session.title }}</div>
-						<marquee class="info">
-							<span v-for="(talk, index) in filteredTalks[session.number]" v-if="talk.presenter.length > 0">
-								<span v-bind:class="{canceled: canceledTalks.includes(talk.number)}">{{ talk.presenter[0].name }}</span><span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper"> (PP)</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
-							</span>
-							<span v-for="announcement in announcementsForSession[session.number]">+++ <span v-html="announcement.message"></span> +++</span>
-						</marquee>
+						<multimessage class="info" v-bind:phase="phase" field="message" v-bind:messages="(session.number in announcementsForSession ? announcementsForSession[session.number] : []).concat([presentersHTMLForSession[session.number]])">
 					</div>
 					<div class="time">{{ session.startTimeFormatted }}</div>
-					<div class="location">{{ session.room }}</div>
-					<div>
-						<div v-html="session.statusText"></div>
-						<div v-for="announcement in announcementsForSession[session.number]">{{ announcement.title }}</div>
-					</div>
+					<div class="location"><multimessage max-length="10" v-bind:messages="[session.room]"/></div>
+					<multimessage v-bind:phase="phase" field="title" v-bind:messages="(session.number in announcementsForSession ? announcementsForSession[session.number] : []).concat([session.statusText])"/>
 				</li>
 			</ul>
 		</section>
@@ -65,5 +73,6 @@
 		</footer>
 	</div>
 </body>
+<script type="text/javascript" src="./script/display.js"></script>
 <script type="text/javascript" src="./script/main.js"></script>
 </html>

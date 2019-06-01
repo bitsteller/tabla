@@ -304,7 +304,8 @@ const app = new Vue({
     announcementsData: [],
     canceledTalks: [],
     conferenceName: conferenceName,
-    conferenceUrl: conferenceUrl
+    conferenceUrl: conferenceUrl,
+    phase: 0,
   },
   computed: {
     sessionDetail () {
@@ -322,6 +323,8 @@ const app = new Vue({
       for (var i = 0; i < keys.length; i++) {
         var session = this.sessionsData[keys[i]];
         session.startTimeFormatted = toFormatTime(session.startTime);
+
+        //status
         session.status = "upcoming";
         session.statusText = "";
 
@@ -339,6 +342,7 @@ const app = new Vue({
           session.status = "passed";
           session.statusText = "<span>passed</span>";
         }
+
         sess[keys[i]] = session;
       }
       return sess;
@@ -493,6 +497,35 @@ const app = new Vue({
         return show;
       })
       return filteredAnnouncements;
+    },
+    presentersHTMLForSession: function() {
+      var presentersHTML = {};
+      var sessions = Object.values(this.sessions);
+
+      for (var i = 0; i < sessions.length; i++) {
+        var session = sessions[i];
+        var html = "";
+        var talks = this.talksBySession[session.number];
+        if (talks != undefined) {
+          for (var j = 0; j < talks.length; j++) {
+            if (talks[j].presenter.length > 0) {
+              if (this.canceledTalks.includes(talks[j].number)) {
+                html += '<span class="canceled">';
+              }
+              else {
+                html += '<span>';
+              }
+              html += talks[j].presenter[0].name;
+              html += '</span>';
+              if (j < talks.length -1) {
+                html += ", ";
+              }
+            }
+          }
+        }
+        presentersHTML[session.number] = html;
+      }
+      return presentersHTML;
     }
   },
   watch : {
@@ -569,6 +602,8 @@ this.interval = setInterval(function() {
     app.now = new Date(app.now.getTime());
   }
   loadAnnouncements("./data/announcements.json");
+
+  app.phase = (app.phase + 1) % 100;
 }, 10*1000)
 
 
