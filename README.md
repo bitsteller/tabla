@@ -16,26 +16,24 @@ Conference program display with focus on usability
 * Support for ad-hoc changes in real-time
 * Support for announcements in real-time
 
-
-## Usage
+## Setup
 
 ### Import program from Easy chair
 
 1. Use the csv export from Easy chair. It is recommended also to export the submissions as Excel and convert to csv.
 2. Place the the files
-
 ```authors.csvrooms.csvsession_chairs.csvsessions.csvtalks.csv
 submissions.csv
 ```
-	
 into the Tablå /data folder.
-	
 3. Run the converter `python convert.py` in the /data folder. It will create the file `program.json`.
 
 ### Setup website
 
 1. Set the parameters in the first lines of `/script/main.js`, such as timezone, conference name, and url to your conference website.
 2. Upload the the Tablå folder, including subfolders to your webserver.
+
+## Usage
 
 ### Customizing
 
@@ -44,7 +42,10 @@ into the Tablå /data folder.
 
 ### Updating the program
 
-(TBD)
+1. Follow the steps under "Import program from EasyChair" above to create an updated `program.json` file. Upload the new file to your webserver in the /data folder.
+2. In `/data/announcements.json` increment the value `programVersion` by one. 
+
+Incrementing the version number ensures that all users will see the updated program immediately (otherwise it can take severaly hours due to caching and would require a page reload).
 
 ### Making announcements
 
