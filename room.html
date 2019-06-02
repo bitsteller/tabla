@@ -56,7 +56,7 @@
 
 		<span v-if="roomView == 'session'">
 			<header>
-				<h1>Session {{ upcomingSessions[0].number}} <span class="location">{{ upcomingSessions[0].room }}</span></h1>
+				<h1>{{ upcomingSessions[0].number}}: {{ upcomingSessions[0].title}} <span class="location">{{ upcomingSessions[0].room }}</span></h1>
 			</header>
 			<div class="announcement">
 				<p v-if="now <= talk.endTime" v-for="(talk, index) in talksBySession[upcomingSessions[0].number]">
