@@ -35,7 +35,7 @@
 	<div id="app">
 		<div v-if="showSettings">
 			<div>Settings:</div>
-			<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
+			<input type="text" class="search" v-model="search" placeholder="Room"/>
 			<button type="button" v-on:click="showSettings=false;">Close</button>
 		</div>
 		<div v-if="debug">
@@ -48,36 +48,46 @@
 			<button type="button" v-on:click="addMinutesToNow(24*60)">+1d</button>
 			<button type="button" v-on:click="phase = phase + 1">+1p</button>
 		</div>
-		<span v-if="displayView == 'program'">
-			<header>
-				<h1>Departures <img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/></h1>
-			</header>
+		<div v-if="search==''">
+			No room set. Set room by pressing ALT-S!
+		</div>
 
-			<section id="main">
-				<ul class="display">
-					<div class="header">
-						<div></div>
-						<div>Destination</div>
-						<div>Depature</div>
-						<div>Platform</div>
-					</div>
-					<li v-for="session in upcomingSessions" class="session">
-						<div class="id"><span v-if="!session.number.includes('_')">{{ session.number }}</span></div>
-						<div class="title">
-							<div>{{ session.title }}</div>
-							<multimessage class="info" v-bind:phase="phase" field="message" v-bind:messages="(session.number in announcementsForSession ? announcementsForSession[session.number] : []).concat([presentersHTMLForSession[session.number]])"/>
-						</div>
-						<div class="time">{{ session.startTimeFormatted }}</div>
-						<div class="location"><multimessage max-length=10 v-bind:messages="[session.room]"/></div>
-						<multimessage max-length=30 v-bind:phase="phase" field="title" v-bind:messages="(session.number in announcementsForSession ? announcementsForSession[session.number] : []).concat([session.statusText])"/>
-					</li>
-				</ul>
-			</section>
-			<footer>
-				
-			</footer>
+
+
+		<span v-if="roomView == 'session'">
+			<header>
+				<h1>Session {{ upcomingSessions[0].number}} <span class="location">{{ upcomingSessions[0].room }}</span></h1>
+			</header>
+			<div class="announcement">
+				<p v-if="now <= talk.endTime" v-for="(talk, index) in talksBySession[upcomingSessions[0].number]">
+					<span v-bind:class="{canceled: canceledTalks.includes(talk.number)}">{{ talk.title }}</span> <span v-if= "talk.presenter.length > 0">({{talk.presenter[0].name}})</span>
+				</p>
+			</div>
 		</span>
-		<span v-if="displayView == 'announcement'">
+		<span v-if="roomView == 'nextsession'">
+			<header>
+				<h1>
+					<span v-if="upcomingSessions[0].statusText == ''" class="time">Next session at {{ upcomingSessions[0].startTime | formatTime }}</span>
+					<span v-if="upcomingSessions[0].statusText != ''" class="time" v-html="upcomingSessions[0].statusText"></span>
+					<span class="location">{{ upcomingSessions[0].room }}</span>
+				</h1>
+			</header>
+			<div class="announcement">
+				<h2>{{ upcomingSessions[0].number}}: {{ upcomingSessions[0].title}}</h2>
+				<p v-for="(talk, index) in talksBySession[upcomingSessions[0].number]">
+					<span v-bind:class="{canceled: canceledTalks.includes(talk.number)}">{{ talk.title }}</span> <span v-if= "talk.presenter.length > 0">({{talk.presenter[0].name}})</span>
+				</p>
+			</div>
+		</span>
+		<span v-if="roomView == 'nomoresession'">
+			<header>
+				<h1>Information <span class="location">{{ search }}</span></h1>
+			</header>
+			<div class="announcement">
+				No upcoming sessions in this room.
+			</div>
+		</span>
+		<span v-if="roomView == 'announcement'">
 			<header>
 				<h1>Information <img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/></h1>
 			</header>

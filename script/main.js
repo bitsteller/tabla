@@ -273,7 +273,7 @@ Vue.component('talk', {
         var status = "upcoming";
 
         var minLeftToStart = minutesBetween(this.now, this.talk.startTime);
-        var minLeftToEnd = minutesBetween(this.now, this.talk.endTime)
+        var minLeftToEnd = minutesBetween(this.now, this.talk.endTime);
 
         if (minLeftToStart <= 0 && minLeftToEnd >= 0) { //while
           status = "ongoing";
@@ -295,6 +295,7 @@ const app = new Vue({
     includePast: false,
     search: "",
     debug: false,
+    showSettings: false,
     filterDay: "",
     sessionsData: {},
     rooms: {},
@@ -532,28 +533,83 @@ const app = new Vue({
       var cycle = [];
       for (var p = 0; p < 3; p++) {
         cycle.push({
-          "displayView": "program",
-          "displayIndex": 0
+          "view": "program",
+          "index": 0
         });
       }
       var announcements = this.announcements;
       for (var i = 0; i < announcements.length; i++) {
         for (var p = 0; p < 1; p++) {
           cycle.push({
-            "displayView": "announcement",
-            "displayIndex": i
+            "view": "announcement",
+            "index": i
           });
         }
       }
       return cycle;
     },
+    roomCycle: function() {
+      var cycle = [];
+      if (this.upcomingSessions.length > 0) {
+        if (this.upcomingSessions[0].status == "ongoing") { //during session
+          cycle.push({
+            "view": "session",
+            "index": 0
+          });
+        }
+        else { //before session
+          for (var p = 0; p < 3; p++) {
+            cycle.push({
+              "view": "nextsession",
+              "index": 0
+            });
+          }
+          var announcements = this.announcements;
+          for (var i = 0; i < announcements.length; i++) {
+            for (var p = 0; p < 1; p++) {
+              cycle.push({
+                "view": "announcement",
+                "index": i
+              });
+            }
+          }
+        }
+      }
+      else { //after last session
+        for (var p = 0; p < 3; p++) {
+          cycle.push({
+            "view": "nomoresession",
+            "index": 0
+          });
+        }
+        var announcements = this.announcements;
+        for (var i = 0; i < announcements.length; i++) {
+          for (var p = 0; p < 1; p++) {
+            cycle.push({
+              "view": "announcement",
+              "index": i
+            });
+          }
+        }
+      }
+
+      return cycle;
+    },
     displayView: function() {
       var currentPhase = this.displayCycle[this.phase % this.displayCycle.length];
-      return currentPhase.displayView;
+      return currentPhase.view;
     },
     displayIndex: function() {
       var currentPhase = this.displayCycle[this.phase % this.displayCycle.length];
-      return currentPhase.displayIndex;
+      return currentPhase.index;
+    },
+    roomView: function() {
+      var currentPhase = this.roomCycle[this.phase % this.roomCycle.length];
+      return currentPhase.view;
+    },
+    roomIndex: function() {
+      var currentPhase = this.roomCycle[this.phase % this.roomCycle.length];
+      return currentPhase.index;
     }
   },
   watch : {
@@ -636,10 +692,17 @@ this.interval = setInterval(function() {
 
 
 document.addEventListener('keypress', function(e) {
-  if (e.code == "Escape") {
+  if (e.altKey == true && e.code == "KeyD") {
     app.debug = !app.debug;
   }
 });
+
+document.addEventListener('keypress', function(e) {
+  if (e.altKey == true && e.code == "KeyS") {
+    app.showSettings = !app.showSettings;
+  }
+});
+
 
 function loadProgram(url, tries = 5, version = 0) {
   var http_request = new XMLHttpRequest();
