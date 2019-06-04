@@ -146,6 +146,16 @@ h1 .location {
 h2 .time {
 }
 
+
+.multimessage {
+  display: grid;
+}
+
+.message {
+  grid-column: 1;
+  grid-row: 1;
+}
+
 /* transitions */
 
 .fade-enter-active, .fade-leave-active {

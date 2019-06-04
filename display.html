@@ -15,15 +15,15 @@
 		  </a>
 	</script>
 	<script type="text/x-template" id="multimessage-template">
-		<div>
+		<div class="multimessage">
 			<span v-if="messages.length > 0">
-				<transition name="fade">
-					<div v-if="message.length > 0 && message.length < maxLength" class="message">
+				<transition name="fade" class="message">
+					<div v-show="message.length > 0 && message.length < maxLength" class="message" v-bind:key="phase">
 						<span v-html="message"/>
 					</div>
 				</transition>
 				<transition name="fade">
-					<marquee v-if="message.length >= maxLength" class="message">
+					<marquee v-show="message.length >= maxLength" class="message" v-bind:key="phase">
 						<span v-html="message"/>
 					</marquee>
 				</transition>
