@@ -33,12 +33,11 @@ into the Tablå /data folder.
 1. Set the parameters in the first lines of `/script/main.js`, such as timezone, conference name, and url to your conference website.
 2. Upload the the Tablå folder, including subfolders to your webserver.
 
-## Usage
-
-### Customizing
+## Customizing
 
 1. Optionally change the colors in `style.css`.
 
+## Last-minute changes and real-time announcements
 
 ### Updating the program
 
@@ -47,16 +46,26 @@ into the Tablå /data folder.
 
 Incrementing the version number ensures that all users will see the updated program immediately (otherwise it can take severaly hours due to caching and would require a page reload).
 
-### Making announcements
-
-Announcements are made by modifing the file /data/announcements.json.
-
-## Make an announcement
+## Announcements
 
 Announcements are displayed on displays and the program viewer in real-time (without page reload) in order to make it easy to reach out to all participants. You can make two types of announcements:
 
 * Announcements to all participants: Messages that are relevant for all conference participants. For example information about lunch/dinner, how to get to the conference, welcoming participants in the beginning and thank for coming in the end of the conference.
 * Announcements to participants of one (or several) sessions: Messages relevant only to those interested in a given session. For example a note that the room for the session has changed, a speaker/chair has been changed, if the session is delayed etc.
+
+## Canceling talks
+
+There is also support for marking specific talks as canceled, without removing them from the program. Canceled talks will be marked as strikethrough text in the program viewer and on the displays.
+
+A talk is marked as canceled as follows:
+
+1. In `announcements.json` add the talk numer quoted as string to the list `canceledTalks`. For example `canceledTalks: ["1","13"]` will marks the talks with number 1 and number 13 as canceled.
+
+
+### Make an announcement
+
+Announcements are made by modifing the file /data/announcements.json.
+
 
 The following fields *have* to be specified in an announcement:
 
@@ -91,11 +100,3 @@ Below is an example of an `announcement.json` file with one announcement:
     "programVersion": 1
 }
 ```
-
-## Canceling talks
-
-There is also support for marking specific talks as canceled, without removing them from the program. Canceled talks will be marked as strikethrough text in the program viewer and on the displays.
-
-A talk is marked as canceled as follows:
-
-1. In `announcements.json` add the talk numer quoted as string to the list `canceledTalks`. For example `canceledTalks: ["1","13"]` will marks the talks with number 1 and number 13 as canceled.
