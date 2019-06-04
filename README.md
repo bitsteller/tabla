@@ -58,19 +58,19 @@ Announcements are displayed on displays and the program viewer in real-time (wit
 * Announcements to all participants: Messages that are relevant for all conference participants. For example information about lunch/dinner, how to get to the conference, welcoming participants in the beginning and thank for coming in the end of the conference.
 * Announcements to participants of one (or several) sessions: Messages relevant only to those interested in a given session. For example a note that the room for the session has changed, a speaker/chair has been changed, if the session is delayed etc.
 
-The following fields have to be specified in an announcement:
+The following fields *have* to be specified in an announcement:
 
-* `title`: Very short summary (max 5 words), for example: `Room change` or `Welcome to the conference`. May only contain text.
-* `message`: The message, for example: `The room for this session has been changed to K3` or `The conference takes place at Campus Norrköping, Kåkenhus. <a href='https://goo.gl/maps/EbkRe6VmQvPETpez9'>Map</a>`. You can use HTML tags for formatting, but avoid pictures in announcements considering sessions.
+* `title`: Very short summary (max 5 words), for example: `"Room change"` or `"Welcome to the conference"`. May only contain text.
+* `message`: The message, for example: `"The room for this session has been changed to K3` or `The conference takes place at Campus Norrköping, Kåkenhus. <a href='https://goo.gl/maps/EbkRe6VmQvPETpez9'>Map</a>"`. You can use HTML tags for formatting, but avoid pictures in announcements considering sessions.
 * `considersSessions`: The list of session numbers (as quoted string) for which the announcement is relevant, for example `["1","5"]`
 * `considersAll`: If this announcement should be shown to all participants, `true` or `false`.
 
-If `considersAll: true` you may also specify
+If `considersAll: true` you *may* also specify:
 
 * `startTime`: Don't show the announcement before this time
 * `endTime`: Don't show the announcement after this time
 
-These times are speicifed as a list of integers `[YYYY,MM,DD,HH,mm]` in *UTC time*!
+These times are specified as a list of integers `[YYYY,MM,DD,HH,mm]` in *UTC time*!
 For example `[2019, 6, 17, 8, 0]` corresponds to 17 June 2019 8:00 UTC (which is 10:00 CEST).
 
 Below is an example of an `announcement.json` file with one announcement:
@@ -99,8 +99,3 @@ There is also support for marking specific talks as canceled, without removing t
 A talk is marked as canceled as follows:
 
 1. In `announcements.json` add the talk numer quoted as string to the list `canceledTalks`. For example `canceledTalks: ["1","13"]` will marks the talks with number 1 and number 13 as canceled.
-
-	
-
-
-*coming*
