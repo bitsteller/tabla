@@ -77,10 +77,11 @@
 				<multimessage class="location" max-length=5 v-bind:messages="[upcomingSessions[0].room]"/>
 			</header>
 			<div class="announcement">
-				<h2><multimessage max-length=100 v-bind:messages="[upcomingSessions[0].number + ': ' + upcomingSessions[0].title]"/></h2>
+				<h2><multimessage max-length=50 v-bind:messages="[upcomingSessions[0].number + ': ' + upcomingSessions[0].title]"/></h2>
 				<p v-for="(talk, index) in talksBySession[upcomingSessions[0].number]">
 					<span v-bind:class="{canceled: canceledTalks.includes(talk.number)}">{{ talk.title }}</span> <span v-if= "talk.presenter.length > 0">({{talk.presenter[0].name}})</span>
 				</p>
+				<img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/>
 			</div>
 		</span>
 		<span v-if="roomView == 'nomoresession'">

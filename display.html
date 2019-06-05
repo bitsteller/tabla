@@ -47,6 +47,7 @@
 			<button type="button" v-on:click="addMinutesToNow(60)">+1h</button>
 			<button type="button" v-on:click="addMinutesToNow(24*60)">+1d</button>
 			<button type="button" v-on:click="phase = phase + 1">+1p</button>
+			<span style="font-size: small;"> {{now | formatTime }}</span>
 		</div>
 		<span v-if="displayView == 'program'">
 			<header>

@@ -80,6 +80,14 @@ body{
 	padding: 0.5em;
 }
 
+.announcement .logo {
+  float:none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em;
+}
+
 header {
 	width: auto;
 	padding: 1px 1em;
