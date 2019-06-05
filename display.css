@@ -68,11 +68,6 @@ body{
 	margin: 0;
 }
 
-header {
-	width: auto;
-	padding: 1px 1em;
-}
-
 .search {
 	font-size: large;
 	max-width: 400px;
@@ -80,15 +75,34 @@ header {
 }
 
 .logo {
-	height: 1.6em;
+	height: 3em;
 	float:right;
+	padding: 0.5em;
+}
+
+header {
+	width: auto;
+	padding: 1px 1em;
+	max-height: 5em;
+	display: flex;
+	flex-flow: row nowrap;
+	margin-top: 10px;
 }
 
 h1 {
-	letter-spacing: 0.08em;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+  	overflow: hidden;
+  	flex-grow: 1;
 	margin: 0.3em 0em 0.4em 0em;
 }
 
+header .location {
+	max-width: 20%;
+	font-size: 2em;
+  	margin: 0.3em 0em;
+  	font-weight: bold;
+}
 
 /*display grid */
 
@@ -139,9 +153,7 @@ span.canceled {
 	margin: 1em;
 }
 
-h1 .location {
-	float:right;
-}
+
 
 h2 .time {
 }

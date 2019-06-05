@@ -139,6 +139,7 @@
 				<button type="button" v-on:click="addMinutesToNow(1)">+1min</button>
 				<button type="button" v-on:click="addMinutesToNow(60)">+1h</button>
 				<button type="button" v-on:click="addMinutesToNow(24*60)">+1d</button>
+				<span> {{now | formatTime }}</span>
 			</div>
 			<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
 			<div v-show="search != ''">{{ filteredSessions | count }} sessions found</div>

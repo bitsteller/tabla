@@ -47,6 +47,7 @@
 			<button type="button" v-on:click="addMinutesToNow(60)">+1h</button>
 			<button type="button" v-on:click="addMinutesToNow(24*60)">+1d</button>
 			<button type="button" v-on:click="phase = phase + 1">+1p</button>
+			<span style="font-size: small;"> {{now | formatTime }}</span>
 		</div>
 		<div v-if="search==''">
 			No room set. Set room by pressing ALT-S!
@@ -56,7 +57,10 @@
 
 		<span v-if="roomView == 'session'">
 			<header>
-				<h1>{{ upcomingSessions[0].number}}: {{ upcomingSessions[0].title}} <span class="location">{{ upcomingSessions[0].room }}</span></h1>
+				<h1>
+					{{ upcomingSessions[0].number}}: {{ upcomingSessions[0].title}} 
+				</h1>
+				<multimessage class="location" max-length=5 v-bind:messages="[upcomingSessions[0].room]"/>
 			</header>
 			<div class="announcement">
 				<p v-if="now <= talk.endTime" v-for="(talk, index) in talksBySession[upcomingSessions[0].number]">
@@ -69,11 +73,11 @@
 				<h1>
 					<span v-if="upcomingSessions[0].statusText == ''" class="time">Next session at {{ upcomingSessions[0].startTime | formatTime }}</span>
 					<span v-if="upcomingSessions[0].statusText != ''" class="time" v-html="upcomingSessions[0].statusText"></span>
-					<span class="location">{{ upcomingSessions[0].room }}</span>
 				</h1>
+				<multimessage class="location" max-length=5 v-bind:messages="[upcomingSessions[0].room]"/>
 			</header>
 			<div class="announcement">
-				<h2>{{ upcomingSessions[0].number}}: {{ upcomingSessions[0].title}}</h2>
+				<h2><multimessage max-length=100 v-bind:messages="[upcomingSessions[0].number + ': ' + upcomingSessions[0].title]"/></h2>
 				<p v-for="(talk, index) in talksBySession[upcomingSessions[0].number]">
 					<span v-bind:class="{canceled: canceledTalks.includes(talk.number)}">{{ talk.title }}</span> <span v-if= "talk.presenter.length > 0">({{talk.presenter[0].name}})</span>
 				</p>
@@ -81,15 +85,18 @@
 		</span>
 		<span v-if="roomView == 'nomoresession'">
 			<header>
-				<h1>Information <span class="location">{{ search }}</span></h1>
+				<h1>Information</h1>
+				<span class="location">{{ search }}</span>
 			</header>
 			<div class="announcement">
-				No upcoming sessions in this room.
+				No upcoming sessions in this room.</br>
+				 <img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/>
 			</div>
 		</span>
 		<span v-if="roomView == 'announcement'">
 			<header>
-				<h1>Information <img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/></h1>
+				<h1>Information</h1>
+				<img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/>
 			</header>
 			<div class="announcement">
 				<h2>{{ announcements[displayIndex].title }}</h2>
