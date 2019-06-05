@@ -24,7 +24,8 @@ Vue.component('multimessage', {
     computed: {
       message: function() {
         if (this.msgs.length > 0) {
-          return this.msgs[parseInt(this.phase) % this.msgs.length];
+          var msg = this.msgs[parseInt(this.phase) % this.msgs.length];
+          return msg;
         }
         else {
           return "";
@@ -49,6 +50,10 @@ Vue.component('multimessage', {
           m = this.messages;
         }
         return m;
+      },
+      textLength: function() {
+        var text = this.message.replace(/<\/?[^>]+(>|$)/g, "");
+        return text.length;
       }
     }
 })
