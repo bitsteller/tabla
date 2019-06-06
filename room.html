@@ -73,11 +73,13 @@
 					<p v-if="now < talk.startTime && now <= talk.endTime" v-for="(talk, index) in talksBySession[upcomingSessions[0].number]">
 						<span v-bind:class="{canceled: canceledTalks.includes(talk.number)}">{{ talk.title }}</span> <span v-if= "talk.presenter.length > 0">({{talk.presenter[0].name}})</span>
 					</p>
+					<img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/>
 				</div>
 			</span>
 			<span v-else>
 				<div class="announcement">
 					<p v-html="upcomingSessions[0].description"></p>
+					<img class="logo" src="http://www.railnorrkoping2019.org/wp-content/uploads/2018/05/LiU_RailNrk_white.png"/>
 				</div>
 			</span>
 		</span>
