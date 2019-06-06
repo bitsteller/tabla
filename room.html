@@ -62,8 +62,14 @@
 				</h1>
 				<multimessage class="location" max-length=5 v-bind:messages="[upcomingSessions[0].room]"/>
 			</header>
+			<div class="now" v-if="now >= talk.startTime && now <= talk.endTime" v-for="(talk, index) in talksBySession[upcomingSessions[0].number]">
+				<span class="minutesleft" v-bind:class="{low: Math.floor(((talk.endTime - now)/1000)/60) < 6}">{{ Math.floor(((talk.endTime - now)/1000)/60)}}</span>
+				<span>
+					<span v-bind:class="{canceled: canceledTalks.includes(talk.number)}">{{ talk.title }}</span> <span v-if= "talk.presenter.length > 0">({{talk.presenter[0].name}})</span>
+				</span>
+			</div>
 			<div class="announcement">
-				<p v-if="now <= talk.endTime" v-for="(talk, index) in talksBySession[upcomingSessions[0].number]">
+				<p v-if="now < talk.startTime && now <= talk.endTime" v-for="(talk, index) in talksBySession[upcomingSessions[0].number]">
 					<span v-bind:class="{canceled: canceledTalks.includes(talk.number)}">{{ talk.title }}</span> <span v-if= "talk.presenter.length > 0">({{talk.presenter[0].name}})</span>
 				</p>
 			</div>
