@@ -187,6 +187,28 @@ h2 .time {
 }
 
 
+
+.flip-enter-active, .flip-leave-active {
+  transition: 1s ease;
+  opacity: 1;
+  transform: rotateX(0deg);
+  transform-origin: center top; /* half of height */
+}
+.flip-enter /* .fade-leave-active below version 2.1.8 */ {
+  transition: 1s ease;
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transform-origin: center top; /* half of height */
+}
+
+.flip-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  transition: 1s ease;
+  opacity: 0;
+  transform: rotateX(90deg);
+  transform-origin: center top; /* half of height */
+}
+
+
 /* social icons */
 
 .livedot {

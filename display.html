@@ -17,12 +17,12 @@
 	<script type="text/x-template" id="multimessage-template">
 		<div class="multimessage">
 			<span v-if="messages.length > 0">
-				<transition name="fade" class="message">
+				<transition name="flip" class="message">
 					<div v-show="textLength > 0 && textLength < maxLength" class="message" v-bind:key="phase">
 						<span v-html="message"/>
 					</div>
 				</transition>
-				<transition name="fade">
+				<transition name="flip">
 					<marquee v-show="textLength >= maxLength" class="message" v-bind:key="phase">
 						<span v-html="message"/>
 					</marquee>
