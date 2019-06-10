@@ -11,7 +11,7 @@ Conference program display with focus on usability
 	* Export of session info for note taking
 	* Easily customizable due to the use of vue templates (*coming*)
 * Program display for information screens
-* Program display for individual rooms including talk timer (*coming*)
+* Program display for individual rooms including talk timer
 * Import of conference program directly from EasyChair
 * Support for ad-hoc changes in real-time
 * Support for announcements in real-time
