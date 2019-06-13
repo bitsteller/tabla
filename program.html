@@ -179,7 +179,7 @@
 									<span v-bind:class="{canceled: canceledTalks.includes(talk.number)}">{{ talk.title }}</span> <span v-if= "talk.presenter.length > 0">({{talk.presenter[0].name}})</span>
 								</p>
 								<span v-if="(search).length == 0" v-for="(talk, index) in filteredTalks[session.number]">
-									<span v-if= "talk.presenter.length > 0" v-on:click="search = talk.presenter[0].name" v-bind:class="{canceled: canceledTalks.includes(talk.number)}">{{talk.presenter[0].name}}</span><span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">PP</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
+									<span v-if= "talk.presenter.length > 0" v-bind:class="{canceled: canceledTalks.includes(talk.number)}">{{talk.presenter[0].name}}</span><span v-if="talk.category == 'industrial-paper'" class="tag" title="Professional paper">PP</span><span v-if="index+1 < filteredTalks[session.number].length">, </span>
 								</span>
 							</div>
 						</div>

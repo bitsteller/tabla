@@ -109,7 +109,7 @@
             "title": "Driver behaviour and support"
         }, 
         "11": {
-            "chairs": "Markus Bohlin", 
+            "chairs": "Anders Peterson", 
             "date": "2019-06-18", 
             "description": "<p>Keynote speaker Rob Goverde:&nbsp;<span style=\"font-size:10.0pt\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\"><span style=\"color:black\">Railway operations research and the development of digital railway traffic systems</span></span></span></p>\n\n<p>The plenary sessions may be very full, please be in good time. Session will also be streamed to room K2 (sound and presented screen).</p>\n", 
             "duration": 30, 
@@ -325,7 +325,7 @@
             "title": "Delay analysis and prediction 4"
         }, 
         "16": {
-            "chairs": "Anders Peterson", 
+            "chairs": "Markus Bohlin", 
             "date": "2019-06-19", 
             "description": "<p>Keynote speaker Jonas Eliasson, Link\u00f6pping University:&nbsp;What is the social value of railway capacity? Connecting transport economics and railway operations research</p>\n\n<p>The plenary sessions may be very full, please be in good time. Session will also be streamed to room K2 (sound and presented screen).</p>\n", 
             "duration": 30, 
@@ -454,7 +454,7 @@
             "chairs": "Anders Peterson", 
             "date": "2019-06-17", 
             "description": "<p>Conference opening session.<br/>\nThe plenary sessions may be very full, please be in good time. Session will also be streamed to room K2 (sound and presented screen).</p>\n", 
-            "duration": 30, 
+            "duration": 40, 
             "kind": "empty", 
             "number": "2", 
             "room": "K4", 
@@ -940,7 +940,7 @@
             "chairs": "", 
             "date": "2019-06-17", 
             "description": "", 
-            "duration": 10, 
+            "duration": 30, 
             "kind": "coffee break", 
             "number": "_1", 
             "room": "", 
@@ -949,28 +949,28 @@
                 6, 
                 17, 
                 8, 
-                0
+                40
             ], 
-            "time": "10:00", 
-            "title": "Break"
+            "time": "10:40", 
+            "title": "Coffee Break"
         }, 
         "_10": {
             "chairs": "", 
             "date": "2019-06-18", 
-            "description": "", 
-            "duration": 10, 
-            "kind": "coffee break", 
+            "description": "<p>Short guided tour of central Norrk\u00f6ping and area around University.<br/>\nTour starts at entrance to conference venue and ends at V\u00e4rmekyrkan (i.e. place where conference dinner is held).</p>\n\n<p>Guidance will be in two groups, both starting at conference venue and and ending V\u00e4rmekyrkan.</p>\n", 
+            "duration": 30, 
+            "kind": "social", 
             "number": "_10", 
             "room": "", 
             "startTime": [
                 2019, 
                 6, 
                 18, 
-                14, 
-                20
+                17, 
+                0
             ], 
-            "time": "16:20", 
-            "title": "Break"
+            "time": "19:00", 
+            "title": "Guided tour in Norrk\u00f6ping"
         }, 
         "_11": {
             "chairs": "", 
@@ -1138,27 +1138,9 @@
             "chairs": "", 
             "date": "2019-06-17", 
             "description": "", 
-            "duration": 30, 
-            "kind": "coffee break", 
-            "number": "_2", 
-            "room": "", 
-            "startTime": [
-                2019, 
-                6, 
-                17, 
-                8, 
-                40
-            ], 
-            "time": "10:40", 
-            "title": "Coffee Break"
-        }, 
-        "_3": {
-            "chairs": "", 
-            "date": "2019-06-17", 
-            "description": "", 
             "duration": 60, 
             "kind": "lunch", 
-            "number": "_3", 
+            "number": "_2", 
             "room": "", 
             "startTime": [
                 2019, 
@@ -1170,13 +1152,13 @@
             "time": "12:30", 
             "title": "Lunch Break"
         }, 
-        "_4": {
+        "_3": {
             "chairs": "", 
             "date": "2019-06-17", 
             "description": "", 
             "duration": 10, 
             "kind": "coffee break", 
-            "number": "_4", 
+            "number": "_3", 
             "room": "", 
             "startTime": [
                 2019, 
@@ -1188,13 +1170,13 @@
             "time": "14:30", 
             "title": "Break"
         }, 
-        "_5": {
+        "_4": {
             "chairs": "", 
             "date": "2019-06-17", 
             "description": "", 
             "duration": 30, 
             "kind": "coffee break", 
-            "number": "_5", 
+            "number": "_4", 
             "room": "", 
             "startTime": [
                 2019, 
@@ -1206,13 +1188,13 @@
             "time": "15:40", 
             "title": "Coffee Break"
         }, 
-        "_6": {
+        "_5": {
             "chairs": "", 
             "date": "2019-06-18", 
             "description": "", 
             "duration": 30, 
             "kind": "coffee break", 
-            "number": "_6", 
+            "number": "_5", 
             "room": "", 
             "startTime": [
                 2019, 
@@ -1224,13 +1206,13 @@
             "time": "10:20", 
             "title": "Coffee Break"
         }, 
-        "_7": {
+        "_6": {
             "chairs": "", 
             "date": "2019-06-18", 
             "description": "", 
             "duration": 60, 
             "kind": "lunch", 
-            "number": "_7", 
+            "number": "_6", 
             "room": "", 
             "startTime": [
                 2019, 
@@ -1242,13 +1224,13 @@
             "time": "12:10", 
             "title": "Lunch Break"
         }, 
-        "_8": {
+        "_7": {
             "chairs": "", 
             "date": "2019-06-18", 
             "description": "", 
             "duration": 10, 
             "kind": "coffee break", 
-            "number": "_8", 
+            "number": "_7", 
             "room": "", 
             "startTime": [
                 2019, 
@@ -1260,13 +1242,13 @@
             "time": "13:40", 
             "title": "Break"
         }, 
-        "_9": {
+        "_8": {
             "chairs": "", 
             "date": "2019-06-18", 
             "description": "", 
             "duration": 30, 
             "kind": "coffee break", 
-            "number": "_9", 
+            "number": "_8", 
             "room": "", 
             "startTime": [
                 2019, 
@@ -1277,6 +1259,24 @@
             ], 
             "time": "14:50", 
             "title": "Coffee Break"
+        }, 
+        "_9": {
+            "chairs": "", 
+            "date": "2019-06-18", 
+            "description": "", 
+            "duration": 10, 
+            "kind": "coffee break", 
+            "number": "_9", 
+            "room": "", 
+            "startTime": [
+                2019, 
+                6, 
+                18, 
+                14, 
+                20
+            ], 
+            "time": "16:20", 
+            "title": "Break"
         }
     }, 
     "talks": [
@@ -2933,7 +2933,7 @@
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
-            "abstract": "<p><span style=\"font-size:11.0pt\"><span style=\"font-family:&quot;Calibri&quot;,sans-serif\">The link between transport economics and railway operations analysis is unfortunately rather weak, even if there are notable exceptions of people and studies briding the gap. The aim of this keynote is therefore to illustrate how concepts and methods from transport economics can be useful for railway operations analysis, in particular analyses of capacity and regulations. I argue that the two fields have much to gain from a closer integration. I will do this by discussing three issues: a) timetable assumptions in cost-benefit analysis (CBA) of increased capacity, b) crowding costs in public transport CBA, and c) slot trading between operators in open-access railway markets.</span></span></p>", 
+            "abstract": "<p><span style=\"font-size:12px\"><span style=\"background-color:transparent; color:#47425d; font-family:&quot;Source Sans Pro&quot;,sans-serif\">The Swedish railway sector has been in the forefront in Europe when it comes to regulatory reforms, organisational changes and market opening since the late 1980s. This plenary presentation gives an overview of the changes, the various steps in the reform process, and the current organisation. The experience and effects of the reforms (both positive and negative) are presented in terms of a number of developments: infrastructure investments, national and regional demand for rail services, market entry, tenders, prices, punctuality, safety, speed and capacity etc. An overall assessment summarizes the pros and cons and some current issues that remain to be handled.</span></span></p>", 
             "authors": [
                 {
                     "country": "Sweden", 
