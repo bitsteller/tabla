@@ -7,8 +7,22 @@
             "considersAll": true,
             "startTime": [2019, 6, 16, 19, 0],
             "endTime": [2019, 6, 17, 8, 0]
+        },
+        {
+            "title": "Livestream in K2",
+            "message": "This session is also livestreamed in room K2 (sound and presented screen)",
+            "considersSessions": ["2", "3", "11", "16"],
+            "considersAll": false
+        },
+        {
+            "title": "Livestream of plenary sessions",
+            "message": "The plenary sessions may be very full, please be in good time. Plenary sessions will also be streamed to room K2 (sound and presented screen).",
+            "considersSessions": [],
+            "considersAll": true,
+            "startTime": [2019, 6, 17, 7, 0],
+            "endTime": [2019, 6, 17, 8, 30]
         }
     ],
     "canceledTalks": [],
-    "programVersion": 1
+    "programVersion": 3
 }

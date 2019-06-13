@@ -73,7 +73,7 @@
             "title": "Capacity analysis 3"
         }, 
         "10C": {
-            "chairs": "Ambra Toletti", 
+            "chairs": "Anders Peterson", 
             "date": "2019-06-18", 
             "description": "", 
             "duration": 80, 
@@ -111,7 +111,7 @@
         "11": {
             "chairs": "Markus Bohlin", 
             "date": "2019-06-18", 
-            "description": "<p>Keynote speaker Rob Goverde:&nbsp;<span style=\"font-size:10.0pt\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\"><span style=\"color:black\">Railway operations research and the development of digital railway traffic systems</span></span></span></p>\n", 
+            "description": "<p>Keynote speaker Rob Goverde:&nbsp;<span style=\"font-size:10.0pt\"><span style=\"font-family:&quot;Arial&quot;,sans-serif\"><span style=\"color:black\">Railway operations research and the development of digital railway traffic systems</span></span></span></p>\n\n<p>The plenary sessions may be very full, please be in good time. Session will also be streamed to room K2 (sound and presented screen).</p>\n", 
             "duration": 30, 
             "kind": "presentations", 
             "number": "11", 
@@ -268,7 +268,7 @@
                 30
             ], 
             "time": "16:30", 
-            "title": "AIROR Business Meeting"
+            "title": "IAROR Business Meeting"
         }, 
         "15A": {
             "chairs": "Francesco Corman", 
@@ -327,7 +327,7 @@
         "16": {
             "chairs": "Anders Peterson", 
             "date": "2019-06-19", 
-            "description": "<p>Keynote speaker: Jonas Eliasson</p>\n", 
+            "description": "<p>Keynote speaker Jonas Eliasson, Link\u00f6pping University:&nbsp;What is the social value of railway capacity? Connecting transport economics and railway operations research</p>\n\n<p>The plenary sessions may be very full, please be in good time. Session will also be streamed to room K2 (sound and presented screen).</p>\n", 
             "duration": 30, 
             "kind": "presentations", 
             "number": "16", 
@@ -379,7 +379,7 @@
             "title": "Rolling stock scheduling and maintenance 2"
         }, 
         "17C": {
-            "chairs": "Anders Peterson", 
+            "chairs": "Emma Solinen", 
             "date": "2019-06-19", 
             "description": "", 
             "duration": 40, 
@@ -417,7 +417,7 @@
         "18": {
             "chairs": "Anders Peterson", 
             "date": "2019-06-19", 
-            "description": "<p>Conference closing session</p>\n", 
+            "description": "<p>Conference closing session.</p>\n\n<p>The plenary sessions may be very full, please be in good time. Session will also be streamed to room K2 (sound and presented screen).</p>\n", 
             "duration": 20, 
             "kind": "empty", 
             "number": "18", 
@@ -453,7 +453,7 @@
         "2": {
             "chairs": "Anders Peterson", 
             "date": "2019-06-17", 
-            "description": "<p>Conference opening session</p>\n", 
+            "description": "<p>Conference opening session.<br/>\nThe plenary sessions may be very full, please be in good time. Session will also be streamed to room K2 (sound and presented screen).</p>\n", 
             "duration": 30, 
             "kind": "empty", 
             "number": "2", 
@@ -525,7 +525,7 @@
         "3": {
             "chairs": "Martin Joborn", 
             "date": "2019-06-17", 
-            "description": "<p>Keynote speaker Gunnar Alexandersson: Railway Market Opening and Organisational Reforms in Sweden</p>\n", 
+            "description": "<p>Keynote speaker Gunnar Alexandersson: Railway Market Opening and Organisational Reforms in Sweden.</p>\n\n<p>The plenary sessions may be very full, please be in good time. Session will also be streamed to room K2 (sound and presented screen).</p>\n", 
             "duration": 30, 
             "kind": "presentations", 
             "number": "3", 
@@ -1855,7 +1855,7 @@
                     "lastname": "Brauner", 
                     "name": "Anna-Katharina Brauner", 
                     "organization": "TU Darmstadt", 
-                    "presenter": true, 
+                    "presenter": false, 
                     "url": ""
                 }, 
                 {
@@ -1864,7 +1864,7 @@
                     "lastname": "Oetting", 
                     "name": "Andreas Oetting", 
                     "organization": "TU Darmstadt", 
-                    "presenter": false, 
+                    "presenter": true, 
                     "url": ""
                 }
             ], 
@@ -1876,9 +1876,9 @@
             "presenter": [
                 {
                     "country": "Germany", 
-                    "firstname": "Anna-Katharina", 
-                    "lastname": "Brauner", 
-                    "name": "Anna-Katharina Brauner", 
+                    "firstname": "Andreas", 
+                    "lastname": "Oetting", 
+                    "name": "Andreas Oetting", 
                     "organization": "TU Darmstadt", 
                     "presenter": true, 
                     "url": ""
@@ -6645,7 +6645,7 @@
                     "lastname": "Albrecht", 
                     "name": "Amie Albrecht", 
                     "organization": "University of South Australia", 
-                    "presenter": false, 
+                    "presenter": true, 
                     "url": ""
                 }, 
                 {
@@ -6663,7 +6663,7 @@
                     "lastname": "Galapitage", 
                     "name": "Ajini Galapitage", 
                     "organization": "University of South Australia", 
-                    "presenter": true, 
+                    "presenter": false, 
                     "url": ""
                 }
             ], 
@@ -6675,9 +6675,9 @@
             "presenter": [
                 {
                     "country": "Australia", 
-                    "firstname": "Ajini", 
-                    "lastname": "Galapitage", 
-                    "name": "Ajini Galapitage", 
+                    "firstname": "Amie", 
+                    "lastname": "Albrecht", 
+                    "name": "Amie Albrecht", 
                     "organization": "University of South Australia", 
                     "presenter": true, 
                     "url": ""
