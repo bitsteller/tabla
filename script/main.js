@@ -692,14 +692,14 @@ this.interval = setInterval(function() {
 
 
 document.addEventListener('keypress', function(e) {
-  if (e.altKey == true && e.code == "KeyD") {
+  if (e.altKey == true && e.key == "1") {
     app.debug = !app.debug;
     e.preventDefault()
   }
 });
 
 document.addEventListener('keypress', function(e) {
-  if (e.altKey == true && e.code == "KeyS") {
+  if (e.altKey == true && e.key == "2") {
     app.showSettings = !app.showSettings;
     e.preventDefault()
   }
