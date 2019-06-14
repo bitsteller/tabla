@@ -41,6 +41,8 @@ header h1 {
 body {
 	color: #17c7d2;
 	background-color: rgba(21,21,21,1.0);
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .search {
@@ -80,7 +82,7 @@ body {
 
 body{
 	font-family: 'IBM Plex Sans', sans-serif;
-	font-size: 36pt;
+	font-size: 32pt;
 	margin: 0;
 }
 
