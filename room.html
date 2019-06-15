@@ -48,9 +48,10 @@
 			<button type="button" v-on:click="addMinutesToNow(24*60)">+1d</button>
 			<button type="button" v-on:click="phase = phase + 1">+1p</button>
 			<span style="font-size: small;"> {{now | formatTime }}</span>
+			<span style="font-size: small;"> Press ? to enter debug mode</span>
 		</div>
 		<div v-if="search==''">
-			No room set. Set room by pressing ALT-S!
+			No room set. Set room by pressing the + key!
 		</div>
 
 
