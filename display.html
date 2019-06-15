@@ -37,6 +37,7 @@
 			<div>Settings:</div>
 			<input type="text" class="search" v-model="search" placeholder="Search title, presenter, room, Session ID..."/>
 			<button type="button" v-on:click="showSettings=false;">Close</button>
+			<span style="font-size: small;"> Press ? to enter debug mode</span>
 		</div>
 		<div v-if="debug">
 			<button type="button" v-on:click="addMinutesToNow(-24*60)">-1d</button>

@@ -24,7 +24,7 @@
         },
         {
             "title": "Technical visit",
-            "message": " Train to Hallsberg (chartered for us) departs at 12:10 from Norrköping C (Norrköping railway station). Walking time from conference venue to Norrköping C is about 15 minutes. Please, proceed as fast as possible from conference venue to railway station.",
+            "message": " Train to Hallsberg (chartered for us) departs at <b>12:10</b> from Norrköping C (Norrköping railway station). Walking time from conference venue to Norrköping C is about 15 minutes. Please, proceed as fast as possible from conference venue to railway station.",
             "considersSessions": [],
             "considersAll": true,
             "startTime": [2019, 6, 19, 9, 30],
