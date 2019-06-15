@@ -418,7 +418,7 @@
             "chairs": "Anders Peterson", 
             "date": "2019-06-19", 
             "description": "<p>Conference closing session.</p>\n\n<p>The plenary sessions may be very full, please be in good time. Session will also be streamed to room K2 (sound and presented screen).</p>\n", 
-            "duration": 20, 
+            "duration": 10, 
             "kind": "empty", 
             "number": "18", 
             "room": "K4", 
@@ -427,9 +427,9 @@
                 6, 
                 19, 
                 9, 
-                30
+                25
             ], 
-            "time": "11:30", 
+            "time": "11:25", 
             "title": "Closing session"
         }, 
         "19": {
@@ -1039,9 +1039,9 @@
                 6, 
                 19, 
                 9, 
-                50
+                35
             ], 
-            "time": "11:50", 
+            "time": "11:35", 
             "title": "Lunch Box Handout"
         }, 
         "_15": {
@@ -1065,8 +1065,8 @@
         "_16": {
             "chairs": "Anders Peterson", 
             "date": "2019-06-19", 
-            "description": "<p>Technical visit: Hallsberg railway junction</p>\n", 
-            "duration": 390, 
+            "description": "<p>Technical visit: Hallsberg railway junction</p>\n\n<p>Train to Hallsberg (chartered for us) departs at <strong>12:10</strong> from Norrk\u00f6ping C (Norrk\u00f6ping railway station).<br/>\nWalking time from conference venue to Norrk\u00f6ping C is about 15 minutes. Please, proceed as fast as possible from conference venue to railway station.</p>\n\n<p>Before leaving conference venue, pick up your lunch box (to eat on the train). (Potentially, lunch boxes will be delivered directly to the train.)</p>\n\n<p>Train arrives back at Norrk\u00f6ping at 18:58.</p>\n", 
+            "duration": 408, 
             "kind": "social", 
             "number": "_16", 
             "room": "", 
@@ -1075,9 +1075,9 @@
                 6, 
                 19, 
                 10, 
-                30
+                10
             ], 
-            "time": "12:30", 
+            "time": "12:10", 
             "title": "Technical visit"
         }, 
         "_17": {
