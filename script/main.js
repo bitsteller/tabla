@@ -307,7 +307,8 @@ const app = new Vue({
     programVersion: 0,
     conferenceName: conferenceName,
     conferenceUrl: conferenceUrl,
-    phase: 0
+    phase: 0,
+    trainsData: {}
   },
   computed: {
     sessionDetail () {
@@ -546,6 +547,15 @@ const app = new Vue({
           });
         }
       }
+      if (this.now.getHours() > 16) {
+        for (var p = 0; p < 2; p++) {
+          cycle.push({
+            "view": "station",
+            "index": 0
+          });  
+        }
+      }
+
       return cycle;
     },
     roomCycle: function() {
@@ -610,6 +620,14 @@ const app = new Vue({
     roomIndex: function() {
       var currentPhase = this.roomCycle[this.phase % this.roomCycle.length];
       return currentPhase.index;
+    },
+    trains: function() {
+      var trains = Object.values(this.trainsData);
+      var trains = trains.filter(function(train) {
+          return train.scheduledDeparture != undefined;
+      });
+      trains.sort(function(a,b) {return a.scheduledDeparture - b.scheduledDeparture});
+      return trains;
     }
   },
   watch : {

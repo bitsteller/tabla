@@ -52,8 +52,13 @@ Vue.component('multimessage', {
         return m;
       },
       textLength: function() {
-        var text = this.message.replace(/<\/?[^>]+(>|$)/g, "");
-        return text.length;
+        if (this.message != undefined) {
+          var text = this.message.replace(/<\/?[^>]+(>|$)/g, "");
+          return text.length;
+        }
+        else {
+          return 0;
+        }
       }
     }
 })

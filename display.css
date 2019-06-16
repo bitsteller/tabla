@@ -173,6 +173,10 @@ header .location {
   padding: 0.3em 0.2em;
 }
 
+.session.wide {
+	grid-template-columns: minmax(4em,5%) 1fr minmax(5em,5%) minmax(4em,5%) minmax(5em,25%); /*number, title, session, time, room, status*/
+}
+
 .session .id {
 	padding-right: 0.5em;
 	text-align: right;
