@@ -72,7 +72,7 @@
 							<multimessage class="info" v-bind:phase="phase" field="message" v-bind:messages="(session.number in announcementsForSession ? announcementsForSession[session.number] : []).concat([presentersHTMLForSession[session.number]])"/>
 						</div>
 						<div class="time">{{ session.startTimeFormatted }}</div>
-						<div class="location"><multimessage max-length=10 v-bind:messages="[session.room]"/></div>
+						<div class="location"><multimessage max-length=6 v-bind:messages="[session.room]"/></div>
 						<multimessage max-length=30 v-bind:phase="phase" field="title" v-bind:messages="(session.number in announcementsForSession ? announcementsForSession[session.number] : []).concat([session.statusText])"/>
 					</li>
 				</ul>
