@@ -227,7 +227,7 @@ function parseTrainAnnouncement(trainsData, item) {
 loadStations();
 
 this.interval = setInterval(function() {
-  if (app.now.getHours() > 14) {
+  if (app.now.getHours() >= 11) {
     updateTrafikverketData();
   }
 }, 40*1000);

@@ -547,7 +547,7 @@ const app = new Vue({
           });
         }
       }
-      if (this.now.getHours() > 16) {
+      if (this.now.getHours() >= 16 || (this.now.getDate() == 19 && this.now.getHours() >= 11)) {
         for (var p = 0; p < 2; p++) {
           cycle.push({
             "view": "station",
