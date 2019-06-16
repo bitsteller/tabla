@@ -29,6 +29,14 @@
             "considersAll": true,
             "startTime": [2019, 6, 19, 9, 30],
             "endTime": [2019, 6, 19, 10, 0]
+        },
+        {
+            "title": "Thanks for participating!",
+            "message": "Thank you for attenedning RailNorrköping! We wish you safe travel home!",
+            "considersSessions": [],
+            "considersAll": true,
+            "startTime": [2019, 6, 19, 9, 30],
+            "endTime": [2019, 6, 19, 10, 30]
         }
     ],
     "canceledTalks": [],

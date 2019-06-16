@@ -703,10 +703,12 @@ this.interval = setInterval(function() {
     app.now.setMinutes(app.now.getMinutes() + 1 );
     app.now = new Date(app.now.getTime());
   }
-  loadAnnouncements("./data/announcements.json");
+  if ((app.phase % 2) == 0) {
+      loadAnnouncements("./data/announcements.json");
+  }
 
   app.phase = (app.phase + 1) % 100;
-}, 40*1000)
+}, 30*1000)
 
 
 document.addEventListener('keypress', function(e) {

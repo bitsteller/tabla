@@ -53,11 +53,11 @@ function updateTrafikverketData() {
                                 "<OR>" +
                                     "<AND>" +
                                         "<GT name='AdvertisedTimeAtLocation' " +
-                                                    "value='$dateadd(-00:05:00)' />" +
+                                                    "value='$dateadd(-00:02:00)' />" +
                                         "<LT name='AdvertisedTimeAtLocation' " +
                                                     "value='$dateadd(6:00:00)' />" +
                                     "</AND>" +
-                                    "<GT name='EstimatedTimeAtLocation' value='$dateadd(-00:05:00)' />" +
+                                    "<GT name='EstimatedTimeAtLocation' value='$dateadd(-00:02:00)' />" +
                                 "</OR>" +
                                 "<EQ name='LocationSignature' value='" + sign + "' />" +
                             "</AND>" +
