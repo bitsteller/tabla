@@ -91,8 +91,8 @@ function getiCalForSession(session, talks, url) {
   }
 
   var desc = "";
-  if (session.chair != undefined) {
-      desc += "Chair: " + String(session.chair) + "\n\n";
+  if (session.chairs != undefined) {
+      desc += "Chair: " + String(session.chairs) + "\n\n";
   }
   desc += String(session.description) + "\n\n";
   if (talks != undefined) {
@@ -362,12 +362,21 @@ const app = new Vue({
           var roomMatch = session.room != undefined && session.room.toLowerCase().includes(app.search.toLowerCase());
           var titleMatch = searchRegex(app.search).test(session.title);
           var descriptionMatch = searchRegex(app.search).test(session.description);
+          var chairMatch = searchRegex(app.search).test(session.chairs);
+
           var talkMatch = (session.number in app.filteredTalks) && (app.filteredTalks[session.number].length > 0);
 
-          return sessionIDMatch || roomMatch || titleMatch || talkMatch || descriptionMatch;
+          return sessionIDMatch || roomMatch || titleMatch || talkMatch || chairMatch || descriptionMatch;
       });
 
-      sessions.sort(function(a,b) {return a.startTime - b.startTime});
+      sessions.sort(function(a,b) {
+        if ((a.startTime - b.startTime) != 0) {
+          return a.startTime - b.startTime;
+        }
+        else {
+          return a.number.localeCompare(b.number);
+        }
+      });
 
       return sessions;
     },
