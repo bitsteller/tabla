@@ -113,7 +113,7 @@ function parseTrainAnnouncement(trainsData, item) {
 
     var today = new Date();  
     var localoffset = -(today.getTimezoneOffset()/60);
-    var offset = (timezoneOffset-localoffset) * 3600 * 1000;
+    var offset = (15+(timezoneOffset-localoffset)) * 3600 * 1000;
 
     var train = {};
     if (item.AdvertisedTrainIdent in trainsData) train = trainsData[item.AdvertisedTrainIdent];
