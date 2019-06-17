@@ -557,11 +557,13 @@ const app = new Vue({
         }
       }
       if (this.now.getHours() >= 16 || (this.now.getDate() == 19 && this.now.getHours() >= 11)) {
-        for (var p = 0; p < 2; p++) {
-          cycle.push({
-            "view": "station",
-            "index": 0
-          });  
+        if(this.trains.length > 0) {
+          for (var p = 0; p < 2; p++) {
+            cycle.push({
+              "view": "station",
+              "index": 0
+            });  
+          }
         }
       }
 
