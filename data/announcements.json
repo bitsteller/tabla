@@ -43,6 +43,22 @@
             "message": "No more seats available in this session",
             "considersSessions": ["7B"],
             "considersAll": false
+        },
+        {
+            "title": "Guided tour",
+            "message": "Tour starts at entrance to conference venue and ends at Värmekyrkan (i.e. place where conference dinner is held). Guidance will be in two groups, both starting at conference venue and and ending Värmekyrkan.",
+            "considersSessions": [],
+            "considersAll": true,
+            "startTime": [2019, 6, 18, 14, 20],
+            "endTime": [2019, 6, 18, 17, 0]
+        },
+        {
+            "title": "Conference dinner",
+            "message": "The conference dinner starts 19:30 at Värmekyrkan. <a href='https://goo.gl/maps/Eg6sQqN4i1DjCteZA'>Map</a>",
+            "considersSessions": [],
+            "considersAll": true,
+            "startTime": [2019, 6, 18, 14, 30],
+            "endTime": [2019, 6, 18, 18, 30]
         }
     ],
     "canceledTalks": [],
