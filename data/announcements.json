@@ -73,8 +73,14 @@
             "message": "The poster session takes places outside of K1",
             "considersSessions": ["12D"],
             "considersAll": false
+        },
+        {
+            "title": "Starts 8:50",
+            "message": "Session starts 8:50 due to the first talk being canceled",
+            "considersSessions": ["15C"],
+            "considersAll": false
         }
     ],
-    "canceledTalks": ["67"],
+    "canceledTalks": ["67", "141"],
     "programVersion": 8
 }
