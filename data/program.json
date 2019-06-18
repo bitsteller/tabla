@@ -1373,7 +1373,7 @@
                 30
             ], 
             "time": "08:30", 
-            "title": "Improvement of maintenance timetable stability based on event specific flexibility assignment in track choice PESP", 
+            "title": "Improvement of maintenance timetable stability based on iteratively assigning event flexibility in FPESP", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -1535,7 +1535,7 @@
                 50
             ], 
             "time": "08:50", 
-            "title": "Evaluation of Travel Time Reliability using \u201cRevealed Preference\u201d Data & Bayesian Posterior Analysis", 
+            "title": "Evaluation of Travel Time Reliability using \u201cRevealed Preference\u201d Data and Bayesian Posterior Analysis", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -1791,7 +1791,7 @@
                 0
             ], 
             "time": "09:00", 
-            "title": "Enhancement of blocking-time theory to represent future interlocking architectures", 
+            "title": "Enhancement of Blocking-time Theory to Represent Future Interlocking Architectures", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -1842,7 +1842,7 @@
                 0
             ], 
             "time": "09:00", 
-            "title": "Online calibration of train motion models: towards the era of bespoke control solutions", 
+            "title": "Online microscopic calibration of train motion models: towards the era of customized control solutions", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -2442,7 +2442,7 @@
                 40
             ], 
             "time": "09:40", 
-            "title": "Train Operation Simulator under Moving Block and Prediction Control", 
+            "title": "Evaluation of Train Operation with Prediction Control by Simulation", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -3233,7 +3233,7 @@
                     "url": ""
                 }
             ], 
-            "authors_str": "Jiping Fang, Fujiyama Taku, Howard Wong and Xin Chen", 
+            "authors_str": "Jiping Fang, Howard Wong, Xin Chen and Fujiyama Taku", 
             "category": "research-paper", 
             "date": "2019-06-19", 
             "duration": 20, 
@@ -3447,7 +3447,7 @@
                 50
             ], 
             "time": "10:50", 
-            "title": "Passenger-orientated analysis of allocation of railway capacity with help of simulation", 
+            "title": "Passenger-orientated Analysis of Railway Capacity Allocation with Help of Simulation", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -3609,7 +3609,7 @@
                 0
             ], 
             "time": "11:00", 
-            "title": "ASSESSMENT of POTENTIAL COMMERCIAL CORRIDORS for HYPERLOOP SYSTEMS ", 
+            "title": "ASSESSMENT of POTENTIAL COMMERCIAL CORRIDORS for HYPERLOOP SYSTEMS", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -3833,7 +3833,7 @@
                     "url": ""
                 }
             ], 
-            "authors_str": "Qinglun Zhong, Shaoquan Ni, Chang'An Xu and Shengdong Li", 
+            "authors_str": "Qinglun Zhong, Shaoquan Ni, Shengdong Li and Chang'An Xu", 
             "category": "research-paper", 
             "date": "2019-06-18", 
             "duration": 20, 
@@ -4013,7 +4013,7 @@
                     "url": ""
                 }
             ], 
-            "authors_str": "Weining Hao, Lingyun Meng, Francesco Corman and Sihui Long", 
+            "authors_str": "Weining Hao, Lingyun Meng, Francesco Corman, Sihui Long and Xi Jiang", 
             "category": "research-paper", 
             "date": "2019-06-18", 
             "duration": 20, 
@@ -4089,7 +4089,7 @@
                 10
             ], 
             "time": "11:10", 
-            "title": "Infrastructure capacity in the ERTMS signalling system", 
+            "title": "Infrastructure capacity in the ERTMS Signaling system", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -4655,7 +4655,7 @@
                     "url": ""
                 }
             ], 
-            "authors_str": "Birgitta Thorslund, Tomas Rosberg and Anders Lindstr\u00f6m", 
+            "authors_str": "Birgitta Thorslund, Tomas Rosberg, Anders Lindstr\u00f6m and Bj\u00f6rn Peters", 
             "category": "research-paper", 
             "date": "2019-06-18", 
             "duration": 20, 
@@ -5187,7 +5187,7 @@
                 50
             ], 
             "time": "11:50", 
-            "title": "Distributed optimization approaches for the integrated problem of real-time railway trac management and train control", 
+            "title": "Distributed optimization approaches for the integrated problem of real-time railway traffic management and train control", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -5783,7 +5783,7 @@
                 30
             ], 
             "time": "13:30", 
-            "title": "Passenger Flow Control with Multi-station Coordination on an Oversaturated Urban Rail Transit Line: A Multi-objective Mixed-integer Linear Programming Approach", 
+            "title": "Passenger Flow Control with Multi-station Coordination on an Oversaturated Urban Rail Transit Line: A Multi-objective Integer Linear Programming Approach", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -6136,7 +6136,7 @@
                     "url": ""
                 }
             ], 
-            "authors_str": "Boris Grimm, Ralf Bornd\u00f6rfer and Thomas Schlechte", 
+            "authors_str": "Ralf Bornd\u00f6rfer, Boris Grimm and Thomas Schlechte", 
             "category": "industrial-paper", 
             "date": "2019-06-18", 
             "duration": 20, 
@@ -6667,7 +6667,7 @@
                     "url": ""
                 }
             ], 
-            "authors_str": "Peter Pudney, Amie Albrecht, Peng Zhou and Ajini Galapitage", 
+            "authors_str": "Ajini Galapitage, Amie Albrecht, Peter Pudney and Peng Zhou ", 
             "category": "research-paper", 
             "date": "2019-06-18", 
             "duration": 20, 
@@ -6692,7 +6692,7 @@
                 30
             ], 
             "time": "14:30", 
-            "title": "Real-time micro-scheduling of trains to improve line flows and energy efficiency", 
+            "title": "Optimal Real-time Line Scheduling for Trains with Connected Driver Advice Systems", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -6898,7 +6898,7 @@
                     "url": "https://sites.google.com/site/jonaseliassonkth/"
                 }
             ], 
-            "authors_str": "Abderrahman Ait-Ali and Jonas Eliasson", 
+            "authors_str": "Abderrahman Ait Ali and Jonas Eliasson", 
             "category": "research-paper", 
             "date": "2019-06-17", 
             "duration": 20, 
@@ -6923,7 +6923,7 @@
                 40
             ], 
             "time": "14:40", 
-            "title": "Dynamic Origin-Destination-Matrix Estimation for Commuter Train Planning Using Smart Cards", 
+            "title": "Dynamic Origin-Destination Estimation Using Smart Card Data: An Entropy Maximisation Approach", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -7370,7 +7370,7 @@
                     "url": ""
                 }
             ], 
-            "authors_str": "Daniel P\u00f6hle, Sebastian K\u00fchn, Anna-Lena Frank and Florian Dahms", 
+            "authors_str": "Florian Dahms, Anna-Lena Frank, Sebastian K\u00fchn and Daniel P\u00f6hle", 
             "category": "industrial-paper", 
             "date": "2019-06-17", 
             "duration": 20, 
@@ -7395,7 +7395,7 @@
                 0
             ], 
             "time": "15:00", 
-            "title": "Transforming automatic scheduling in a working application for a railway infrastructure manager", 
+            "title": "Transforming Automatic Scheduling in a Working Application for a Railway Infrastructure Manager", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -8099,7 +8099,7 @@
                     "url": ""
                 }
             ], 
-            "authors_str": "Ping Huang and Chao Wen", 
+            "authors_str": "Ping Huang, Chao Wen and Zhongcan Li", 
             "category": "research-paper", 
             "date": "2019-06-18", 
             "duration": 20, 
@@ -8193,7 +8193,7 @@
                 0
             ], 
             "time": "16:00", 
-            "title": "Connectivity Reliability on an Urban Rail Transit Network From the Perspective of Passengers\u2019 Travel", 
+            "title": "Connectivity Reliability on an Urban Rail Transit Network from the Perspective of Passengers\u2019 Travel", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -8648,7 +8648,7 @@
                     "url": ""
                 }
             ], 
-            "authors_str": "Y. Chang, R. Niu, Y. Wang, X. Luan, A. D'Ariano and M. Sam\u00e0", 
+            "authors_str": "Yihong Chang, Ru Niu, Yihui Wang, Xiaojie Luan, Marcella Sam\u00e0 and Andrea D'Ariano ", 
             "category": "research-paper", 
             "date": "2019-06-17", 
             "duration": 20, 
@@ -8871,7 +8871,7 @@
                 50
             ], 
             "time": "16:50", 
-            "title": "Impact of perturbations calibration in simulation: the case of robustness evaluation at station", 
+            "title": "Impact of calibration of perturbations in simulation: the case of robustness evaluation at station", 
             "track": "RailNorrk\u00f6ping 2019"
         }, 
         {
@@ -8957,7 +8957,7 @@
                     "url": ""
                 }
             ], 
-            "authors_str": "Paola Pellegrini, Pierre Hosteins and Joaquin Rodriguez", 
+            "authors_str": "Pierre Hosteins, Paola Pellegrini and Joaquin Rodriguez", 
             "category": "research-paper", 
             "date": "2019-06-17", 
             "duration": 20, 

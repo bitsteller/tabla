@@ -80,15 +80,17 @@ for a in reader:
 			talk["presenter"].append(author)
 
 
-if os.path.isfile('submissions.csv'):
+if os.path.isfile('submissions2.csv'):
 	print("Parsing submissions csv...")
-	f = open( 'submissions.csv', 'r' )  
+	f = open( 'submissions2.csv', 'r' )  
 	f.readline()
 	reader = csv.DictReader(f, delimiter=";",fieldnames = ( "number", "authors", "title", "ext_abstract", "full_paper", "camera_ready", "revision_letter", "category", "accepts_publication", "poster_session", "track", "decision"))  
 	for s in reader:
 		talk = [t for t in talks if t["number"] == s["number"]]
 		if len(talk) > 0:
 			talk = talk[0]
+			talk["title"] = s["title"]
+			talk["authors_str"] = s["authors"]
 			talk["category"] = s["category"]
 			talk["accepts_publication"] = s["accepts_publication"]
 
