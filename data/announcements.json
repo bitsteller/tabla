@@ -59,8 +59,16 @@
             "considersAll": true,
             "startTime": [2019, 6, 18, 14, 30],
             "endTime": [2019, 6, 18, 18, 30]
+        },
+        {
+            "title": "IAROR Business meeting",
+            "message": "All IAROR members are welcome to the IAROR Business meeting Tuesday at 16:30 in K4, also new members that have applied during the conference.",
+            "considersSessions": ["14"],
+            "considersAll": true,
+            "startTime": [2019, 6, 18, 10, 10],
+            "endTime": [2019, 6, 18, 14, 30]
         }
     ],
-    "canceledTalks": [],
-    "programVersion": 5
+    "canceledTalks": ["67"],
+    "programVersion": 6
 }

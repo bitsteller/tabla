@@ -255,7 +255,7 @@
         "14": {
             "chairs": "Norio Tomii", 
             "date": "2019-06-18", 
-            "description": "<p>Meeting open to all IAROR members.</p>\n", 
+            "description": "<p><strong>All IAROR members are welcome</strong>, both \"old\" members and persons that have applied at the conference.</p>\n", 
             "duration": 90, 
             "kind": "empty", 
             "number": "14", 
@@ -268,7 +268,7 @@
                 30
             ], 
             "time": "16:30", 
-            "title": "IAROR Business Meeting"
+            "title": "IAROR Business Meeting: for all IAROR members - new and old"
         }, 
         "15A": {
             "chairs": "Francesco Corman", 
@@ -379,7 +379,7 @@
             "title": "Rolling stock scheduling and maintenance 2"
         }, 
         "17C": {
-            "chairs": "Emma Solinen", 
+            "chairs": "Sara Gestrelius", 
             "date": "2019-06-19", 
             "description": "", 
             "duration": 40, 
