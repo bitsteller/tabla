@@ -802,7 +802,7 @@ function loadAnnouncements(url, tries = 2) {
 
           if (data.programVersion != app.programVersion) { //program outdated, update
             app.programVersion = data.programVersion;
-            loadProgram("./data/program.json");
+            loadProgram("./data/program.json", data.programVersion);
           }
 
           app.canceledTalks = data.canceledTalks;
