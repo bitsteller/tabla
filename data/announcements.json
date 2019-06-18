@@ -46,7 +46,7 @@
         },
         {
             "title": "Guided tour",
-            "message": "Tour starts at entrance to conference venue and ends at Värmekyrkan (i.e. place where conference dinner is held). Guidance will be in two groups, both starting at conference venue and and ending Värmekyrkan.",
+            "message": "A short guided tour starts outside conference venue entrance at 19:00 and ends at conference dinner at 19:30. ",
             "considersSessions": [],
             "considersAll": true,
             "startTime": [2019, 6, 18, 14, 20],
@@ -67,6 +67,12 @@
             "considersAll": true,
             "startTime": [2019, 6, 18, 10, 10],
             "endTime": [2019, 6, 18, 14, 30]
+        },
+        {
+            "title": "Outside of K1",
+            "message": "The poster session takes places outside of K1",
+            "considersSessions": ["12D"],
+            "considersAll": false
         }
     ],
     "canceledTalks": ["67"],
