@@ -37,6 +37,12 @@
             "considersAll": true,
             "startTime": [2019, 6, 19, 9, 30],
             "endTime": [2019, 6, 19, 10, 30]
+        },
+        {
+            "title": "Session full",
+            "message": "No more seats available in this session",
+            "considersSessions": ["7B"],
+            "considersAll": false
         }
     ],
     "canceledTalks": [],
