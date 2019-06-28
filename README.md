@@ -1,6 +1,8 @@
 # Tablå
 Conference program display with focus on usability
 
+![Program viewer](/documentation/screenshots/program1.png?raw=true "Program viewer")
+
 
 ## Features
 * Conference program website 
@@ -22,7 +24,11 @@ Conference program display with focus on usability
 
 1. Use the csv export from Easy chair. It is recommended also to export the submissions as Excel and convert to csv.
 2. Place the the files
-```authors.csvrooms.csvsession_chairs.csvsessions.csvtalks.csv
+```authors.csv
+rooms.csv
+session_chairs.csv
+sessions.csv
+talks.csv
 submissions.csv
 ```
 into the Tablå /data folder.
