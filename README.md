@@ -1,7 +1,9 @@
 # Tablå
-Conference program display with focus on usability
+Conference program display with focus on usability.
 
 ![Program viewer](/documentation/screenshots/program1.png?raw=true "Program viewer")
+![Display](/documentation/screenshots/display.png?raw=true "Display")
+![Room display](/documentation/screenshots/display.png?raw=true "Room display")
 
 
 ## Features
