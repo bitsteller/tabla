@@ -24,11 +24,19 @@
         },
         {
             "title": "Technical visit",
-            "message": "Train to Hallsberg (chartered for us) departs at <b>12:10</b> from Norrköping C (Norrköping railway station). Walking time from conference venue to Norrköping C is about 15 minutes. Please, proceed as fast as possible from conference venue to railway station.",
+            "message": "Train to Hallsberg (chartered for us) departs at <b>12:10</b> from Norrköping C, <b>track 2b</b> (Norrköping railway station). Walking time from conference venue to Norrköping C is about 15 minutes. Please, proceed as fast as possible from conference venue to railway station.",
             "considersSessions": [],
             "considersAll": true,
             "startTime": [2019, 6, 19, 8, 0],
             "endTime": [2019, 6, 19, 10, 0]
+        },
+        {
+            "title": "Lunch boxes",
+            "message": "Lunch boxes for Hallsberg-travellers handed out at entrance to conference venue!",
+            "considersSessions": [],
+            "considersAll": true,
+            "startTime": [2019, 6, 19, 8, 0],
+            "endTime": [2019, 6, 19, 10, 10]
         },
         {
             "title": "Thanks for participating!",
@@ -79,6 +87,27 @@
             "message": "Session starts 8:50 due to the first talk being canceled",
             "considersSessions": ["15C"],
             "considersAll": false
+        },
+        {
+            "title": "Controlled burn",
+            "message": "Due to the controlled burn in a forest north of Norrköping some smoke can reach the city during the coming days (depending on wind direction). ",
+            "considersSessions": [],
+            "considersAll": true,
+            "startTime": [2019, 6, 18, 16, 0],
+            "endTime": [2019, 6, 18, 18, 0]
+        },
+        {
+            "title": "Starts 11:00",
+            "message": "Session starts 11:00 due to the first talk being canceled",
+            "considersSessions": ["17A"],
+            "considersAll": false
+        },
+        {
+            "title": "Travel information",
+            "message": "There are currently major disruptions for trains from Norrköping. If you are travelling today check the information about your train from <a href='https://www.trafikverket.se/trafikinformation/tag/?&TrainOrStation=Norrköping%20C&ArrDep=departure&'>Trafikverket</a> and <a href='https://www2.sj.se/sv/trafikinfo/trafiken-idag.html/search/Norrköping%20C/Date/2019-06-20'>SJ</a>",
+            "considersSessions": [],
+            "startTime": [2019, 6, 20, 14, 0],
+            "endTime": [2019, 6, 20, 16, 0]
         }
     ],
     "canceledTalks": ["67", "141"],
